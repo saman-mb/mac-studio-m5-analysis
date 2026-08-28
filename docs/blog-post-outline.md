@@ -23,16 +23,19 @@ Mention: pre-order now, available 22 Sep. Sources: [Apple UK tech-specs Studio](
 Frontload the verdict matrix. Click — either scroll for the full fit table, or jump to
 the section on your model class.
 
-## Section 2 — Why guessing RAM is a scam (llmfit pitch)
+## Section 2 — The method: llmfit's actual math, not marketing
 
-- Apple CPU/GPU marketing tells you nothing about LLM fit. The only thing that matters
-  for a given model: unified memory capacity + memory bandwidth. Everything else is
-  detail.
+- LLM fit on Apple Silicon comes down to unified memory capacity + memory bandwidth.
+  Apple's other headline specs (Neural Engine, "Neural Accelerators") are irrelevant
+  to whether a given model loads and decodes at usable t/s.
 - llmfit checks every model in the HF database for weight + KV cache fit at a given
   quant, and estimates t/s from memory-bandwidth roofline.
-- Simulate mode: `--memory X --ram X --cpu-cores N fit --json` — works on any box.
-  Verified against my actual Strix Halo 128GB box (grounded check).
+- Simulate mode: `--memory X --ram X --cpu-cores N fit --json` — used it against my
+  Strix Halo box (128GB, 256GB/s) to sanity-check the simulator against real hardware
+  before trusting pre-release specs.
 - British English + **no em dashes** — review prose carefully.
+- Note for prose review: llmfit is the measurement tool here, not the subject. It's
+  the method. Don't praise it, just walk through the numbers it produced.
 
 ## Section 3 — The new lineup (Apple UK, verified)
 

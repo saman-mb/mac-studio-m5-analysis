@@ -1,86 +1,82 @@
-# Mac mini — M6 / M5 Pro — Local LLM guide
+# Mac mini — M6 / M5 Pro — full configuration coverage
 
 *Specs verified against [Apple UK tech-specs](https://www.apple.com/uk/mac-mini/specs/).*
+*All fit levels from llmfit v1.1.12 with `--memory/--ram/--cpu-cores` simulation.*
 
 **Note: 2026 Mac mini ships M6 (not M5), plus M5 Pro option.** No M5 Max/Ultra.
 
-## Published configurations
+## Every config (Apple UK, verified)
 
-| Model | Chip | CPU | GPU | RAM (config) | Bandwidth |
-|---|---|---|---|---|---|
-| 1 | M6 | 12c (2S+4P+6E) | 12c | 16GB (cfg 24/32) | 153GB/s |
-| 2 | M6 | 12c | 12c | 16GB (cfg 24/32) | 153GB/s |
-| 3 | M6 | 12c | 12c | 24GB (cfg 32) | 170GB/s |
-| 4 | M5 Pro | 15c (5S+10P) → cfg 18c | 16c → cfg 20c | 24GB (cfg 48/64) | 307GB/s |
-
-Media engine same on all: H.264/HEVC/ProRes/ProRes RAW hw-accel, AV1 decode.
-
-## llmfit sims (memory/CPU override)
-
-Simulated 16/24/32GB M6 (12 cores) and 24/48/64GB M5 Pro (15–18 cores).
-
-### Fit table — flagship models
-
-| Model | 16GB M6 | 24GB M6 | 32GB M6 | 24GB Pro | 48GB Pro | 64GB Pro |
+| Model | Chip | CPU | GPU | RAM (config) | Bandwidth | Storage |
 |---|---|---|---|---|---|---|
-| llama-3.1-70b | Too Tight | Marginal (Q3_K_M) | Marginal (Q2_K) | Marginal (Q3_K_M) | Good (AWQ) | Good (AWQ) |
-| llama-3.3-70b | Perfect* | Perfect* | Perfect* | Perfect* | Perfect | Perfect |
-| qwen3-32b | Marginal (Q2_K) | Marginal (Q4_K_M) | **Perfect (Q6_K)** | Marginal (Q4_K_M) | **Perfect (Q8)** | **Perfect (Q8)** |
-| qwen3-235b (MoE) | Perfect* | Perfect* | Perfect* | Perfect* | Perfect* | Perfect* |
-| deepseek-r1-0528 distill | Perfect | Perfect | Perfect | Perfect | Perfect | Perfect |
-| deepseek-v3 | Perfect* | Perfect* | Perfect* | Perfect* | Perfect* | Perfect* |
-| gpt-oss-120b | Perfect | Perfect | Perfect | Perfect | Perfect | Perfect |
-| mistral-large 123B | Too Tight | Too Tight | Too Tight | Too Tight | Marginal (Q2_K) | Marginal (Q3_K_M) |
-| llama-3.1-405b | Too Tight | Too Tight | Too Tight | Too Tight | Too Tight | Too Tight |
-| qwen3-coder-480b | Too Tight | Too Tight | Too Tight | Too Tight | Too Tight | Too Tight |
-| llama-4-maverick | Too Tight | Too Tight | Too Tight | Too Tight | Too Tight | Too Tight |
-| minimax-m2 | Perfect | Good | Perfect | Good | Perfect | Perfect |
-| glm-4.5 | Perfect | Perfect | Perfect | Perfect | Perfect | Perfect |
+| 1 | M6 | 12c (2S+4P+6E) | 12c | 16GB (cfg 24/32) | 153GB/s | 256GB |
+| 2 | M6 | 12c | 12c | 16GB (cfg 24/32) | 153GB/s | 512GB |
+| 3 | M6 | 12c | 12c | 24GB (cfg 32) | 170GB/s | 512GB |
+| 4 | M5 Pro | 15c (5S+10P) → cfg 18c | 16c → cfg 20c | 24GB (cfg 48/64) | 307GB/s | 512GB |
 
-* MoE partial offload.
+Models 1 and 2 differ only in storage. Model 4 has an 18c/20c die upgrade option.
 
-**Bandwidth scaling** vs this detector box (256GB/s):
-- M6 153GB/s ≈ ×0.6
-- M6 170GB/s ≈ ×0.66
-- M5 Pro 307GB/s ≈ ×1.2
+## What each config can and can't run
 
-So raw t/s in `raw/m6_*.json` and `raw/m5pro_*.json` are optimistic for M6 configs and
-slightly conservative for M5 Pro.
+### M6 16GB (153GB/s)
+- **CAN:** gpt-oss-120b (Perfect), qwen3-235b MoE* (Perfect), deepseek-v3* (Perfect),
+  deepseek-r1-0528 distill (Perfect), glm-4.5 (Perfect), minimax-m2 (Perfect),
+  llama-3.3-70b (Perfect*), ~14-16B dense (Phi-3-medium 14B Q8, gemma-4 31B MXFP4)
+- **CAN'T:** llama-3.1-70b (Too Tight), qwen3-32b (Marginal Q2_K), mistral-large,
+  llama-3.1-405b, qwen3-coder-480b, llama-4-maverick (all Too Tight)
+- **Verdict:** useless for serious local LLM work. Best you get is ~14B dense.
 
-### Largest models by tier (llmfit, Perfect fits)
+### M6 24GB (170GB/s)
+- **CAN:** everything above + llama-3.1-70b (Marginal Q3_K_M), qwen3-32b (Marginal
+  Q4_K_M), ~22B dense (ERNIE-4.5-21B Q8, Qwen3.5-27B Q8 edge)
+- **CAN'T:** mistral-large, llama-3.1-405b, qwen3-coder-480b, llama-4-maverick
+- **Verdict:** entry-level. OK for 20B-class and MoE partial. Skip for anything bigger.
 
-| Config | Largest fitting | Notes |
+### M6 32GB (170GB/s)
+- **CAN:** qwen3-32b (Perfect Q6_K), gemma-2-27b (Perfect Q8), ~28-30B dense,
+  everything smaller at high quants
+- **CAN'T:** mistral-large, llama-3.1-405b, qwen3-coder-480b, llama-4-maverick
+- **Verdict:** sweet spot for "small but real" local LLMs. Cheapest sensible floor.
+
+### M5 Pro 24GB (307GB/s)
+- **CAN:** same as M6 24GB (die bump, same RAM)
+- **CAN'T:** same as M6 24GB
+- **Verdict:** pointless for LLM. Paying for CPU/GPU you don't need.
+
+### M5 Pro 48GB (307GB/s)
+- **CAN:** llama-3.1-70b (Good AWQ), llama-3.3-70b (Perfect), qwen3-32b (Perfect Q8),
+  ~40-42B dense (Qwen2.5-72B NVFP4, Llama-3.3-70B NVFP4), mistral-large (Marginal Q2_K)
+- **CAN'T:** llama-3.1-405b, qwen3-coder-480b, llama-4-maverick, mistral-large (good quants)
+- **Verdict:** only mini tier that fits 70B at Q8-equivalent (via NVFP4). Mistral-large
+  goes Marginal at Q2_K (low quality).
+
+### M5 Pro 64GB (307GB/s)
+- **CAN:** ~57-68B dense (Llama-65B Q6_K, Jamba-Mini 51B Q8), mistral-large (Marginal
+  Q3_K_M), everything smaller at high quants
+- **CAN'T:** llama-3.1-405b, qwen3-coder-480b, llama-4-maverick, mistral-large (good quants)
+- **Verdict:** best-of-the-minis but caps out at ~70B. Does not reach frontier.
+
+* MoE partial offload: only active experts resident; listed memory is per-token
+  working set, not full weights.
+
+## Bandwidth scaling vs detector box
+
+llmfit detected this box's GPU at 256GB/s. Scale raw t/s:
+
+| Config | Bandwidth | Scale factor |
 |---|---|---|
-| M6 16GB | ~14-16B dense (Phi-3-medium 14B Q8) | gemma-4 31B MXFP4 fits at ~16GB exactly |
-| M6 24GB | ~22B dense (ERNIE-4.5-21B Q8) | Qwen3.5-27B needs Q8 edge |
-| M6 32GB | ~28-30B dense (gemma-2-27b Q8) | Qwen3-32B hits Perfect at Q6_K |
-| Pro 24GB | same as M6 24GB | die bump, same RAM |
-| Pro 48GB | ~40-42B dense (Qwen2.5-72B NVFP4, Llama-3.3-70B NVFP4) | 70B at NVFP4 fits |
-| Pro 64GB | ~57-68B dense (Llama-65B Q6_K, Jamba-Mini 51B Q8) | mistral-large 123B still Marginal |
+| M6 16GB | 153GB/s | ×0.6 |
+| M6 24/32GB | 170GB/s | ×0.66 |
+| M5 Pro (all) | 307GB/s | ×1.2 |
 
-## Reading this for LLM use
-
-**M6 16GB (models 1 & 2):** useless for serious local LLM work. Best you get is
-~14B dense, MoE trickles, GPT-OSS-120B via aggressive offload. Avoid.
-
-**M6 24GB (model 3 base):** entry-level, OK for 20B-class and MoE partial. Fine for
-chat with 7B-20B models. Skip for anything bigger.
-
-**M6 32GB (model 3 upgraded):** Qwen3-32B Perfect at Q6_K, gemma-2-27b Perfect.
-Sweet spot for "small but real" local LLMs. Cheap.
-
-**M5 Pro 48GB:** the only mini tier that fits **70B at Q8-equivalent** (via NVFP4
-fits, llmfit "Perfect"). Mistral-large goes Marginal at Q2_K.
-
-**M5 Pro 64GB:** 57-68B dense at Q6_K/Q8 fit Perfect. Mistral-large 123B Marginal
-at Q3_K_M (not great quality). Best-of-the-minis but caps out at ~70B — does not
-reach frontier (405B+, full DeepSeek R1 671B).
+Fit levels (Perfect/Good/Marginal/Too Tight) are memory-driven and don't need scaling.
 
 ## Verdict vs Mac Studio M5
 
 - If goal is frontier local (405B dense, full R1, GLM-5): **mini can't do it. Studio M5 Ultra 512GB required.**
 - If goal is mid-size daily driver (30-70B dense, Qwen3-235B MoE, GLM-4.5): **M5 Pro 64GB mini** is enough and far cheaper.
 - If goal is casual coding assistant (7-30B): **M6 32GB** is the cheapest sensible floor.
+- **Skip:** M6 16GB (too small), M5 Pro 24GB (paying for die you don't need).
 
 ## Reproduce
 
@@ -93,10 +89,4 @@ llmfit --memory 48G --ram 48G --cpu-cores 15 fit --json > raw/m5pro_48.json
 llmfit --memory 64G --ram 64G --cpu-cores 18 fit --json > raw/m5pro_64.json
 ```
 
-## Caveats
-
-- Pricing not in this doc — Apple store pages render client-side, need browser.
-- Fit levels from llmfit are memory-driven and reliable; TPS values need scaling
-  by bandwidth ratio (noted per section).
-- llmfit database includes junk entries; tables above filtered to known model families.
-- M6 chip is new, real-world perf may differ from bandwidth-scaled estimates.
+Full per-model detail in `raw/mini_flagship.json`.

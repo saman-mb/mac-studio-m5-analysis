@@ -89,14 +89,21 @@ to buy the bigger box; without those, 256GB and even the 40c/128GB M5 Max tie.
 
 ## Price estimate (512GB, UK)
 
-Anchors:
-- M5 Ultra 256GB UK ≈ **£10,000** (user-sourced)
-- 96GB → 256GB upgrade line shown as **−£4,000** on Apple UK (so 96GB base ≈ £6,000)
-- Apple RAM tier pattern (M3/M4 Ultra): each doubling tier ≈ +£2,000–£3,000
+Anchors (user-sourced + Apple screenshot):
+- M5 Ultra **256GB + 4TB ≈ £12,000** (user)
+- 96GB → 256GB upgrade line: **−£4,000** on Apple UK
+- Mac Studio 1TB→4TB upgrade typically **+£1,200–£1,500**
 
-Estimate: **M5 Ultra 512GB ≈ £12,000–£13,000** (with 1TB SSD).
-Add ~£500–£1,500 per storage bump above 1TB.
-Wait for late-Oct reveal to confirm; this is inference from tier pricing, not a published figure.
+Derived:
+- 256GB + 1TB ≈ £10,500–£10,800
+- 96GB base + 1TB ≈ £6,500–£6,800
+
+Estimate:
+- **512GB + 1TB ≈ £13,000–£14,500**
+- **512GB + 4TB ≈ £14,500–£16,000** (same storage tier as your £12k reference)
+
+Rationale: RAM doubling tier premium on Ultra historically +£2,500–£3,500; 256→512 is the
+top tier so premium may skew higher. Inference from tier pattern — late-Oct reveal confirms.
 
 ## Reproduce
 

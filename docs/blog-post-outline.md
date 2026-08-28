@@ -1,93 +1,104 @@
-# Blog post outline — `local-ai-guide-to-m5-mac-lineup`
+# Blog post outline — `m5-mac-mini-studio-local-ai-guide`
 
 Target: `~/dev/blog/src/content/posts/m5-mac-mini-studio-local-ai-guide.md`
 
 Working title: **"How to Buy a Mac for Local AI in 2026: llmfit on the M5 Studio and M6 Mini"**
 
-Description (frontmatter): "Apple opened pre-orders for the M5 Mac Studio and M6 Mac mini. I used llmfit's hardware simulation mode to estimate fit and cost per model class. 405B needs the 512GB Ultra at ~£15k. Qwen3-235B fits every mini config. Choose by model class, not chip name."
+Description (frontmatter): "Apple opened pre-orders for the M5 Mac Studio and M6 Mac mini. I simulated every configuration through llmfit (13 configs, 11 flagship models, weighted to the same scale). 405B at Q8 needs the 512GB Ultra at ~£15k. Qwen3-235B fits every mini config via MoE offload. Choose by model class, not chip name."
 
 Tags: `["AI", "hardware", "local-inference", "agentic", "infrastructure"]`
+
+Data backing (NOT guestimation, all llmfit sims):
+- `~/dev/mac-studio-m5-analysis/raw/scaled_full.json` — 13 configs × 11 models, fit + raw t/s + scaled t/s
+- `~/dev/mac-studio-m5-analysis/raw/m5max48.json` etc. — full DB per config
+- Bandwidth scale factors: detector 256GB/s → ×0.6 (M6 16GB), ×0.66 (M6 24/32GB), ×1.2 (M5 Pro), ×1.8 (Max 36GB), ×2.4 (Max 48/64/128GB), ×4.7 (Ultra)
 
 ---
 
 ## Section 1 — The claim, first
 
-Open with the decision. Lead with what llmfit said and what to buy. Something like:
+Open with the decision and verdict matrix. "Apple opened pre-orders for the M5 Mac Studio and M6 Mac mini this week. I simulated all 13 configurations through llmfit, weighted the scaled t/s numbers against the detection box's 256GB/s, and the verdict surprised me. Here's the working."
 
-"Apple opened pre-orders for the M5 Mac Studio and M6 Mac mini this week. I ran every
-configuration through llmfit's simulate mode to work out which model classes fit, and
-the answer surprised me. Here's the working."
+Mention: pre-order now, availability 22 Sep, 512GB Ultra late Oct. Sources: [Apple UK tech-specs Studio](https://www.apple.com/uk/mac-studio/specs/), [Mini](https://www.apple.com/uk/mac-mini/specs/). Price anchors from checkout screenshots: Max 128GB+4TB £6,899, Ultra 256GB+4TB £10,999.
 
-Mention: pre-order now, available 22 Sep. Sources: [Apple UK tech-specs Studio](https://www.apple.com/uk/mac-studio/specs/), [Mini](https://www.apple.com/uk/mac-mini/specs/). Pre-order anchors: Max 128GB+4TB £6,899, Ultra 256GB+4TB £10,999, wait for 512GB in late Oct.
+Frontload verdict: skip 36GB Max / 16GB Mini / 96GB Ultra (worst tier). Frontload verdict matrix. Either scroll for the full fit table, or jump to your model class.
 
-Frontload the verdict matrix. Click — either scroll for the full fit table, or jump to
-the section on your model class.
+## Section 2 — Method: llmfit's actual math, not marketing
 
-## Section 2 — The method: llmfit's actual math, not marketing
-
-- LLM fit on Apple Silicon comes down to unified memory capacity + memory bandwidth.
-  Apple's other headline specs (Neural Engine, "Neural Accelerators") are irrelevant
-  to whether a given model loads and decodes at usable t/s.
+- LLM fit on Apple Silicon = unified memory capacity + memory bandwidth. Everything
+  else (Neural Engine, "Neural Accelerators") is irrelevant to whether a given model
+  loads and decodes at usable t/s.
 - llmfit checks every model in the HF database for weight + KV cache fit at a given
   quant, and estimates t/s from memory-bandwidth roofline.
-- Simulate mode: `--memory X --ram X --cpu-cores N fit --json` — used it against my
-  Strix Halo box (128GB, 256GB/s) to sanity-check the simulator against real hardware
-  before trusting pre-release specs.
-- British English + **no em dashes** — review prose carefully.
-- Note for prose review: llmfit is the measurement tool here, not the subject. It's
-  the method. Don't praise it, just walk through the numbers it produced.
+- Simulate mode: `llmfit --memory X --ram X --cpu-cores N fit --json`.
+- Sanity-checked the simulator against my Strix Halo box (128GB, 256GB/s). Numbers
+  tracked. Then same flags against every Apple config from the tech-specs pages.
+- Note for prose review: llmfit is the measurement tool, not the subject. Walk
+  through the numbers it produced, don't praise it.
 
-## Section 3 — The new lineup (Apple UK, verified)
+## Section 3 — New lineup (Apple UK, verified)
 
-Mini ships **M6** (not M5) plus **M5 Pro** — that surprised me. Table the 4 mini
-configs (M6 12c/12c 16–32GB at 153–170GB/s, M5 Pro 15–18c 24–64GB at 307GB/s) and 2
-Studio chips (M5 Max 18c 36–128GB at 460/614GB/s, M5 Ultra 30–36c 96–512GB at 1.2TB/s).
+Mini ships **M6** (not M5) plus **M5 Pro** upgrade — that surprised me.
 
-Dry-wit line candidate: "Apple keeps publishing 'Neural Accelerators' on the spec sheet
-like it's a useful marketing term. It is not. Memory bandwidth is the number."
+Two tables, all configs from spec pages:
 
-## Section 4 — Fit by model class
+Studio: Max 36/48/64/128GB, Ultra 96/256/512GB (36c CPU upgrade gate on 256+512).
+Mini: M6 16/24/32GB, M5 Pro 24/48/64GB (18c CPU upgrade option).
 
-This is the post's centrepiece. Table every config, with llmfit `fit_level`, against
-11 flagship models (from `raw/flagship.json` and `raw/mini_flagship.json`).
+Dry-wit line candidate: "Apple spec pages list 'Neural Accelerators' like it's a
+number you can plan around. It is not. Memory bandwidth is the number."
 
-Classes:
-1. **Small** (7–30B dense) — any config except base 16GB mini.
-2. **Mid** (32–70B dense) — Pro 64GB mini or Max 128GB Studio.
-3. **MoE big** (Qwen3-235B, DeepSeek V3) — fits every config via partial offload. Dry
-   line: "MoE is the cheat code. It fits on anything."
-4. **Frontier dense** (Llama 3.1 405B, Qwen3-Coder-480B, Maverick) — 512GB Studio only.
-5. **Full 1T-class** (R1 671B, Ling-1T, GLM-5) — 512GB Studio, 1.4–23 t/s scaled. GLM-5
-   class is the only thing doing ~20 t/s at that size.
+## Section 4 — Fit by model class (the centrepiece, data-grounded)
 
-## Section 5 — The price classes
+Pulls directly from `raw/scaled_full.json` (13 configs × 11 models). For each class,
+table every config's fit + scaled t/s + headroom comment. Choose by class:
 
-Link class to config:
-- **Casual coder (7-30B)** → M6 32GB mini, cheapest sensible.
-- **Daily driver 30-70B** → M5 Pro 64GB mini.
-- **MoE cheat** → any (incl. base 16GB minis since partial offload).
-- **405B Q8 + R1 671B** → Studio Ultra 512GB (~£15-16k with 4TB).
+1. **Small (7–30B dense + gpt-oss-120b + GLM-4.5)** — everything except base 16GB Mini.
+2. **Mid (32–70B dense: Qwen3-32B, Llama-3.1/3.3-70B)** — Max 36GB Studio handles the
+   32B class (Perfect Q6_K). 70B needs 48GB+ Pro / 128GB+ Studio for Perfect quants.
+3. **MoE (Qwen3-235B, DeepSeek V3, R1 0528 distill)** — fits every config via partial
+   offload. Dry line: "MoE is the cheat code."
+4. **Mid-large dense (mistral-large 123B)** — Marginal on Max 48-64GB, Perfect on Max
+   128GB and Ultra 256GB+.
+5. **Frontier dense (Llama-3.1-405B, Qwen3-Coder-480B, Llama 4 Maverick)** — Ultra
+   256GB gets NVFP4/Marginal fits. Perfect fits need Ultra 512GB. Only class where
+   512GB unlocks anything.
+6. **1T-class (Ling-1T, GLM-5 754-785B, MiniMax-M1)** — Ultra 512GB only. GLM-5.1-AWQ
+   at 767B does ~23 t/s (largest at reading speed). Ling-1T runs at ~2-3 t/s.
+
+## Section 5 — Price per model class
+
+Link class → config → price:
+- **Casual (7–30B + MoE)** → M6 32GB mini (cheapest sensible floor)
+- **Real 70B daily driver** → M5 Pro 64GB mini
+- **Mid-large 123B** → Max 128GB Studio (~£6.9k at 4TB)
+- **Frontier 405B + full R1** → Ultra 512GB (~£15-16k est, late Oct)
 - Surprise line: Ultra 256GB and Max 128GB tie on everything sub-405B. 512GB exists
-  for 405B + R1 alone.
+  for 405B + full R1 alone. If you don't run those, upsell not worth it.
 
-## Section 6 — What I bought / would buy
+Price-estimate workings (user screenshots): Max 128+4TB £6,899, Ultra 256+4TB £10,999.
+In-die 96→256 RAM jump at checkout = −£4,000 line. 512 est = £15-16k, flagged as
+inference from tier pricing, not published.
 
-Bridge from the framework desktop I already own (Strix Halo 128GB, 256GB/s). Why 128GB
-didn't cut it (405B, GLM-5, R1 locked out) and why the 512GB Ultra is the actual
-upgrade. Skip the softmax — this is the original human angle. End with the honest
-anchor.
+## Section 6 — What I'm buying, and why
 
-## Section 7 — How to reproduce
+Bridge from the Framework desktop I already own (Strix Halo 128GB, 256GB/s). Why
+128GB didn't cut it (405B, GLM-5, full R1 locked out) and why 512GB Ultra is the
+actual upgrade. Flagged inference: scaled t/s uses the detector-box ratio, llmfit
+has no bandwidth override — real decode depends on GPU cores too, not just bandwidth.
 
-One short code block + link to the GitHub repo with all raw JSON
-(`mac-studio-m5-analysis` on GitHub). Closing insight line, not a summary.
+## Section 7 — Reproduce it yourself
+
+Short code block with the 13 `llmfit --memory ... fit --json` commands + link to
+GitHub repo `mac-studio-m5-analysis` with all raw JSONs. Close on an insight, not
+a summary.
 
 ---
 
-## Pre-publish checklist targets (CLAUDE.md §10)
+## Pre-publish checklist (CLAUDE.md §10)
 
 - `npm run build` ✅
-- `npx serve dist -l 4323`
-- `node check-links.cjs` — verify Apple UK tech-specs + newsroom URLs, llmfit repo link,
-  Math with `$$` only if used (won't be)
-- draft: true until launch day
+- `npx serve dist -l 4323` + `node check-links.cjs`
+- Verify Apple UK tech-specs + llmfit repo links resolve
+- draft: true until ready
+- All em dashes removed in prose review; check raw tables for accidental — characters

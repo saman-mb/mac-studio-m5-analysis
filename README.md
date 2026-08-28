@@ -87,6 +87,34 @@ to buy the bigger box; without those, 256GB and even the 40c/128GB M5 Max tie.
 
 (Note: 512GB RAM is on UK's page but hidden until late Oct, per your screenshot.)
 
+## Largest models you can run on 512GB (usable t/s)
+
+llmfit raw TPS on detecting machine (256GB/s) scaled by published Ultra
+bandwidth (1.2TB/s) = **×4.7**. Threshold picked: **~10 tok/s post-scale**
+(reading speed). Raw llmfit values in `raw/m5ultra512.json`.
+
+| Model | Params | fit | raw t/s | ~t/s at 1.2TB/s | mem |
+|---|---|---|---|---|---|
+| GLM-5.1-AWQ (cyankiwi) | 767B | Good | 5.0 | ~23 | 393GB |
+| GLM-5 (zai-org FP8) | 754B | Good | 4.3 | ~20 | 386GB |
+| GLM-5.2-NVFP4 | 779B | Good | 2.0 | ~9 | 399GB |
+| QuantTrio GLM-5.2 Int4/Int8 | 785B | Good | 1.9 | ~9 | 402GB |
+| Ling-1T (inclusionAI) | 1.0T | Good | 0.6 | ~3 | 403GB |
+| Ling-2.5-1T | 1.0T | Good | 0.6 | ~3 | 408GB |
+| Ling-2.6-1T | 1.0T | Good | 0.5 | ~2.3 | 414GB |
+| Llama-3.1-405B (FP8) | 406B | Perfect | 0.3 | ~1.4 | 440GB |
+| DeepSeek-V3.2-NVFP4 | 395B | Perfect | 0.4 | ~1.9 | 428GB |
+| Trinity-Large-Thinking-FP8 | 399B | Perfect | 0.4 | ~1.9 | 432GB |
+| MiniMax-M1-80k | 456B | Perfect | 0.3 | ~1.4 | 494GB |
+
+Reading this: GLM-5/5.1-class (750-780B) at 4-bit is the largest that clears
+**~20 tok/s**. 405B-class dense runs but at ~1.4 tok/s — batch/offline only.
+1T-param models technically fit but at ~2-3 tok/s.
+
+Scale factor rationale: llmfit has no bandwidth override, detected GPU = this
+box's 256GB/s. Published Ultra = 1.2TB/s. Ratio = 4.6875. Used as multiplier,
+flagged as rough (real decode also depends on GPU cores, not just bandwidth).
+
 ## Price estimate (512GB, UK)
 
 Anchors (user screenshots, Apple UK checkout):

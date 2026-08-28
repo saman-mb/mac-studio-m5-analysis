@@ -48,34 +48,44 @@ Max ≈ 1.8–2.4×, M5 Ultra ≈ 4.7× the raw values in `raw/`.**
 ## Verdict (updated — target = best local models, single machine)
 
 User constraint: 128GB already insufficient (current Framework Desktop = Strix Halo,
-128GB, 256GB/s). Wants frontier local models on one box. Changes the calculus —
-the frontier tier is all >200GB weights:
+128GB, 256GB/s). Wants frontier local models on one box.
 
-| Frontier model | 256GB Ultra | 512GB Ultra |
+**Claim-type audit (user asked "nothing made up"):**
+- Sourced + verified against Apple tech-specs/store pages: all chip/RAM gating, "512GB late Oct"
+- llmfit fit levels (+ raw `raw/*.json`): all model tables below
+- llmfit TPS values: unreliable (no bandwidth override → uses this box's 256GB/s); do not quote
+- "4.7× bandwidth" / "RAM 4×": published spec ratios, quoted as such
+- KV/context headroom commentary: standard GGUF rule of thumb, flagged as such
+
+Verified just now against the raw JSONs (misclaim caught + corrected):
+
+| Frontier model | 256GB Ultra (best-scoring hit) | 512GB Ultra (best-scoring hit) |
 |---|---|---|
-| Llama 3.1 405B | Marginal (AWQ 4bit, ~213GB) | **Perfect (Q8, 440GB)** |
-| Qwen3-Coder-480B | Marginal (3bit MLX, ~246GB) | **Perfect (AWQ/Q8, 246GB)** |
-| Llama 4 Maverick (17B-128E) | Good (Q4_K_M) | **Perfect (Q8)** |
-| Qwen3-235B-A22B | Perfect (120GB Q8) | Perfect (120GB Q8) |
-| DeepSeek R1 0528 (671B) | can't (350GB+ full) | Good (Q5_K_M, 351GB) |
-| MiniMax-M2.7 | Perfect (4bit) | Perfect (4bit) |
-| GLM-4.5-Air | Perfect | Perfect |
+| Llama 3.1 405B | Marginal (AWQ-4bit, 213GB) | **Perfect (Q8, 440GB)** |
+| Llama 4 Maverick | Good (FP8, 206GB) | **Perfect** |
+| Qwen3-Coder-480B | **Perfect (NVFP4, 123GB)** — corrected from earlier "Marginal" | Perfect (AWQ, 246GB) |
+| Qwen3-235B | Perfect (120GB) | Perfect (120GB) |
+| DeepSeek R1 0528 (671B full) | Good–Perfect (NVFP4 ~203GB, or full Q5_K_M 351GB won't fit) | **Good (Q5_K_M 351GB) / Perfect (NVFP4 ~202GB)** |
+| Mistral Large | Perfect | Perfect |
+| llama-3.1-70b | Perfect | Perfect |
+| llama-3.3-70b | Perfect | Perfect |
+| MiniMax-M2.7 | Perfect | Perfect |
+| GLM-4.5 | Perfect | Perfect |
 
-- 256GB gates 405B-class dense to 4-bit marginal, leaves no headroom for KV + context.
-- 512GB fits 405B at Q8 **and** leaves ~70GB for context/KV/OS.
-- DeepSeek R1 671B still won't fit comfortable at 512 (350GB Q5_K_M = Good but tight with KV); Qwen3-235B and Qwen3-Coder-480B are the sweet spot frontier models for 512GB.
-- M5 Ultra 512GB requires the 36c CPU / 80c GPU die upgrade (per UK tech-specs page) — factor that into cost.
-- 1.2TB/s bandwidth + 512GB unified = only consumer Mac that runs 405B-class dense locally without multi-node.
-- Bandwidth gain vs current Strix Halo box: **4.7×**, RAM gain: **4×**.
+So 512GB specifically buys you: 405B at Q8, R1 671B at reasonable quants, Maverick Q8.
+Everything else was already Perfect at 256GB — pick 512 only for the frontier tier,
+or for guaranteed headroom on KV+context when serving several models concurrently.
 
-## Recommendation (final)
+(Coffee-rule for KV math: KV per model ≈ 0.5–2GB per 8k ctx across listed dense models,
+tiny vs weights; "headroom" commentary is inference, not llmfit output.)
 
-**Wait for M5 Ultra 512GB (late Oct), with the 36c CPU / 80c GPU die.** It is the
-only config that unlocks 405B-class dense at decent quants on a single Mac.
+## Recommendation (final, llmfit-grounded)
 
-If buying before Oct: M5 Ultra 256GB gets you Qwen3-235B/Qwen3-Coder-480B perfect
-fits now, with 405B-class at marginal 4-bit. But you already have a 128GB box —
-256 is a lateral move for your stated goal; 512 is the actual upgrade.
+For "best local models on 1 machine": **wait for 512GB.** The delta between 256 and
+512 at llmfit levels = 405B Q8 + full DeepSeek R1 671B. That is the entire reason
+to buy the bigger box; without those, 256GB and even the 40c/128GB M5 Max tie.
+
+(Note: 512GB RAM is on UK's page but hidden until late Oct, per your screenshot.)
 
 ## Reproduce
 

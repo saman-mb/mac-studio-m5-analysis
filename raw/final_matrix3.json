@@ -6,7 +6,8 @@
    "scaled_tps": 0.06,
    "mem": 3226.07,
    "variant": "moonshotai/Kimi-K3",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Qwen3.8-Max 2.4T": {
    "fit": "Too Tight",
@@ -14,15 +15,17 @@
    "scaled_tps": 1.08,
    "mem": 1253.0,
    "variant": "Qwen/Qwen3.8-2.4T-A95B",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "DeepSeek V4-Pro 1.6T": {
    "fit": "Too Tight",
-   "raw_tps": 1.7,
-   "scaled_tps": 1.02,
-   "mem": 819.0,
-   "variant": "unsloth/DeepSeek-V4-Pro",
-   "quant": "Q4_K_M"
+   "raw_tps": 0.9,
+   "scaled_tps": 0.54,
+   "mem": 466.1,
+   "variant": "nvidia/DeepSeek-V4-Pro-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra512"
   },
   "LongCat 2.0 1.6T": {
    "fit": "Too Tight",
@@ -30,95 +33,107 @@
    "scaled_tps": 0.12,
    "mem": 1146.92,
    "variant": "meituan-longcat/LongCat-2.0-INT8",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Ling 2.6 1T": {
    "fit": "Too Tight",
-   "raw_tps": 0.3,
-   "scaled_tps": 0.18,
-   "mem": 628.99,
+   "raw_tps": 0.5,
+   "scaled_tps": 0.3,
+   "mem": 413.6,
    "variant": "inclusionAI/Ling-2.6-1T",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 3.42,
+   "raw_tps": 4.8,
+   "scaled_tps": 2.88,
    "mem": 217.6,
    "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 3.2,
-   "scaled_tps": 1.92,
+   "raw_tps": 2.0,
+   "scaled_tps": 1.2,
    "mem": 171.6,
    "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Llama 4 Maverick 400B": {
    "fit": "Too Tight",
-   "raw_tps": 12.1,
-   "scaled_tps": 7.26,
+   "raw_tps": 3.3,
+   "scaled_tps": 1.98,
    "mem": 205.7,
-   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-   "quant": "Q4_K_M"
+   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Qwen3.5 397B-A17B": {
    "fit": "Too Tight",
-   "raw_tps": 9.3,
-   "scaled_tps": 5.58,
-   "mem": 201.7,
-   "variant": "mlx-community/Qwen3.5-397B-A17B-8bit",
-   "quant": "Q4_K_M"
+   "raw_tps": 7.4,
+   "scaled_tps": 4.44,
+   "mem": 113.6,
+   "variant": "amd/Qwen3.5-397B-A17B-MoE-MXFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 9.2,
-   "scaled_tps": 5.52,
+   "raw_tps": 5.8,
+   "scaled_tps": 3.48,
    "mem": 83.3,
    "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5max128"
   },
   "MiniMax M3 427B": {
    "fit": "Too Tight",
-   "raw_tps": 7.2,
-   "scaled_tps": 4.32,
-   "mem": 232.2,
-   "variant": "cyankiwi/MiniMax-M3-AWQ-INT4",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.7,
+   "scaled_tps": 3.42,
+   "mem": 112.9,
+   "variant": "nvidia/MiniMax-M3-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "Kimi K2.6 1.1T": {
    "fit": "Too Tight",
-   "raw_tps": 4.2,
-   "scaled_tps": 2.52,
+   "raw_tps": 3.8,
+   "scaled_tps": 2.28,
    "mem": 542.2,
    "variant": "moonshotai/Kimi-K2.6",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "Nemotron 3 Super 120B": {
    "fit": "Too Tight",
-   "raw_tps": 9.7,
-   "scaled_tps": 5.82,
-   "mem": 65.2,
-   "variant": "cyankiwi/NVIDIA-Nemotron-3-Super-120B-A12B-AWQ-4bit",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.5,
+   "scaled_tps": 3.3,
+   "mem": 28.81,
+   "variant": "MLXCreator/NVIDIA-Nemotron-3-Super-120B-A12B-oQ8-fp16-mtp",
+   "quant": "Q6_K",
+   "chosen_on": "m6_32"
   },
   "gpt-oss-120b 117B": {
    "fit": "Too Tight",
-   "raw_tps": 28.8,
-   "scaled_tps": 17.28,
-   "mem": 59.8,
-   "variant": "unsloth/gpt-oss-120b-unsloth-bnb-4bit",
-   "quant": "Q4_K_M"
+   "raw_tps": 4.8,
+   "scaled_tps": 2.88,
+   "mem": 47.56,
+   "variant": "mlx-community/gpt-oss-120b-mxfp4-bf16",
+   "quant": "Q2_K",
+   "chosen_on": "m5pro_48"
   },
   "Llama 4 Scout 109B": {
    "fit": "Too Tight",
-   "raw_tps": 17.4,
-   "scaled_tps": 10.44,
-   "mem": 55.6,
-   "variant": "meta-llama/Llama-4-Scout-17B-16E",
-   "quant": "Q4_K_M"
+   "raw_tps": 9.0,
+   "scaled_tps": 5.4,
+   "mem": 32.6,
+   "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
+   "quant": "Q5_K_M",
+   "chosen_on": "m5pro_48"
   },
   "Gemma 4 31B": {
    "fit": "Good",
@@ -126,15 +141,17 @@
    "scaled_tps": 10.98,
    "mem": 12.86,
    "variant": "mlx-community/gemma-4-31B-it-qat-OptiQ-4bit",
-   "quant": "Q2_K"
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 26B-A4B": {
-   "fit": "Good",
-   "raw_tps": 24.9,
-   "scaled_tps": 14.94,
-   "mem": 12.9,
-   "variant": "mlx-community/gemma-4-26B-A4B-it-OptiQ-4bit",
-   "quant": "Q3_K_M"
+   "fit": "Perfect",
+   "raw_tps": 24.7,
+   "scaled_tps": 14.82,
+   "mem": 7.4,
+   "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Qwen3.8 27B": {
    "fit": "Good",
@@ -142,15 +159,17 @@
    "scaled_tps": 6.96,
    "mem": 13.18,
    "variant": "amd/Qwen3.8-27B-Quark-AWQ-INT4-W4A16",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "ERNIE 4.5 21B-A3B": {
-   "fit": "Marginal",
+   "fit": "Too Tight",
    "raw_tps": 10.3,
    "scaled_tps": 6.18,
    "mem": 15.78,
    "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-   "quant": "Q5_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   },
   "Granite 4.1 30B": {
    "fit": "Good",
@@ -158,23 +177,26 @@
    "scaled_tps": 11.7,
    "mem": 13.18,
    "variant": "ibm-granite/granite-4.1-30b-base",
-   "quant": "Q2_K"
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Nemotron 3 Nano 30B": {
-   "fit": "Too Tight",
-   "raw_tps": 28.3,
-   "scaled_tps": 16.98,
-   "mem": 16.2,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-   "quant": "Q2_K"
+   "fit": "Perfect",
+   "raw_tps": 20.7,
+   "scaled_tps": 12.42,
+   "mem": 8.3,
+   "variant": "Ex0bit/Elbaz-NVIDIA-Nemotron-3-Nano-30B-A3B-PRISM-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Ministral 3 14B": {
-   "fit": "Perfect",
+   "fit": "Good",
    "raw_tps": 13.5,
    "scaled_tps": 8.1,
    "mem": 12.91,
    "variant": "ccharnkij/Ministral-3-14B-Reasoning-2512-Uncensored",
-   "quant": "Q6_K"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 12B": {
    "fit": "Perfect",
@@ -182,7 +204,8 @@
    "scaled_tps": 14.1,
    "mem": 9.48,
    "variant": "mattbucci/gemma-4-12B-AWQ",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "gpt-oss-20b 21B": {
    "fit": "Good",
@@ -190,7 +213,8 @@
    "scaled_tps": 15.54,
    "mem": 10.7,
    "variant": "unsloth/gpt-oss-20b-BF16",
-   "quant": "Q5_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   }
  },
  "m6_24": {
@@ -200,7 +224,8 @@
    "scaled_tps": 0.07,
    "mem": 3226.07,
    "variant": "moonshotai/Kimi-K3",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Qwen3.8-Max 2.4T": {
    "fit": "Too Tight",
@@ -208,15 +233,17 @@
    "scaled_tps": 1.19,
    "mem": 1253.0,
    "variant": "Qwen/Qwen3.8-2.4T-A95B",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "DeepSeek V4-Pro 1.6T": {
    "fit": "Too Tight",
-   "raw_tps": 1.7,
-   "scaled_tps": 1.12,
-   "mem": 819.0,
-   "variant": "unsloth/DeepSeek-V4-Pro",
-   "quant": "Q4_K_M"
+   "raw_tps": 0.9,
+   "scaled_tps": 0.59,
+   "mem": 466.1,
+   "variant": "nvidia/DeepSeek-V4-Pro-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra512"
   },
   "LongCat 2.0 1.6T": {
    "fit": "Too Tight",
@@ -224,111 +251,125 @@
    "scaled_tps": 0.13,
    "mem": 1146.92,
    "variant": "meituan-longcat/LongCat-2.0-INT8",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Ling 2.6 1T": {
    "fit": "Too Tight",
-   "raw_tps": 0.3,
-   "scaled_tps": 0.2,
-   "mem": 628.99,
+   "raw_tps": 0.5,
+   "scaled_tps": 0.33,
+   "mem": 413.6,
    "variant": "inclusionAI/Ling-2.6-1T",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 3.76,
+   "raw_tps": 4.8,
+   "scaled_tps": 3.17,
    "mem": 217.6,
    "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 3.2,
-   "scaled_tps": 2.11,
+   "raw_tps": 2.0,
+   "scaled_tps": 1.32,
    "mem": 171.6,
    "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Llama 4 Maverick 400B": {
    "fit": "Too Tight",
-   "raw_tps": 12.1,
-   "scaled_tps": 7.99,
+   "raw_tps": 3.3,
+   "scaled_tps": 2.18,
    "mem": 205.7,
-   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-   "quant": "Q4_K_M"
+   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Qwen3.5 397B-A17B": {
    "fit": "Too Tight",
-   "raw_tps": 9.3,
-   "scaled_tps": 6.14,
-   "mem": 206.6,
-   "variant": "Qwen/Qwen3.5-397B-A17B-FP8",
-   "quant": "Q4_K_M"
+   "raw_tps": 7.4,
+   "scaled_tps": 4.88,
+   "mem": 113.6,
+   "variant": "amd/Qwen3.5-397B-A17B-MoE-MXFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 9.2,
-   "scaled_tps": 6.07,
+   "raw_tps": 5.8,
+   "scaled_tps": 3.83,
    "mem": 83.3,
    "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5max128"
   },
   "MiniMax M3 427B": {
    "fit": "Too Tight",
-   "raw_tps": 7.2,
-   "scaled_tps": 4.75,
-   "mem": 232.2,
-   "variant": "cyankiwi/MiniMax-M3-AWQ-INT4",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.7,
+   "scaled_tps": 3.76,
+   "mem": 112.9,
+   "variant": "nvidia/MiniMax-M3-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "Kimi K2.6 1.1T": {
    "fit": "Too Tight",
-   "raw_tps": 4.2,
-   "scaled_tps": 2.77,
+   "raw_tps": 3.8,
+   "scaled_tps": 2.51,
    "mem": 542.2,
    "variant": "moonshotai/Kimi-K2.6",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "Nemotron 3 Super 120B": {
    "fit": "Too Tight",
-   "raw_tps": 9.7,
-   "scaled_tps": 6.4,
-   "mem": 65.2,
-   "variant": "cyankiwi/NVIDIA-Nemotron-3-Super-120B-A12B-AWQ-4bit",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.5,
+   "scaled_tps": 3.63,
+   "mem": 28.81,
+   "variant": "MLXCreator/NVIDIA-Nemotron-3-Super-120B-A12B-oQ8-fp16-mtp",
+   "quant": "Q6_K",
+   "chosen_on": "m6_32"
   },
   "gpt-oss-120b 117B": {
    "fit": "Too Tight",
-   "raw_tps": 28.8,
-   "scaled_tps": 19.01,
-   "mem": 59.8,
-   "variant": "unsloth/gpt-oss-120b-unsloth-bnb-4bit",
-   "quant": "Q4_K_M"
+   "raw_tps": 4.8,
+   "scaled_tps": 3.17,
+   "mem": 47.56,
+   "variant": "mlx-community/gpt-oss-120b-mxfp4-bf16",
+   "quant": "Q2_K",
+   "chosen_on": "m5pro_48"
   },
   "Llama 4 Scout 109B": {
    "fit": "Too Tight",
-   "raw_tps": 17.4,
-   "scaled_tps": 11.48,
-   "mem": 55.6,
-   "variant": "meta-llama/Llama-4-Scout-17B-16E",
-   "quant": "Q4_K_M"
+   "raw_tps": 9.0,
+   "scaled_tps": 5.94,
+   "mem": 32.6,
+   "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
+   "quant": "Q5_K_M",
+   "chosen_on": "m5pro_48"
   },
   "Gemma 4 31B": {
-   "fit": "Marginal",
-   "raw_tps": 16.8,
-   "scaled_tps": 11.09,
-   "mem": 20.43,
-   "variant": "unsloth/gemma-4-31B-it-qat-w4a16",
-   "quant": "Q2_K"
+   "fit": "Perfect",
+   "raw_tps": 18.3,
+   "scaled_tps": 12.08,
+   "mem": 12.86,
+   "variant": "mlx-community/gemma-4-31B-it-qat-OptiQ-4bit",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 26.0,
-   "scaled_tps": 17.16,
+   "raw_tps": 24.7,
+   "scaled_tps": 16.3,
    "mem": 7.4,
    "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Qwen3.8 27B": {
    "fit": "Perfect",
@@ -336,39 +377,44 @@
    "scaled_tps": 7.66,
    "mem": 13.18,
    "variant": "amd/Qwen3.8-27B-Quark-AWQ-INT4-W4A16",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "ERNIE 4.5 21B-A3B": {
-   "fit": "Perfect",
-   "raw_tps": 6.5,
-   "scaled_tps": 4.29,
-   "mem": 23.85,
+   "fit": "Good",
+   "raw_tps": 10.3,
+   "scaled_tps": 6.8,
+   "mem": 15.78,
    "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   },
   "Granite 4.1 30B": {
-   "fit": "Marginal",
-   "raw_tps": 7.8,
-   "scaled_tps": 5.15,
-   "mem": 21.07,
-   "variant": "mlx-community/granite-4.1-30b-mxfp8",
-   "quant": "Q5_K_M"
+   "fit": "Perfect",
+   "raw_tps": 19.5,
+   "scaled_tps": 12.87,
+   "mem": 13.18,
+   "variant": "ibm-granite/granite-4.1-30b-base",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Nemotron 3 Nano 30B": {
-   "fit": "Good",
-   "raw_tps": 19.6,
-   "scaled_tps": 12.94,
-   "mem": 16.2,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-   "quant": "Q5_K_M"
+   "fit": "Perfect",
+   "raw_tps": 20.7,
+   "scaled_tps": 13.66,
+   "mem": 8.3,
+   "variant": "Ex0bit/Elbaz-NVIDIA-Nemotron-3-Nano-30B-A3B-PRISM-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Ministral 3 14B": {
    "fit": "Perfect",
-   "raw_tps": 10.1,
-   "scaled_tps": 6.67,
-   "mem": 16.39,
+   "raw_tps": 13.5,
+   "scaled_tps": 8.91,
+   "mem": 12.91,
    "variant": "ccharnkij/Ministral-3-14B-Reasoning-2512-Uncensored",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 12B": {
    "fit": "Perfect",
@@ -376,15 +422,17 @@
    "scaled_tps": 15.51,
    "mem": 9.48,
    "variant": "mattbucci/gemma-4-12B-AWQ",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "gpt-oss-20b 21B": {
    "fit": "Perfect",
-   "raw_tps": 22.4,
-   "scaled_tps": 14.78,
+   "raw_tps": 25.9,
+   "scaled_tps": 17.09,
    "mem": 10.7,
-   "variant": "unsloth/gpt-oss-20b-unsloth-bnb-4bit",
-   "quant": "Q8_0"
+   "variant": "unsloth/gpt-oss-20b-BF16",
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   }
  },
  "m6_32": {
@@ -394,23 +442,26 @@
    "scaled_tps": 0.07,
    "mem": 3226.07,
    "variant": "moonshotai/Kimi-K3",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Qwen3.8-Max 2.4T": {
    "fit": "Too Tight",
    "raw_tps": 1.8,
    "scaled_tps": 1.19,
-   "mem": 639.2,
-   "variant": "amd/Qwen3.8-2.4T-A95B-Quark-MXFP4",
-   "quant": "Q4_K_M"
+   "mem": 1253.0,
+   "variant": "Qwen/Qwen3.8-2.4T-A95B",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "DeepSeek V4-Pro 1.6T": {
    "fit": "Too Tight",
-   "raw_tps": 1.7,
-   "scaled_tps": 1.12,
-   "mem": 819.0,
-   "variant": "unsloth/DeepSeek-V4-Pro",
-   "quant": "Q4_K_M"
+   "raw_tps": 0.9,
+   "scaled_tps": 0.59,
+   "mem": 466.1,
+   "variant": "nvidia/DeepSeek-V4-Pro-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra512"
   },
   "LongCat 2.0 1.6T": {
    "fit": "Too Tight",
@@ -418,111 +469,125 @@
    "scaled_tps": 0.13,
    "mem": 1146.92,
    "variant": "meituan-longcat/LongCat-2.0-INT8",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Ling 2.6 1T": {
    "fit": "Too Tight",
-   "raw_tps": 0.3,
-   "scaled_tps": 0.2,
-   "mem": 628.99,
+   "raw_tps": 0.5,
+   "scaled_tps": 0.33,
+   "mem": 413.6,
    "variant": "inclusionAI/Ling-2.6-1T",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 3.76,
+   "raw_tps": 4.8,
+   "scaled_tps": 3.17,
    "mem": 217.6,
    "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 3.2,
-   "scaled_tps": 2.11,
+   "raw_tps": 2.0,
+   "scaled_tps": 1.32,
    "mem": 171.6,
    "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Llama 4 Maverick 400B": {
    "fit": "Too Tight",
-   "raw_tps": 12.1,
-   "scaled_tps": 7.99,
+   "raw_tps": 3.3,
+   "scaled_tps": 2.18,
    "mem": 205.7,
-   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-   "quant": "Q4_K_M"
+   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Qwen3.5 397B-A17B": {
    "fit": "Too Tight",
-   "raw_tps": 9.3,
-   "scaled_tps": 6.14,
-   "mem": 206.6,
-   "variant": "Qwen/Qwen3.5-397B-A17B-FP8",
-   "quant": "Q4_K_M"
+   "raw_tps": 7.4,
+   "scaled_tps": 4.88,
+   "mem": 113.6,
+   "variant": "amd/Qwen3.5-397B-A17B-MoE-MXFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 9.2,
-   "scaled_tps": 6.07,
+   "raw_tps": 5.8,
+   "scaled_tps": 3.83,
    "mem": 83.3,
    "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5max128"
   },
   "MiniMax M3 427B": {
    "fit": "Too Tight",
-   "raw_tps": 7.2,
-   "scaled_tps": 4.75,
-   "mem": 232.2,
-   "variant": "cyankiwi/MiniMax-M3-AWQ-INT4",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.7,
+   "scaled_tps": 3.76,
+   "mem": 112.9,
+   "variant": "nvidia/MiniMax-M3-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "Kimi K2.6 1.1T": {
    "fit": "Too Tight",
-   "raw_tps": 4.2,
-   "scaled_tps": 2.77,
+   "raw_tps": 3.8,
+   "scaled_tps": 2.51,
    "mem": 542.2,
    "variant": "moonshotai/Kimi-K2.6",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "Nemotron 3 Super 120B": {
-   "fit": "Too Tight",
-   "raw_tps": 9.7,
-   "scaled_tps": 6.4,
-   "mem": 65.2,
-   "variant": "cyankiwi/NVIDIA-Nemotron-3-Super-120B-A12B-AWQ-4bit",
-   "quant": "AWQ-4bit"
+   "fit": "Marginal",
+   "raw_tps": 5.5,
+   "scaled_tps": 3.63,
+   "mem": 28.81,
+   "variant": "MLXCreator/NVIDIA-Nemotron-3-Super-120B-A12B-oQ8-fp16-mtp",
+   "quant": "Q6_K",
+   "chosen_on": "m6_32"
   },
   "gpt-oss-120b 117B": {
    "fit": "Too Tight",
-   "raw_tps": 28.8,
-   "scaled_tps": 19.01,
-   "mem": 59.8,
-   "variant": "unsloth/gpt-oss-120b-unsloth-bnb-4bit",
-   "quant": "Q4_K_M"
+   "raw_tps": 4.8,
+   "scaled_tps": 3.17,
+   "mem": 47.56,
+   "variant": "mlx-community/gpt-oss-120b-mxfp4-bf16",
+   "quant": "Q2_K",
+   "chosen_on": "m5pro_48"
   },
   "Llama 4 Scout 109B": {
    "fit": "Too Tight",
-   "raw_tps": 17.4,
-   "scaled_tps": 11.48,
-   "mem": 55.6,
-   "variant": "meta-llama/Llama-4-Scout-17B-16E",
-   "quant": "Q4_K_M"
+   "raw_tps": 9.0,
+   "scaled_tps": 5.94,
+   "mem": 32.6,
+   "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
+   "quant": "Q5_K_M",
+   "chosen_on": "m5pro_48"
   },
   "Gemma 4 31B": {
    "fit": "Perfect",
-   "raw_tps": 9.0,
-   "scaled_tps": 5.94,
-   "mem": 23.64,
-   "variant": "QuantTrio/gemma-4-31B-it-AWQ",
-   "quant": "AWQ-4bit"
+   "raw_tps": 18.3,
+   "scaled_tps": 12.08,
+   "mem": 12.86,
+   "variant": "mlx-community/gemma-4-31B-it-qat-OptiQ-4bit",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 26.7,
-   "scaled_tps": 17.62,
+   "raw_tps": 24.7,
+   "scaled_tps": 16.3,
    "mem": 7.4,
    "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Qwen3.8 27B": {
    "fit": "Perfect",
@@ -530,39 +595,44 @@
    "scaled_tps": 7.66,
    "mem": 13.18,
    "variant": "amd/Qwen3.8-27B-Quark-AWQ-INT4-W4A16",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.5,
-   "scaled_tps": 4.29,
-   "mem": 23.85,
+   "raw_tps": 10.3,
+   "scaled_tps": 6.8,
+   "mem": 15.78,
    "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   },
   "Granite 4.1 30B": {
    "fit": "Perfect",
-   "raw_tps": 6.5,
-   "scaled_tps": 4.29,
-   "mem": 25.59,
-   "variant": "ibm-granite/granite-4.1-30b",
-   "quant": "Q6_K"
+   "raw_tps": 19.5,
+   "scaled_tps": 12.87,
+   "mem": 13.18,
+   "variant": "ibm-granite/granite-4.1-30b-base",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Nemotron 3 Nano 30B": {
    "fit": "Perfect",
-   "raw_tps": 21.1,
-   "scaled_tps": 13.93,
-   "mem": 16.2,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-   "quant": "Q6_K"
+   "raw_tps": 20.7,
+   "scaled_tps": 13.66,
+   "mem": 8.3,
+   "variant": "Ex0bit/Elbaz-NVIDIA-Nemotron-3-Nano-30B-A3B-PRISM-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Ministral 3 14B": {
    "fit": "Perfect",
-   "raw_tps": 10.1,
-   "scaled_tps": 6.67,
-   "mem": 16.39,
+   "raw_tps": 13.5,
+   "scaled_tps": 8.91,
+   "mem": 12.91,
    "variant": "ccharnkij/Ministral-3-14B-Reasoning-2512-Uncensored",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 12B": {
    "fit": "Perfect",
@@ -570,15 +640,17 @@
    "scaled_tps": 15.51,
    "mem": 9.48,
    "variant": "mattbucci/gemma-4-12B-AWQ",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "gpt-oss-20b 21B": {
    "fit": "Perfect",
-   "raw_tps": 28.7,
-   "scaled_tps": 18.94,
+   "raw_tps": 25.9,
+   "scaled_tps": 17.09,
    "mem": 10.7,
    "variant": "unsloth/gpt-oss-20b-BF16",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   }
  },
  "m5pro_24": {
@@ -588,23 +660,26 @@
    "scaled_tps": 0.12,
    "mem": 3226.07,
    "variant": "moonshotai/Kimi-K3",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Qwen3.8-Max 2.4T": {
    "fit": "Too Tight",
    "raw_tps": 1.8,
    "scaled_tps": 2.16,
    "mem": 1253.0,
-   "variant": "Qwen/Qwen3.8-2.4T-A95B-FP8",
-   "quant": "Q4_K_M"
+   "variant": "Qwen/Qwen3.8-2.4T-A95B",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "DeepSeek V4-Pro 1.6T": {
    "fit": "Too Tight",
-   "raw_tps": 1.7,
-   "scaled_tps": 2.04,
-   "mem": 819.0,
-   "variant": "unsloth/DeepSeek-V4-Pro",
-   "quant": "Q4_K_M"
+   "raw_tps": 0.9,
+   "scaled_tps": 1.08,
+   "mem": 466.1,
+   "variant": "nvidia/DeepSeek-V4-Pro-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra512"
   },
   "LongCat 2.0 1.6T": {
    "fit": "Too Tight",
@@ -612,111 +687,125 @@
    "scaled_tps": 0.24,
    "mem": 1146.92,
    "variant": "meituan-longcat/LongCat-2.0-INT8",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Ling 2.6 1T": {
    "fit": "Too Tight",
-   "raw_tps": 0.3,
-   "scaled_tps": 0.36,
-   "mem": 628.99,
+   "raw_tps": 0.5,
+   "scaled_tps": 0.6,
+   "mem": 413.6,
    "variant": "inclusionAI/Ling-2.6-1T",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 6.84,
+   "raw_tps": 4.8,
+   "scaled_tps": 5.76,
    "mem": 217.6,
    "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 3.2,
-   "scaled_tps": 3.84,
+   "raw_tps": 2.0,
+   "scaled_tps": 2.4,
    "mem": 171.6,
    "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Llama 4 Maverick 400B": {
    "fit": "Too Tight",
-   "raw_tps": 12.1,
-   "scaled_tps": 14.52,
+   "raw_tps": 3.3,
+   "scaled_tps": 3.96,
    "mem": 205.7,
-   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-   "quant": "Q4_K_M"
+   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Qwen3.5 397B-A17B": {
    "fit": "Too Tight",
-   "raw_tps": 9.3,
-   "scaled_tps": 11.16,
-   "mem": 201.7,
-   "variant": "mlx-community/Qwen3.5-397B-A17B-8bit",
-   "quant": "Q4_K_M"
+   "raw_tps": 7.4,
+   "scaled_tps": 8.88,
+   "mem": 113.6,
+   "variant": "amd/Qwen3.5-397B-A17B-MoE-MXFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 9.2,
-   "scaled_tps": 11.04,
+   "raw_tps": 5.8,
+   "scaled_tps": 6.96,
    "mem": 83.3,
    "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5max128"
   },
   "MiniMax M3 427B": {
    "fit": "Too Tight",
-   "raw_tps": 7.2,
-   "scaled_tps": 8.64,
-   "mem": 232.2,
-   "variant": "cyankiwi/MiniMax-M3-AWQ-INT4",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.7,
+   "scaled_tps": 6.84,
+   "mem": 112.9,
+   "variant": "nvidia/MiniMax-M3-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "Kimi K2.6 1.1T": {
    "fit": "Too Tight",
-   "raw_tps": 4.2,
-   "scaled_tps": 5.04,
+   "raw_tps": 3.8,
+   "scaled_tps": 4.56,
    "mem": 542.2,
    "variant": "moonshotai/Kimi-K2.6",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "Nemotron 3 Super 120B": {
    "fit": "Too Tight",
-   "raw_tps": 9.7,
-   "scaled_tps": 11.64,
-   "mem": 65.2,
-   "variant": "cyankiwi/NVIDIA-Nemotron-3-Super-120B-A12B-AWQ-4bit",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.5,
+   "scaled_tps": 6.6,
+   "mem": 28.81,
+   "variant": "MLXCreator/NVIDIA-Nemotron-3-Super-120B-A12B-oQ8-fp16-mtp",
+   "quant": "Q6_K",
+   "chosen_on": "m6_32"
   },
   "gpt-oss-120b 117B": {
    "fit": "Too Tight",
-   "raw_tps": 28.8,
-   "scaled_tps": 34.56,
-   "mem": 59.8,
-   "variant": "unsloth/gpt-oss-120b-BF16",
-   "quant": "Q4_K_M"
+   "raw_tps": 4.8,
+   "scaled_tps": 5.76,
+   "mem": 47.56,
+   "variant": "mlx-community/gpt-oss-120b-mxfp4-bf16",
+   "quant": "Q2_K",
+   "chosen_on": "m5pro_48"
   },
   "Llama 4 Scout 109B": {
    "fit": "Too Tight",
-   "raw_tps": 17.4,
-   "scaled_tps": 20.88,
-   "mem": 55.6,
-   "variant": "meta-llama/Llama-4-Scout-17B-16E",
-   "quant": "Q4_K_M"
+   "raw_tps": 9.0,
+   "scaled_tps": 10.8,
+   "mem": 32.6,
+   "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
+   "quant": "Q5_K_M",
+   "chosen_on": "m5pro_48"
   },
   "Gemma 4 31B": {
-   "fit": "Marginal",
-   "raw_tps": 16.8,
-   "scaled_tps": 20.16,
-   "mem": 20.43,
-   "variant": "google/gemma-4-31B-it-qat-w4a16-ct",
-   "quant": "Q2_K"
+   "fit": "Perfect",
+   "raw_tps": 18.3,
+   "scaled_tps": 21.96,
+   "mem": 12.86,
+   "variant": "mlx-community/gemma-4-31B-it-qat-OptiQ-4bit",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 26.0,
-   "scaled_tps": 31.2,
+   "raw_tps": 24.7,
+   "scaled_tps": 29.64,
    "mem": 7.4,
    "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Qwen3.8 27B": {
    "fit": "Perfect",
@@ -724,39 +813,44 @@
    "scaled_tps": 13.92,
    "mem": 13.18,
    "variant": "amd/Qwen3.8-27B-Quark-AWQ-INT4-W4A16",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "ERNIE 4.5 21B-A3B": {
-   "fit": "Perfect",
-   "raw_tps": 6.5,
-   "scaled_tps": 7.8,
-   "mem": 23.85,
+   "fit": "Good",
+   "raw_tps": 10.3,
+   "scaled_tps": 12.36,
+   "mem": 15.78,
    "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   },
   "Granite 4.1 30B": {
-   "fit": "Marginal",
-   "raw_tps": 7.8,
-   "scaled_tps": 9.36,
-   "mem": 21.07,
-   "variant": "mlx-community/granite-4.1-30b-mxfp8",
-   "quant": "Q5_K_M"
+   "fit": "Perfect",
+   "raw_tps": 19.5,
+   "scaled_tps": 23.4,
+   "mem": 13.18,
+   "variant": "ibm-granite/granite-4.1-30b-base",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Nemotron 3 Nano 30B": {
-   "fit": "Good",
-   "raw_tps": 19.6,
-   "scaled_tps": 23.52,
-   "mem": 16.2,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-   "quant": "Q5_K_M"
+   "fit": "Perfect",
+   "raw_tps": 20.7,
+   "scaled_tps": 24.84,
+   "mem": 8.3,
+   "variant": "Ex0bit/Elbaz-NVIDIA-Nemotron-3-Nano-30B-A3B-PRISM-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Ministral 3 14B": {
    "fit": "Perfect",
-   "raw_tps": 10.1,
-   "scaled_tps": 12.12,
-   "mem": 16.39,
+   "raw_tps": 13.5,
+   "scaled_tps": 16.2,
+   "mem": 12.91,
    "variant": "ccharnkij/Ministral-3-14B-Reasoning-2512-Uncensored",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 12B": {
    "fit": "Perfect",
@@ -764,15 +858,17 @@
    "scaled_tps": 28.2,
    "mem": 9.48,
    "variant": "mattbucci/gemma-4-12B-AWQ",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "gpt-oss-20b 21B": {
    "fit": "Perfect",
-   "raw_tps": 22.4,
-   "scaled_tps": 26.88,
+   "raw_tps": 25.9,
+   "scaled_tps": 31.08,
    "mem": 10.7,
    "variant": "unsloth/gpt-oss-20b-BF16",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   }
  },
  "m5pro_48": {
@@ -782,23 +878,26 @@
    "scaled_tps": 0.12,
    "mem": 3226.07,
    "variant": "moonshotai/Kimi-K3",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Qwen3.8-Max 2.4T": {
    "fit": "Too Tight",
    "raw_tps": 1.8,
    "scaled_tps": 2.16,
-   "mem": 639.2,
-   "variant": "amd/Qwen3.8-2.4T-A95B-Quark-MXFP4",
-   "quant": "Q4_K_M"
+   "mem": 1253.0,
+   "variant": "Qwen/Qwen3.8-2.4T-A95B",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "DeepSeek V4-Pro 1.6T": {
    "fit": "Too Tight",
-   "raw_tps": 1.7,
-   "scaled_tps": 2.04,
-   "mem": 819.0,
-   "variant": "unsloth/DeepSeek-V4-Pro",
-   "quant": "Q4_K_M"
+   "raw_tps": 0.9,
+   "scaled_tps": 1.08,
+   "mem": 466.1,
+   "variant": "nvidia/DeepSeek-V4-Pro-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra512"
   },
   "LongCat 2.0 1.6T": {
    "fit": "Too Tight",
@@ -806,87 +905,98 @@
    "scaled_tps": 0.24,
    "mem": 1146.92,
    "variant": "meituan-longcat/LongCat-2.0-INT8",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Ling 2.6 1T": {
    "fit": "Too Tight",
-   "raw_tps": 0.3,
-   "scaled_tps": 0.36,
-   "mem": 628.99,
+   "raw_tps": 0.5,
+   "scaled_tps": 0.6,
+   "mem": 413.6,
    "variant": "inclusionAI/Ling-2.6-1T",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 6.84,
+   "raw_tps": 4.8,
+   "scaled_tps": 5.76,
    "mem": 217.6,
    "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 3.2,
-   "scaled_tps": 3.84,
+   "raw_tps": 2.0,
+   "scaled_tps": 2.4,
    "mem": 171.6,
    "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Llama 4 Maverick 400B": {
    "fit": "Too Tight",
-   "raw_tps": 12.1,
-   "scaled_tps": 14.52,
+   "raw_tps": 3.3,
+   "scaled_tps": 3.96,
    "mem": 205.7,
-   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-   "quant": "Q4_K_M"
+   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Qwen3.5 397B-A17B": {
    "fit": "Too Tight",
-   "raw_tps": 9.3,
-   "scaled_tps": 11.16,
-   "mem": 206.6,
-   "variant": "Qwen/Qwen3.5-397B-A17B-FP8",
-   "quant": "Q4_K_M"
+   "raw_tps": 7.4,
+   "scaled_tps": 8.88,
+   "mem": 113.6,
+   "variant": "amd/Qwen3.5-397B-A17B-MoE-MXFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 9.2,
-   "scaled_tps": 11.04,
+   "raw_tps": 5.8,
+   "scaled_tps": 6.96,
    "mem": 83.3,
    "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5max128"
   },
   "MiniMax M3 427B": {
    "fit": "Too Tight",
-   "raw_tps": 7.2,
-   "scaled_tps": 8.64,
-   "mem": 232.2,
-   "variant": "cyankiwi/MiniMax-M3-AWQ-INT4",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.7,
+   "scaled_tps": 6.84,
+   "mem": 112.9,
+   "variant": "nvidia/MiniMax-M3-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "Kimi K2.6 1.1T": {
    "fit": "Too Tight",
-   "raw_tps": 4.2,
-   "scaled_tps": 5.04,
+   "raw_tps": 3.8,
+   "scaled_tps": 4.56,
    "mem": 542.2,
    "variant": "moonshotai/Kimi-K2.6",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "Nemotron 3 Super 120B": {
    "fit": "Good",
-   "raw_tps": 2.9,
-   "scaled_tps": 3.48,
-   "mem": 34.4,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
-   "quant": "Q5_K_M"
+   "raw_tps": 5.5,
+   "scaled_tps": 6.6,
+   "mem": 28.81,
+   "variant": "MLXCreator/NVIDIA-Nemotron-3-Super-120B-A12B-oQ8-fp16-mtp",
+   "quant": "Q6_K",
+   "chosen_on": "m6_32"
   },
   "gpt-oss-120b 117B": {
-   "fit": "Marginal",
+   "fit": "Too Tight",
    "raw_tps": 4.8,
    "scaled_tps": 5.76,
    "mem": 47.56,
    "variant": "mlx-community/gpt-oss-120b-mxfp4-bf16",
-   "quant": "Q2_K"
+   "quant": "Q2_K",
+   "chosen_on": "m5pro_48"
   },
   "Llama 4 Scout 109B": {
    "fit": "Good",
@@ -894,23 +1004,26 @@
    "scaled_tps": 10.8,
    "mem": 32.6,
    "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
-   "quant": "Q5_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5pro_48"
   },
   "Gemma 4 31B": {
    "fit": "Perfect",
-   "raw_tps": 9.0,
-   "scaled_tps": 10.8,
-   "mem": 23.64,
-   "variant": "QuantTrio/gemma-4-31B-it-AWQ",
-   "quant": "AWQ-4bit"
+   "raw_tps": 18.3,
+   "scaled_tps": 21.96,
+   "mem": 12.86,
+   "variant": "mlx-community/gemma-4-31B-it-qat-OptiQ-4bit",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 26.7,
-   "scaled_tps": 32.04,
-   "mem": 13.6,
-   "variant": "google/gemma-4-26B-A4B-it",
-   "quant": "Q8_0"
+   "raw_tps": 24.7,
+   "scaled_tps": 29.64,
+   "mem": 7.4,
+   "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Qwen3.8 27B": {
    "fit": "Perfect",
@@ -918,39 +1031,44 @@
    "scaled_tps": 13.92,
    "mem": 13.18,
    "variant": "amd/Qwen3.8-27B-Quark-AWQ-INT4-W4A16",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.5,
-   "scaled_tps": 7.8,
-   "mem": 23.85,
+   "raw_tps": 10.3,
+   "scaled_tps": 12.36,
+   "mem": 15.78,
    "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   },
   "Granite 4.1 30B": {
    "fit": "Perfect",
-   "raw_tps": 4.9,
-   "scaled_tps": 5.88,
-   "mem": 32.81,
-   "variant": "ibm-granite/granite-4.1-30b",
-   "quant": "Q8_0"
+   "raw_tps": 19.5,
+   "scaled_tps": 23.4,
+   "mem": 13.18,
+   "variant": "ibm-granite/granite-4.1-30b-base",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Nemotron 3 Nano 30B": {
    "fit": "Perfect",
-   "raw_tps": 21.1,
-   "scaled_tps": 25.32,
-   "mem": 16.2,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-   "quant": "Q8_0"
+   "raw_tps": 20.7,
+   "scaled_tps": 24.84,
+   "mem": 8.3,
+   "variant": "Ex0bit/Elbaz-NVIDIA-Nemotron-3-Nano-30B-A3B-PRISM-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Ministral 3 14B": {
    "fit": "Perfect",
-   "raw_tps": 10.1,
-   "scaled_tps": 12.12,
-   "mem": 16.39,
+   "raw_tps": 13.5,
+   "scaled_tps": 16.2,
+   "mem": 12.91,
    "variant": "ccharnkij/Ministral-3-14B-Reasoning-2512-Uncensored",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 12B": {
    "fit": "Perfect",
@@ -958,15 +1076,17 @@
    "scaled_tps": 28.2,
    "mem": 9.48,
    "variant": "mattbucci/gemma-4-12B-AWQ",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "gpt-oss-20b 21B": {
    "fit": "Perfect",
-   "raw_tps": 31.0,
-   "scaled_tps": 37.2,
+   "raw_tps": 25.9,
+   "scaled_tps": 31.08,
    "mem": 10.7,
-   "variant": "mlx-community/gpt-oss-20b-MXFP4-Q8",
-   "quant": "Q8_0"
+   "variant": "unsloth/gpt-oss-20b-BF16",
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   }
  },
  "m5pro_64": {
@@ -976,23 +1096,26 @@
    "scaled_tps": 0.12,
    "mem": 3226.07,
    "variant": "moonshotai/Kimi-K3",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Qwen3.8-Max 2.4T": {
    "fit": "Too Tight",
    "raw_tps": 1.8,
    "scaled_tps": 2.16,
    "mem": 1253.0,
-   "variant": "Qwen/Qwen3.8-2.4T-A95B-FP8",
-   "quant": "Q4_K_M"
+   "variant": "Qwen/Qwen3.8-2.4T-A95B",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "DeepSeek V4-Pro 1.6T": {
    "fit": "Too Tight",
-   "raw_tps": 1.7,
-   "scaled_tps": 2.04,
-   "mem": 819.0,
-   "variant": "unsloth/DeepSeek-V4-Pro",
-   "quant": "Q4_K_M"
+   "raw_tps": 0.9,
+   "scaled_tps": 1.08,
+   "mem": 466.1,
+   "variant": "nvidia/DeepSeek-V4-Pro-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra512"
   },
   "LongCat 2.0 1.6T": {
    "fit": "Too Tight",
@@ -1000,111 +1123,125 @@
    "scaled_tps": 0.24,
    "mem": 1146.92,
    "variant": "meituan-longcat/LongCat-2.0-INT8",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Ling 2.6 1T": {
    "fit": "Too Tight",
-   "raw_tps": 0.3,
-   "scaled_tps": 0.36,
-   "mem": 628.99,
+   "raw_tps": 0.5,
+   "scaled_tps": 0.6,
+   "mem": 413.6,
    "variant": "inclusionAI/Ling-2.6-1T",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 6.84,
+   "raw_tps": 4.8,
+   "scaled_tps": 5.76,
    "mem": 217.6,
    "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 3.2,
-   "scaled_tps": 3.84,
+   "raw_tps": 2.0,
+   "scaled_tps": 2.4,
    "mem": 171.6,
    "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Llama 4 Maverick 400B": {
    "fit": "Too Tight",
-   "raw_tps": 12.1,
-   "scaled_tps": 14.52,
+   "raw_tps": 3.3,
+   "scaled_tps": 3.96,
    "mem": 205.7,
-   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-   "quant": "Q4_K_M"
+   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Qwen3.5 397B-A17B": {
    "fit": "Too Tight",
-   "raw_tps": 9.3,
-   "scaled_tps": 11.16,
-   "mem": 201.7,
-   "variant": "mlx-community/Qwen3.5-397B-A17B-8bit",
-   "quant": "Q4_K_M"
+   "raw_tps": 7.4,
+   "scaled_tps": 8.88,
+   "mem": 113.6,
+   "variant": "amd/Qwen3.5-397B-A17B-MoE-MXFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 9.6,
-   "scaled_tps": 11.52,
+   "raw_tps": 5.8,
+   "scaled_tps": 6.96,
    "mem": 83.3,
    "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
-   "quant": "Q2_K"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5max128"
   },
   "MiniMax M3 427B": {
    "fit": "Too Tight",
-   "raw_tps": 7.2,
-   "scaled_tps": 8.64,
-   "mem": 232.2,
-   "variant": "cyankiwi/MiniMax-M3-AWQ-INT4",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.7,
+   "scaled_tps": 6.84,
+   "mem": 112.9,
+   "variant": "nvidia/MiniMax-M3-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "Kimi K2.6 1.1T": {
    "fit": "Too Tight",
-   "raw_tps": 4.2,
-   "scaled_tps": 5.04,
+   "raw_tps": 3.8,
+   "scaled_tps": 4.56,
    "mem": 542.2,
    "variant": "moonshotai/Kimi-K2.6",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "Nemotron 3 Super 120B": {
    "fit": "Perfect",
-   "raw_tps": 3.0,
-   "scaled_tps": 3.6,
-   "mem": 34.4,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
-   "quant": "Q6_K"
+   "raw_tps": 5.5,
+   "scaled_tps": 6.6,
+   "mem": 28.81,
+   "variant": "MLXCreator/NVIDIA-Nemotron-3-Super-120B-A12B-oQ8-fp16-mtp",
+   "quant": "Q6_K",
+   "chosen_on": "m6_32"
   },
   "gpt-oss-120b 117B": {
-   "fit": "Marginal",
-   "raw_tps": 22.0,
-   "scaled_tps": 26.4,
-   "mem": 59.8,
-   "variant": "mlx-community/gpt-oss-120b-MXFP4-Q8",
-   "quant": "Q3_K_M"
+   "fit": "Good",
+   "raw_tps": 4.8,
+   "scaled_tps": 5.76,
+   "mem": 47.56,
+   "variant": "mlx-community/gpt-oss-120b-mxfp4-bf16",
+   "quant": "Q2_K",
+   "chosen_on": "m5pro_48"
   },
   "Llama 4 Scout 109B": {
    "fit": "Perfect",
-   "raw_tps": 9.9,
-   "scaled_tps": 11.88,
+   "raw_tps": 9.0,
+   "scaled_tps": 10.8,
    "mem": 32.6,
    "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
-   "quant": "Q6_K"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5pro_48"
   },
   "Gemma 4 31B": {
    "fit": "Perfect",
-   "raw_tps": 9.0,
-   "scaled_tps": 10.8,
-   "mem": 23.64,
-   "variant": "QuantTrio/gemma-4-31B-it-AWQ",
-   "quant": "AWQ-4bit"
+   "raw_tps": 18.3,
+   "scaled_tps": 21.96,
+   "mem": 12.86,
+   "variant": "mlx-community/gemma-4-31B-it-qat-OptiQ-4bit",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 26.7,
-   "scaled_tps": 32.04,
-   "mem": 13.6,
-   "variant": "google/gemma-4-26B-A4B-it",
-   "quant": "Q8_0"
+   "raw_tps": 24.7,
+   "scaled_tps": 29.64,
+   "mem": 7.4,
+   "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Qwen3.8 27B": {
    "fit": "Perfect",
@@ -1112,39 +1249,44 @@
    "scaled_tps": 13.92,
    "mem": 13.18,
    "variant": "amd/Qwen3.8-27B-Quark-AWQ-INT4-W4A16",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.5,
-   "scaled_tps": 7.8,
-   "mem": 23.85,
+   "raw_tps": 10.3,
+   "scaled_tps": 12.36,
+   "mem": 15.78,
    "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   },
   "Granite 4.1 30B": {
    "fit": "Perfect",
-   "raw_tps": 4.9,
-   "scaled_tps": 5.88,
-   "mem": 32.81,
+   "raw_tps": 19.5,
+   "scaled_tps": 23.4,
+   "mem": 13.18,
    "variant": "ibm-granite/granite-4.1-30b-base",
-   "quant": "Q8_0"
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Nemotron 3 Nano 30B": {
    "fit": "Perfect",
-   "raw_tps": 23.0,
-   "scaled_tps": 27.6,
-   "mem": 16.2,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-   "quant": "Q8_0"
+   "raw_tps": 20.7,
+   "scaled_tps": 24.84,
+   "mem": 8.3,
+   "variant": "Ex0bit/Elbaz-NVIDIA-Nemotron-3-Nano-30B-A3B-PRISM-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Ministral 3 14B": {
    "fit": "Perfect",
-   "raw_tps": 10.1,
-   "scaled_tps": 12.12,
-   "mem": 16.39,
+   "raw_tps": 13.5,
+   "scaled_tps": 16.2,
+   "mem": 12.91,
    "variant": "ccharnkij/Ministral-3-14B-Reasoning-2512-Uncensored",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 12B": {
    "fit": "Perfect",
@@ -1152,15 +1294,17 @@
    "scaled_tps": 28.2,
    "mem": 9.48,
    "variant": "mattbucci/gemma-4-12B-AWQ",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "gpt-oss-20b 21B": {
    "fit": "Perfect",
-   "raw_tps": 31.0,
-   "scaled_tps": 37.2,
+   "raw_tps": 25.9,
+   "scaled_tps": 31.08,
    "mem": 10.7,
-   "variant": "unsloth/gpt-oss-20b-bnb-4bit",
-   "quant": "Q8_0"
+   "variant": "unsloth/gpt-oss-20b-BF16",
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   }
  },
  "m5max36": {
@@ -1170,23 +1314,26 @@
    "scaled_tps": 0.18,
    "mem": 3226.07,
    "variant": "moonshotai/Kimi-K3",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Qwen3.8-Max 2.4T": {
    "fit": "Too Tight",
    "raw_tps": 1.8,
    "scaled_tps": 3.24,
    "mem": 1253.0,
-   "variant": "Qwen/Qwen3.8-2.4T-A95B-FP8",
-   "quant": "Q4_K_M"
+   "variant": "Qwen/Qwen3.8-2.4T-A95B",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "DeepSeek V4-Pro 1.6T": {
    "fit": "Too Tight",
-   "raw_tps": 1.7,
-   "scaled_tps": 3.06,
-   "mem": 819.0,
-   "variant": "unsloth/DeepSeek-V4-Pro",
-   "quant": "Q4_K_M"
+   "raw_tps": 0.9,
+   "scaled_tps": 1.62,
+   "mem": 466.1,
+   "variant": "nvidia/DeepSeek-V4-Pro-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra512"
   },
   "LongCat 2.0 1.6T": {
    "fit": "Too Tight",
@@ -1194,111 +1341,125 @@
    "scaled_tps": 0.36,
    "mem": 1146.92,
    "variant": "meituan-longcat/LongCat-2.0-INT8",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Ling 2.6 1T": {
    "fit": "Too Tight",
-   "raw_tps": 0.3,
-   "scaled_tps": 0.54,
-   "mem": 628.99,
+   "raw_tps": 0.5,
+   "scaled_tps": 0.9,
+   "mem": 413.6,
    "variant": "inclusionAI/Ling-2.6-1T",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 10.26,
+   "raw_tps": 4.8,
+   "scaled_tps": 8.64,
    "mem": 217.6,
    "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 3.2,
-   "scaled_tps": 5.76,
+   "raw_tps": 2.0,
+   "scaled_tps": 3.6,
    "mem": 171.6,
    "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Llama 4 Maverick 400B": {
    "fit": "Too Tight",
-   "raw_tps": 12.1,
-   "scaled_tps": 21.78,
+   "raw_tps": 3.3,
+   "scaled_tps": 5.94,
    "mem": 205.7,
-   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-   "quant": "Q4_K_M"
+   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Qwen3.5 397B-A17B": {
    "fit": "Too Tight",
-   "raw_tps": 9.3,
-   "scaled_tps": 16.74,
-   "mem": 201.7,
-   "variant": "mlx-community/Qwen3.5-397B-A17B-8bit",
-   "quant": "Q4_K_M"
+   "raw_tps": 7.4,
+   "scaled_tps": 13.32,
+   "mem": 113.6,
+   "variant": "amd/Qwen3.5-397B-A17B-MoE-MXFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 9.2,
-   "scaled_tps": 16.56,
+   "raw_tps": 5.8,
+   "scaled_tps": 10.44,
    "mem": 83.3,
    "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5max128"
   },
   "MiniMax M3 427B": {
    "fit": "Too Tight",
-   "raw_tps": 7.2,
-   "scaled_tps": 12.96,
-   "mem": 232.2,
-   "variant": "cyankiwi/MiniMax-M3-AWQ-INT4",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.7,
+   "scaled_tps": 10.26,
+   "mem": 112.9,
+   "variant": "nvidia/MiniMax-M3-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "Kimi K2.6 1.1T": {
    "fit": "Too Tight",
-   "raw_tps": 4.2,
-   "scaled_tps": 7.56,
+   "raw_tps": 3.8,
+   "scaled_tps": 6.84,
    "mem": 542.2,
    "variant": "moonshotai/Kimi-K2.6",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "Nemotron 3 Super 120B": {
-   "fit": "Marginal",
-   "raw_tps": 4.1,
-   "scaled_tps": 7.38,
-   "mem": 34.4,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
-   "quant": "Q3_K_M"
+   "fit": "Good",
+   "raw_tps": 5.5,
+   "scaled_tps": 9.9,
+   "mem": 28.81,
+   "variant": "MLXCreator/NVIDIA-Nemotron-3-Super-120B-A12B-oQ8-fp16-mtp",
+   "quant": "Q6_K",
+   "chosen_on": "m6_32"
   },
   "gpt-oss-120b 117B": {
    "fit": "Too Tight",
-   "raw_tps": 28.8,
-   "scaled_tps": 51.84,
-   "mem": 59.8,
-   "variant": "unsloth/gpt-oss-120b-BF16",
-   "quant": "Q4_K_M"
+   "raw_tps": 4.8,
+   "scaled_tps": 8.64,
+   "mem": 47.56,
+   "variant": "mlx-community/gpt-oss-120b-mxfp4-bf16",
+   "quant": "Q2_K",
+   "chosen_on": "m5pro_48"
   },
   "Llama 4 Scout 109B": {
    "fit": "Marginal",
-   "raw_tps": 10.2,
-   "scaled_tps": 18.36,
+   "raw_tps": 9.0,
+   "scaled_tps": 16.2,
    "mem": 32.6,
    "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
-   "quant": "Q3_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5pro_48"
   },
   "Gemma 4 31B": {
    "fit": "Perfect",
-   "raw_tps": 9.0,
-   "scaled_tps": 16.2,
-   "mem": 23.64,
-   "variant": "QuantTrio/gemma-4-31B-it-AWQ",
-   "quant": "AWQ-4bit"
+   "raw_tps": 18.3,
+   "scaled_tps": 32.94,
+   "mem": 12.86,
+   "variant": "mlx-community/gemma-4-31B-it-qat-OptiQ-4bit",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 26.7,
-   "scaled_tps": 48.06,
+   "raw_tps": 24.7,
+   "scaled_tps": 44.46,
    "mem": 7.4,
    "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Qwen3.8 27B": {
    "fit": "Perfect",
@@ -1306,39 +1467,44 @@
    "scaled_tps": 20.88,
    "mem": 13.18,
    "variant": "amd/Qwen3.8-27B-Quark-AWQ-INT4-W4A16",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.5,
-   "scaled_tps": 11.7,
-   "mem": 23.85,
+   "raw_tps": 10.3,
+   "scaled_tps": 18.54,
+   "mem": 15.78,
    "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   },
   "Granite 4.1 30B": {
    "fit": "Perfect",
-   "raw_tps": 4.9,
-   "scaled_tps": 8.82,
-   "mem": 31.75,
-   "variant": "mlx-community/granite-4.1-30b-mxfp8",
-   "quant": "Q8_0"
+   "raw_tps": 19.5,
+   "scaled_tps": 35.1,
+   "mem": 13.18,
+   "variant": "ibm-granite/granite-4.1-30b-base",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Nemotron 3 Nano 30B": {
    "fit": "Perfect",
-   "raw_tps": 16.0,
-   "scaled_tps": 28.8,
-   "mem": 16.2,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-   "quant": "Q8_0"
+   "raw_tps": 20.7,
+   "scaled_tps": 37.26,
+   "mem": 8.3,
+   "variant": "Ex0bit/Elbaz-NVIDIA-Nemotron-3-Nano-30B-A3B-PRISM-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Ministral 3 14B": {
    "fit": "Perfect",
-   "raw_tps": 10.1,
-   "scaled_tps": 18.18,
-   "mem": 16.39,
+   "raw_tps": 13.5,
+   "scaled_tps": 24.3,
+   "mem": 12.91,
    "variant": "ccharnkij/Ministral-3-14B-Reasoning-2512-Uncensored",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 12B": {
    "fit": "Perfect",
@@ -1346,15 +1512,17 @@
    "scaled_tps": 42.3,
    "mem": 9.48,
    "variant": "mattbucci/gemma-4-12B-AWQ",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "gpt-oss-20b 21B": {
    "fit": "Perfect",
-   "raw_tps": 30.7,
-   "scaled_tps": 55.26,
+   "raw_tps": 25.9,
+   "scaled_tps": 46.62,
    "mem": 10.7,
-   "variant": "unsloth/gpt-oss-20b-unsloth-bnb-4bit",
-   "quant": "Q8_0"
+   "variant": "unsloth/gpt-oss-20b-BF16",
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   }
  },
  "m5max48": {
@@ -1364,23 +1532,26 @@
    "scaled_tps": 0.24,
    "mem": 3226.07,
    "variant": "moonshotai/Kimi-K3",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Qwen3.8-Max 2.4T": {
    "fit": "Too Tight",
    "raw_tps": 1.8,
    "scaled_tps": 4.32,
    "mem": 1253.0,
-   "variant": "Qwen/Qwen3.8-2.4T-A95B-FP8",
-   "quant": "Q4_K_M"
+   "variant": "Qwen/Qwen3.8-2.4T-A95B",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "DeepSeek V4-Pro 1.6T": {
    "fit": "Too Tight",
-   "raw_tps": 1.7,
-   "scaled_tps": 4.08,
-   "mem": 819.0,
-   "variant": "unsloth/DeepSeek-V4-Pro",
-   "quant": "Q4_K_M"
+   "raw_tps": 0.9,
+   "scaled_tps": 2.16,
+   "mem": 466.1,
+   "variant": "nvidia/DeepSeek-V4-Pro-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra512"
   },
   "LongCat 2.0 1.6T": {
    "fit": "Too Tight",
@@ -1388,87 +1559,98 @@
    "scaled_tps": 0.48,
    "mem": 1146.92,
    "variant": "meituan-longcat/LongCat-2.0-INT8",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Ling 2.6 1T": {
    "fit": "Too Tight",
-   "raw_tps": 0.3,
-   "scaled_tps": 0.72,
-   "mem": 628.99,
+   "raw_tps": 0.5,
+   "scaled_tps": 1.2,
+   "mem": 413.6,
    "variant": "inclusionAI/Ling-2.6-1T",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 13.68,
+   "raw_tps": 4.8,
+   "scaled_tps": 11.52,
    "mem": 217.6,
    "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 3.2,
-   "scaled_tps": 7.68,
+   "raw_tps": 2.0,
+   "scaled_tps": 4.8,
    "mem": 171.6,
    "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Llama 4 Maverick 400B": {
    "fit": "Too Tight",
-   "raw_tps": 12.1,
-   "scaled_tps": 29.04,
+   "raw_tps": 3.3,
+   "scaled_tps": 7.92,
    "mem": 205.7,
-   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-   "quant": "Q4_K_M"
+   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Qwen3.5 397B-A17B": {
    "fit": "Too Tight",
-   "raw_tps": 9.3,
-   "scaled_tps": 22.32,
-   "mem": 206.6,
-   "variant": "Qwen/Qwen3.5-397B-A17B-FP8",
-   "quant": "Q4_K_M"
+   "raw_tps": 7.4,
+   "scaled_tps": 17.76,
+   "mem": 113.6,
+   "variant": "amd/Qwen3.5-397B-A17B-MoE-MXFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 9.2,
-   "scaled_tps": 22.08,
+   "raw_tps": 5.8,
+   "scaled_tps": 13.92,
    "mem": 83.3,
    "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5max128"
   },
   "MiniMax M3 427B": {
    "fit": "Too Tight",
-   "raw_tps": 7.2,
-   "scaled_tps": 17.28,
-   "mem": 232.2,
-   "variant": "cyankiwi/MiniMax-M3-AWQ-INT4",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.7,
+   "scaled_tps": 13.68,
+   "mem": 112.9,
+   "variant": "nvidia/MiniMax-M3-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "Kimi K2.6 1.1T": {
    "fit": "Too Tight",
-   "raw_tps": 4.2,
-   "scaled_tps": 10.08,
+   "raw_tps": 3.8,
+   "scaled_tps": 9.12,
    "mem": 542.2,
    "variant": "moonshotai/Kimi-K2.6",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "Nemotron 3 Super 120B": {
    "fit": "Good",
-   "raw_tps": 2.9,
-   "scaled_tps": 6.96,
-   "mem": 34.4,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
-   "quant": "Q5_K_M"
+   "raw_tps": 5.5,
+   "scaled_tps": 13.2,
+   "mem": 28.81,
+   "variant": "MLXCreator/NVIDIA-Nemotron-3-Super-120B-A12B-oQ8-fp16-mtp",
+   "quant": "Q6_K",
+   "chosen_on": "m6_32"
   },
   "gpt-oss-120b 117B": {
-   "fit": "Marginal",
+   "fit": "Too Tight",
    "raw_tps": 4.8,
    "scaled_tps": 11.52,
    "mem": 47.56,
    "variant": "mlx-community/gpt-oss-120b-mxfp4-bf16",
-   "quant": "Q2_K"
+   "quant": "Q2_K",
+   "chosen_on": "m5pro_48"
   },
   "Llama 4 Scout 109B": {
    "fit": "Good",
@@ -1476,23 +1658,26 @@
    "scaled_tps": 21.6,
    "mem": 32.6,
    "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
-   "quant": "Q5_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5pro_48"
   },
   "Gemma 4 31B": {
    "fit": "Perfect",
-   "raw_tps": 9.0,
-   "scaled_tps": 21.6,
-   "mem": 23.64,
-   "variant": "QuantTrio/gemma-4-31B-it-AWQ",
-   "quant": "AWQ-4bit"
+   "raw_tps": 18.3,
+   "scaled_tps": 43.92,
+   "mem": 12.86,
+   "variant": "mlx-community/gemma-4-31B-it-qat-OptiQ-4bit",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 26.7,
-   "scaled_tps": 64.08,
-   "mem": 13.6,
-   "variant": "google/gemma-4-26B-A4B-it",
-   "quant": "Q8_0"
+   "raw_tps": 24.7,
+   "scaled_tps": 59.28,
+   "mem": 7.4,
+   "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Qwen3.8 27B": {
    "fit": "Perfect",
@@ -1500,39 +1685,44 @@
    "scaled_tps": 27.84,
    "mem": 13.18,
    "variant": "amd/Qwen3.8-27B-Quark-AWQ-INT4-W4A16",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.5,
-   "scaled_tps": 15.6,
-   "mem": 23.85,
+   "raw_tps": 10.3,
+   "scaled_tps": 24.72,
+   "mem": 15.78,
    "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   },
   "Granite 4.1 30B": {
    "fit": "Perfect",
-   "raw_tps": 4.9,
-   "scaled_tps": 11.76,
-   "mem": 32.81,
+   "raw_tps": 19.5,
+   "scaled_tps": 46.8,
+   "mem": 13.18,
    "variant": "ibm-granite/granite-4.1-30b-base",
-   "quant": "Q8_0"
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Nemotron 3 Nano 30B": {
    "fit": "Perfect",
-   "raw_tps": 21.1,
-   "scaled_tps": 50.64,
-   "mem": 16.2,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-   "quant": "Q8_0"
+   "raw_tps": 20.7,
+   "scaled_tps": 49.68,
+   "mem": 8.3,
+   "variant": "Ex0bit/Elbaz-NVIDIA-Nemotron-3-Nano-30B-A3B-PRISM-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Ministral 3 14B": {
    "fit": "Perfect",
-   "raw_tps": 10.1,
-   "scaled_tps": 24.24,
-   "mem": 16.39,
+   "raw_tps": 13.5,
+   "scaled_tps": 32.4,
+   "mem": 12.91,
    "variant": "ccharnkij/Ministral-3-14B-Reasoning-2512-Uncensored",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 12B": {
    "fit": "Perfect",
@@ -1540,15 +1730,17 @@
    "scaled_tps": 56.4,
    "mem": 9.48,
    "variant": "mattbucci/gemma-4-12B-AWQ",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "gpt-oss-20b 21B": {
    "fit": "Perfect",
-   "raw_tps": 31.0,
-   "scaled_tps": 74.4,
+   "raw_tps": 25.9,
+   "scaled_tps": 62.16,
    "mem": 10.7,
-   "variant": "unsloth/gpt-oss-20b-unsloth-bnb-4bit",
-   "quant": "Q8_0"
+   "variant": "unsloth/gpt-oss-20b-BF16",
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   }
  },
  "m5max64": {
@@ -1558,7 +1750,8 @@
    "scaled_tps": 0.24,
    "mem": 3226.07,
    "variant": "moonshotai/Kimi-K3",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Qwen3.8-Max 2.4T": {
    "fit": "Too Tight",
@@ -1566,15 +1759,17 @@
    "scaled_tps": 4.32,
    "mem": 1253.0,
    "variant": "Qwen/Qwen3.8-2.4T-A95B",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "DeepSeek V4-Pro 1.6T": {
    "fit": "Too Tight",
-   "raw_tps": 1.7,
-   "scaled_tps": 4.08,
-   "mem": 819.0,
-   "variant": "unsloth/DeepSeek-V4-Pro",
-   "quant": "Q4_K_M"
+   "raw_tps": 0.9,
+   "scaled_tps": 2.16,
+   "mem": 466.1,
+   "variant": "nvidia/DeepSeek-V4-Pro-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra512"
   },
   "LongCat 2.0 1.6T": {
    "fit": "Too Tight",
@@ -1582,111 +1777,125 @@
    "scaled_tps": 0.48,
    "mem": 1146.92,
    "variant": "meituan-longcat/LongCat-2.0-INT8",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Ling 2.6 1T": {
    "fit": "Too Tight",
-   "raw_tps": 0.3,
-   "scaled_tps": 0.72,
-   "mem": 628.99,
+   "raw_tps": 0.5,
+   "scaled_tps": 1.2,
+   "mem": 413.6,
    "variant": "inclusionAI/Ling-2.6-1T",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 13.68,
+   "raw_tps": 4.8,
+   "scaled_tps": 11.52,
    "mem": 217.6,
    "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 3.2,
-   "scaled_tps": 7.68,
+   "raw_tps": 2.0,
+   "scaled_tps": 4.8,
    "mem": 171.6,
    "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Llama 4 Maverick 400B": {
    "fit": "Too Tight",
-   "raw_tps": 12.1,
-   "scaled_tps": 29.04,
+   "raw_tps": 3.3,
+   "scaled_tps": 7.92,
    "mem": 205.7,
-   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-   "quant": "Q4_K_M"
+   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Qwen3.5 397B-A17B": {
    "fit": "Too Tight",
-   "raw_tps": 9.3,
-   "scaled_tps": 22.32,
-   "mem": 206.6,
-   "variant": "Qwen/Qwen3.5-397B-A17B-FP8",
-   "quant": "Q4_K_M"
+   "raw_tps": 7.4,
+   "scaled_tps": 17.76,
+   "mem": 113.6,
+   "variant": "amd/Qwen3.5-397B-A17B-MoE-MXFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 9.6,
-   "scaled_tps": 23.04,
+   "raw_tps": 5.8,
+   "scaled_tps": 13.92,
    "mem": 83.3,
    "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
-   "quant": "Q2_K"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5max128"
   },
   "MiniMax M3 427B": {
    "fit": "Too Tight",
-   "raw_tps": 7.2,
-   "scaled_tps": 17.28,
-   "mem": 232.2,
-   "variant": "cyankiwi/MiniMax-M3-AWQ-INT4",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.7,
+   "scaled_tps": 13.68,
+   "mem": 112.9,
+   "variant": "nvidia/MiniMax-M3-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "Kimi K2.6 1.1T": {
    "fit": "Too Tight",
-   "raw_tps": 4.2,
-   "scaled_tps": 10.08,
+   "raw_tps": 3.8,
+   "scaled_tps": 9.12,
    "mem": 542.2,
    "variant": "moonshotai/Kimi-K2.6",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "Nemotron 3 Super 120B": {
    "fit": "Perfect",
-   "raw_tps": 3.0,
-   "scaled_tps": 7.2,
-   "mem": 34.4,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
-   "quant": "Q6_K"
+   "raw_tps": 5.5,
+   "scaled_tps": 13.2,
+   "mem": 28.81,
+   "variant": "MLXCreator/NVIDIA-Nemotron-3-Super-120B-A12B-oQ8-fp16-mtp",
+   "quant": "Q6_K",
+   "chosen_on": "m6_32"
   },
   "gpt-oss-120b 117B": {
-   "fit": "Marginal",
-   "raw_tps": 22.0,
-   "scaled_tps": 52.8,
-   "mem": 59.8,
-   "variant": "unsloth/gpt-oss-120b-BF16",
-   "quant": "Q3_K_M"
+   "fit": "Good",
+   "raw_tps": 4.8,
+   "scaled_tps": 11.52,
+   "mem": 47.56,
+   "variant": "mlx-community/gpt-oss-120b-mxfp4-bf16",
+   "quant": "Q2_K",
+   "chosen_on": "m5pro_48"
   },
   "Llama 4 Scout 109B": {
    "fit": "Perfect",
-   "raw_tps": 9.9,
-   "scaled_tps": 23.76,
+   "raw_tps": 9.0,
+   "scaled_tps": 21.6,
    "mem": 32.6,
    "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
-   "quant": "Q6_K"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5pro_48"
   },
   "Gemma 4 31B": {
    "fit": "Perfect",
-   "raw_tps": 9.0,
-   "scaled_tps": 21.6,
-   "mem": 23.64,
-   "variant": "QuantTrio/gemma-4-31B-it-AWQ",
-   "quant": "AWQ-4bit"
+   "raw_tps": 18.3,
+   "scaled_tps": 43.92,
+   "mem": 12.86,
+   "variant": "mlx-community/gemma-4-31B-it-qat-OptiQ-4bit",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 26.7,
-   "scaled_tps": 64.08,
-   "mem": 13.6,
-   "variant": "google/gemma-4-26B-A4B-it",
-   "quant": "Q8_0"
+   "raw_tps": 24.7,
+   "scaled_tps": 59.28,
+   "mem": 7.4,
+   "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Qwen3.8 27B": {
    "fit": "Perfect",
@@ -1694,39 +1903,44 @@
    "scaled_tps": 27.84,
    "mem": 13.18,
    "variant": "amd/Qwen3.8-27B-Quark-AWQ-INT4-W4A16",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.5,
-   "scaled_tps": 15.6,
-   "mem": 23.85,
+   "raw_tps": 10.3,
+   "scaled_tps": 24.72,
+   "mem": 15.78,
    "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   },
   "Granite 4.1 30B": {
    "fit": "Perfect",
-   "raw_tps": 4.9,
-   "scaled_tps": 11.76,
-   "mem": 32.81,
-   "variant": "ibm-granite/granite-4.1-30b",
-   "quant": "Q8_0"
+   "raw_tps": 19.5,
+   "scaled_tps": 46.8,
+   "mem": 13.18,
+   "variant": "ibm-granite/granite-4.1-30b-base",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Nemotron 3 Nano 30B": {
    "fit": "Perfect",
-   "raw_tps": 23.0,
-   "scaled_tps": 55.2,
-   "mem": 16.2,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-   "quant": "Q8_0"
+   "raw_tps": 20.7,
+   "scaled_tps": 49.68,
+   "mem": 8.3,
+   "variant": "Ex0bit/Elbaz-NVIDIA-Nemotron-3-Nano-30B-A3B-PRISM-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Ministral 3 14B": {
    "fit": "Perfect",
-   "raw_tps": 10.1,
-   "scaled_tps": 24.24,
-   "mem": 16.39,
+   "raw_tps": 13.5,
+   "scaled_tps": 32.4,
+   "mem": 12.91,
    "variant": "ccharnkij/Ministral-3-14B-Reasoning-2512-Uncensored",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 12B": {
    "fit": "Perfect",
@@ -1734,15 +1948,17 @@
    "scaled_tps": 56.4,
    "mem": 9.48,
    "variant": "mattbucci/gemma-4-12B-AWQ",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "gpt-oss-20b 21B": {
    "fit": "Perfect",
-   "raw_tps": 31.0,
-   "scaled_tps": 74.4,
+   "raw_tps": 25.9,
+   "scaled_tps": 62.16,
    "mem": 10.7,
-   "variant": "unsloth/gpt-oss-20b-unsloth-bnb-4bit",
-   "quant": "Q8_0"
+   "variant": "unsloth/gpt-oss-20b-BF16",
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   }
  },
  "m5max128": {
@@ -1752,23 +1968,26 @@
    "scaled_tps": 0.24,
    "mem": 3226.07,
    "variant": "moonshotai/Kimi-K3",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Qwen3.8-Max 2.4T": {
    "fit": "Too Tight",
    "raw_tps": 1.8,
    "scaled_tps": 4.32,
    "mem": 1253.0,
-   "variant": "Qwen/Qwen3.8-2.4T-A95B-FP8",
-   "quant": "Q4_K_M"
+   "variant": "Qwen/Qwen3.8-2.4T-A95B",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "DeepSeek V4-Pro 1.6T": {
    "fit": "Too Tight",
-   "raw_tps": 1.7,
-   "scaled_tps": 4.08,
-   "mem": 819.0,
-   "variant": "unsloth/DeepSeek-V4-Pro",
-   "quant": "Q4_K_M"
+   "raw_tps": 0.9,
+   "scaled_tps": 2.16,
+   "mem": 466.1,
+   "variant": "nvidia/DeepSeek-V4-Pro-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra512"
   },
   "LongCat 2.0 1.6T": {
    "fit": "Too Tight",
@@ -1776,39 +1995,44 @@
    "scaled_tps": 0.48,
    "mem": 1146.92,
    "variant": "meituan-longcat/LongCat-2.0-INT8",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Ling 2.6 1T": {
    "fit": "Too Tight",
-   "raw_tps": 0.3,
-   "scaled_tps": 0.72,
-   "mem": 628.99,
+   "raw_tps": 0.5,
+   "scaled_tps": 1.2,
+   "mem": 413.6,
    "variant": "inclusionAI/Ling-2.6-1T",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 13.68,
+   "raw_tps": 4.8,
+   "scaled_tps": 11.52,
    "mem": 217.6,
    "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 3.2,
-   "scaled_tps": 7.68,
+   "raw_tps": 2.0,
+   "scaled_tps": 4.8,
    "mem": 171.6,
    "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Llama 4 Maverick 400B": {
    "fit": "Too Tight",
-   "raw_tps": 12.1,
-   "scaled_tps": 29.04,
+   "raw_tps": 3.3,
+   "scaled_tps": 7.92,
    "mem": 205.7,
-   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-   "quant": "Q4_K_M"
+   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Qwen3.5 397B-A17B": {
    "fit": "Marginal",
@@ -1816,7 +2040,8 @@
    "scaled_tps": 17.76,
    "mem": 113.6,
    "variant": "amd/Qwen3.5-397B-A17B-MoE-MXFP4",
-   "quant": "Q3_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Good",
@@ -1824,7 +2049,8 @@
    "scaled_tps": 13.92,
    "mem": 83.3,
    "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
-   "quant": "Q5_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5max128"
   },
   "MiniMax M3 427B": {
    "fit": "Marginal",
@@ -1832,55 +2058,62 @@
    "scaled_tps": 13.68,
    "mem": 112.9,
    "variant": "nvidia/MiniMax-M3-NVFP4",
-   "quant": "Q3_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "Kimi K2.6 1.1T": {
    "fit": "Too Tight",
-   "raw_tps": 4.2,
-   "scaled_tps": 10.08,
+   "raw_tps": 3.8,
+   "scaled_tps": 9.12,
    "mem": 542.2,
    "variant": "moonshotai/Kimi-K2.6",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "Nemotron 3 Super 120B": {
    "fit": "Perfect",
-   "raw_tps": 9.7,
-   "scaled_tps": 23.28,
-   "mem": 65.2,
-   "variant": "cyankiwi/NVIDIA-Nemotron-3-Super-120B-A12B-AWQ-4bit",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.5,
+   "scaled_tps": 13.2,
+   "mem": 28.81,
+   "variant": "MLXCreator/NVIDIA-Nemotron-3-Super-120B-A12B-oQ8-fp16-mtp",
+   "quant": "Q6_K",
+   "chosen_on": "m6_32"
   },
   "gpt-oss-120b 117B": {
    "fit": "Perfect",
-   "raw_tps": 15.8,
-   "scaled_tps": 37.92,
-   "mem": 59.8,
-   "variant": "unsloth/gpt-oss-120b-BF16",
-   "quant": "Q8_0"
+   "raw_tps": 4.8,
+   "scaled_tps": 11.52,
+   "mem": 47.56,
+   "variant": "mlx-community/gpt-oss-120b-mxfp4-bf16",
+   "quant": "Q2_K",
+   "chosen_on": "m5pro_48"
   },
   "Llama 4 Scout 109B": {
    "fit": "Perfect",
-   "raw_tps": 11.3,
-   "scaled_tps": 27.12,
+   "raw_tps": 9.0,
+   "scaled_tps": 21.6,
    "mem": 32.6,
    "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5pro_48"
   },
   "Gemma 4 31B": {
    "fit": "Perfect",
-   "raw_tps": 9.0,
-   "scaled_tps": 21.6,
-   "mem": 23.64,
-   "variant": "QuantTrio/gemma-4-31B-it-AWQ",
-   "quant": "AWQ-4bit"
+   "raw_tps": 18.3,
+   "scaled_tps": 43.92,
+   "mem": 12.86,
+   "variant": "mlx-community/gemma-4-31B-it-qat-OptiQ-4bit",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 26.7,
-   "scaled_tps": 64.08,
-   "mem": 13.6,
-   "variant": "google/gemma-4-26B-A4B-it",
-   "quant": "Q8_0"
+   "raw_tps": 24.7,
+   "scaled_tps": 59.28,
+   "mem": 7.4,
+   "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Qwen3.8 27B": {
    "fit": "Perfect",
@@ -1888,39 +2121,44 @@
    "scaled_tps": 27.84,
    "mem": 13.18,
    "variant": "amd/Qwen3.8-27B-Quark-AWQ-INT4-W4A16",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.5,
-   "scaled_tps": 15.6,
-   "mem": 23.85,
+   "raw_tps": 10.3,
+   "scaled_tps": 24.72,
+   "mem": 15.78,
    "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   },
   "Granite 4.1 30B": {
    "fit": "Perfect",
-   "raw_tps": 4.9,
-   "scaled_tps": 11.76,
-   "mem": 31.75,
-   "variant": "mlx-community/granite-4.1-30b-mxfp8",
-   "quant": "Q8_0"
+   "raw_tps": 19.5,
+   "scaled_tps": 46.8,
+   "mem": 13.18,
+   "variant": "ibm-granite/granite-4.1-30b-base",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Nemotron 3 Nano 30B": {
    "fit": "Perfect",
-   "raw_tps": 23.0,
-   "scaled_tps": 55.2,
-   "mem": 16.2,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-   "quant": "Q8_0"
+   "raw_tps": 20.7,
+   "scaled_tps": 49.68,
+   "mem": 8.3,
+   "variant": "Ex0bit/Elbaz-NVIDIA-Nemotron-3-Nano-30B-A3B-PRISM-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Ministral 3 14B": {
    "fit": "Perfect",
-   "raw_tps": 10.1,
-   "scaled_tps": 24.24,
-   "mem": 16.39,
+   "raw_tps": 13.5,
+   "scaled_tps": 32.4,
+   "mem": 12.91,
    "variant": "ccharnkij/Ministral-3-14B-Reasoning-2512-Uncensored",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 12B": {
    "fit": "Perfect",
@@ -1928,15 +2166,17 @@
    "scaled_tps": 56.4,
    "mem": 9.48,
    "variant": "mattbucci/gemma-4-12B-AWQ",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "gpt-oss-20b 21B": {
    "fit": "Perfect",
-   "raw_tps": 31.0,
-   "scaled_tps": 74.4,
+   "raw_tps": 25.9,
+   "scaled_tps": 62.16,
    "mem": 10.7,
-   "variant": "unsloth/gpt-oss-20b-bnb-4bit",
-   "quant": "Q8_0"
+   "variant": "unsloth/gpt-oss-20b-BF16",
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   }
  },
  "m5ultra96": {
@@ -1946,23 +2186,26 @@
    "scaled_tps": 0.47,
    "mem": 3226.07,
    "variant": "moonshotai/Kimi-K3",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Qwen3.8-Max 2.4T": {
    "fit": "Too Tight",
    "raw_tps": 1.8,
    "scaled_tps": 8.46,
    "mem": 1253.0,
-   "variant": "Qwen/Qwen3.8-2.4T-A95B-FP8",
-   "quant": "Q4_K_M"
+   "variant": "Qwen/Qwen3.8-2.4T-A95B",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "DeepSeek V4-Pro 1.6T": {
    "fit": "Too Tight",
-   "raw_tps": 1.7,
-   "scaled_tps": 7.99,
-   "mem": 819.0,
-   "variant": "unsloth/DeepSeek-V4-Pro",
-   "quant": "Q4_K_M"
+   "raw_tps": 0.9,
+   "scaled_tps": 4.23,
+   "mem": 466.1,
+   "variant": "nvidia/DeepSeek-V4-Pro-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra512"
   },
   "LongCat 2.0 1.6T": {
    "fit": "Too Tight",
@@ -1970,111 +2213,125 @@
    "scaled_tps": 0.94,
    "mem": 1146.92,
    "variant": "meituan-longcat/LongCat-2.0-INT8",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Ling 2.6 1T": {
    "fit": "Too Tight",
-   "raw_tps": 0.3,
-   "scaled_tps": 1.41,
-   "mem": 628.99,
+   "raw_tps": 0.5,
+   "scaled_tps": 2.35,
+   "mem": 413.6,
    "variant": "inclusionAI/Ling-2.6-1T",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 26.79,
+   "raw_tps": 4.8,
+   "scaled_tps": 22.56,
    "mem": 217.6,
    "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
-   "quant": "Q4_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 3.2,
-   "scaled_tps": 15.04,
+   "raw_tps": 2.0,
+   "scaled_tps": 9.4,
    "mem": 171.6,
    "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
-   "quant": "Q4_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Llama 4 Maverick 400B": {
    "fit": "Too Tight",
-   "raw_tps": 12.1,
-   "scaled_tps": 56.87,
+   "raw_tps": 3.3,
+   "scaled_tps": 15.51,
    "mem": 205.7,
-   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-   "quant": "Q4_K_M"
+   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Qwen3.5 397B-A17B": {
    "fit": "Too Tight",
-   "raw_tps": 9.3,
-   "scaled_tps": 43.71,
-   "mem": 201.7,
-   "variant": "mlx-community/Qwen3.5-397B-A17B-8bit",
-   "quant": "Q4_K_M"
+   "raw_tps": 7.4,
+   "scaled_tps": 34.78,
+   "mem": 113.6,
+   "variant": "amd/Qwen3.5-397B-A17B-MoE-MXFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Marginal",
-   "raw_tps": 8.8,
-   "scaled_tps": 41.36,
+   "raw_tps": 5.8,
+   "scaled_tps": 27.26,
    "mem": 83.3,
    "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
-   "quant": "Q3_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5max128"
   },
   "MiniMax M3 427B": {
    "fit": "Too Tight",
-   "raw_tps": 7.2,
-   "scaled_tps": 33.84,
-   "mem": 232.2,
-   "variant": "cyankiwi/MiniMax-M3-AWQ-INT4",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.7,
+   "scaled_tps": 26.79,
+   "mem": 112.9,
+   "variant": "nvidia/MiniMax-M3-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "Kimi K2.6 1.1T": {
    "fit": "Too Tight",
-   "raw_tps": 4.2,
-   "scaled_tps": 19.74,
+   "raw_tps": 3.8,
+   "scaled_tps": 17.86,
    "mem": 542.2,
    "variant": "moonshotai/Kimi-K2.6",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "Nemotron 3 Super 120B": {
-   "fit": "Good",
-   "raw_tps": 9.2,
-   "scaled_tps": 43.24,
-   "mem": 65.2,
-   "variant": "cyankiwi/NVIDIA-Nemotron-3-Super-120B-A12B-AWQ-4bit",
-   "quant": "AWQ-4bit"
+   "fit": "Perfect",
+   "raw_tps": 5.5,
+   "scaled_tps": 25.85,
+   "mem": 28.81,
+   "variant": "MLXCreator/NVIDIA-Nemotron-3-Super-120B-A12B-oQ8-fp16-mtp",
+   "quant": "Q6_K",
+   "chosen_on": "m6_32"
   },
   "gpt-oss-120b 117B": {
-   "fit": "Good",
-   "raw_tps": 20.9,
-   "scaled_tps": 98.23,
-   "mem": 61.7,
-   "variant": "openai/gpt-oss-120b",
-   "quant": "Q5_K_M"
+   "fit": "Perfect",
+   "raw_tps": 4.8,
+   "scaled_tps": 22.56,
+   "mem": 47.56,
+   "variant": "mlx-community/gpt-oss-120b-mxfp4-bf16",
+   "quant": "Q2_K",
+   "chosen_on": "m5pro_48"
   },
   "Llama 4 Scout 109B": {
    "fit": "Perfect",
-   "raw_tps": 10.3,
-   "scaled_tps": 48.41,
+   "raw_tps": 9.0,
+   "scaled_tps": 42.3,
    "mem": 32.6,
    "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5pro_48"
   },
   "Gemma 4 31B": {
    "fit": "Perfect",
-   "raw_tps": 9.0,
-   "scaled_tps": 42.3,
-   "mem": 23.64,
-   "variant": "QuantTrio/gemma-4-31B-it-AWQ",
-   "quant": "AWQ-4bit"
+   "raw_tps": 18.3,
+   "scaled_tps": 86.01,
+   "mem": 12.86,
+   "variant": "mlx-community/gemma-4-31B-it-qat-OptiQ-4bit",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 26.7,
-   "scaled_tps": 125.49,
-   "mem": 13.6,
-   "variant": "google/gemma-4-26B-A4B-it",
-   "quant": "Q8_0"
+   "raw_tps": 24.7,
+   "scaled_tps": 116.09,
+   "mem": 7.4,
+   "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Qwen3.8 27B": {
    "fit": "Perfect",
@@ -2082,39 +2339,44 @@
    "scaled_tps": 54.52,
    "mem": 13.18,
    "variant": "amd/Qwen3.8-27B-Quark-AWQ-INT4-W4A16",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.5,
-   "scaled_tps": 30.55,
-   "mem": 23.85,
+   "raw_tps": 10.3,
+   "scaled_tps": 48.41,
+   "mem": 15.78,
    "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   },
   "Granite 4.1 30B": {
    "fit": "Perfect",
-   "raw_tps": 4.9,
-   "scaled_tps": 23.03,
-   "mem": 32.81,
-   "variant": "ibm-granite/granite-4.1-30b",
-   "quant": "Q8_0"
+   "raw_tps": 19.5,
+   "scaled_tps": 91.65,
+   "mem": 13.18,
+   "variant": "ibm-granite/granite-4.1-30b-base",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Nemotron 3 Nano 30B": {
    "fit": "Perfect",
-   "raw_tps": 23.0,
-   "scaled_tps": 108.1,
-   "mem": 16.2,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-   "quant": "Q8_0"
+   "raw_tps": 20.7,
+   "scaled_tps": 97.29,
+   "mem": 8.3,
+   "variant": "Ex0bit/Elbaz-NVIDIA-Nemotron-3-Nano-30B-A3B-PRISM-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Ministral 3 14B": {
    "fit": "Perfect",
-   "raw_tps": 10.1,
-   "scaled_tps": 47.47,
-   "mem": 16.39,
+   "raw_tps": 13.5,
+   "scaled_tps": 63.45,
+   "mem": 12.91,
    "variant": "ccharnkij/Ministral-3-14B-Reasoning-2512-Uncensored",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 12B": {
    "fit": "Perfect",
@@ -2122,15 +2384,17 @@
    "scaled_tps": 110.45,
    "mem": 9.48,
    "variant": "mattbucci/gemma-4-12B-AWQ",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "gpt-oss-20b 21B": {
    "fit": "Perfect",
-   "raw_tps": 31.0,
-   "scaled_tps": 145.7,
+   "raw_tps": 25.9,
+   "scaled_tps": 121.73,
    "mem": 10.7,
    "variant": "unsloth/gpt-oss-20b-BF16",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   }
  },
  "m5ultra256": {
@@ -2140,23 +2404,26 @@
    "scaled_tps": 0.47,
    "mem": 3226.07,
    "variant": "moonshotai/Kimi-K3",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Qwen3.8-Max 2.4T": {
    "fit": "Too Tight",
    "raw_tps": 1.8,
    "scaled_tps": 8.46,
-   "mem": 639.2,
-   "variant": "amd/Qwen3.8-2.4T-A95B-Quark-MXFP4",
-   "quant": "Q4_K_M"
+   "mem": 1253.0,
+   "variant": "Qwen/Qwen3.8-2.4T-A95B",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "DeepSeek V4-Pro 1.6T": {
    "fit": "Too Tight",
-   "raw_tps": 1.7,
-   "scaled_tps": 7.99,
-   "mem": 819.0,
-   "variant": "unsloth/DeepSeek-V4-Pro",
-   "quant": "Q4_K_M"
+   "raw_tps": 0.9,
+   "scaled_tps": 4.23,
+   "mem": 466.1,
+   "variant": "nvidia/DeepSeek-V4-Pro-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra512"
   },
   "LongCat 2.0 1.6T": {
    "fit": "Too Tight",
@@ -2164,23 +2431,26 @@
    "scaled_tps": 0.94,
    "mem": 1146.92,
    "variant": "meituan-longcat/LongCat-2.0-INT8",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Ling 2.6 1T": {
    "fit": "Too Tight",
-   "raw_tps": 0.3,
-   "scaled_tps": 1.41,
-   "mem": 628.99,
+   "raw_tps": 0.5,
+   "scaled_tps": 2.35,
+   "mem": 413.6,
    "variant": "inclusionAI/Ling-2.6-1T",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "GLM-5.2 743B": {
-   "fit": "Marginal",
+   "fit": "Good",
    "raw_tps": 4.8,
    "scaled_tps": 22.56,
    "mem": 217.6,
    "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
-   "quant": "Q3_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Good",
@@ -2188,87 +2458,98 @@
    "scaled_tps": 9.4,
    "mem": 171.6,
    "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
-   "quant": "Q5_K_M"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Llama 4 Maverick 400B": {
    "fit": "Good",
-   "raw_tps": 8.6,
-   "scaled_tps": 40.42,
+   "raw_tps": 3.3,
+   "scaled_tps": 15.51,
    "mem": 205.7,
-   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-   "quant": "Q4_K_M"
+   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Qwen3.5 397B-A17B": {
-   "fit": "Good",
-   "raw_tps": 6.7,
-   "scaled_tps": 31.49,
-   "mem": 201.7,
-   "variant": "mlx-community/Qwen3.5-397B-A17B-8bit",
-   "quant": "Q4_K_M"
+   "fit": "Perfect",
+   "raw_tps": 7.4,
+   "scaled_tps": 34.78,
+   "mem": 113.6,
+   "variant": "amd/Qwen3.5-397B-A17B-MoE-MXFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Perfect",
-   "raw_tps": 4.7,
-   "scaled_tps": 22.09,
+   "raw_tps": 5.8,
+   "scaled_tps": 27.26,
    "mem": 83.3,
    "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5max128"
   },
   "MiniMax M3 427B": {
    "fit": "Perfect",
-   "raw_tps": 4.2,
-   "scaled_tps": 19.74,
+   "raw_tps": 5.7,
+   "scaled_tps": 26.79,
    "mem": 112.9,
    "variant": "nvidia/MiniMax-M3-NVFP4",
-   "quant": "Q8_0"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "Kimi K2.6 1.1T": {
    "fit": "Too Tight",
-   "raw_tps": 4.2,
-   "scaled_tps": 19.74,
+   "raw_tps": 3.8,
+   "scaled_tps": 17.86,
    "mem": 542.2,
    "variant": "moonshotai/Kimi-K2.6",
-   "quant": "Q4_K_M"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "Nemotron 3 Super 120B": {
    "fit": "Perfect",
-   "raw_tps": 9.7,
-   "scaled_tps": 45.59,
-   "mem": 65.2,
-   "variant": "cyankiwi/NVIDIA-Nemotron-3-Super-120B-A12B-AWQ-4bit",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.5,
+   "scaled_tps": 25.85,
+   "mem": 28.81,
+   "variant": "MLXCreator/NVIDIA-Nemotron-3-Super-120B-A12B-oQ8-fp16-mtp",
+   "quant": "Q6_K",
+   "chosen_on": "m6_32"
   },
   "gpt-oss-120b 117B": {
    "fit": "Perfect",
-   "raw_tps": 24.2,
-   "scaled_tps": 113.74,
-   "mem": 59.8,
-   "variant": "unsloth/gpt-oss-120b-unsloth-bnb-4bit",
-   "quant": "Q8_0"
+   "raw_tps": 4.8,
+   "scaled_tps": 22.56,
+   "mem": 47.56,
+   "variant": "mlx-community/gpt-oss-120b-mxfp4-bf16",
+   "quant": "Q2_K",
+   "chosen_on": "m5pro_48"
   },
   "Llama 4 Scout 109B": {
    "fit": "Perfect",
-   "raw_tps": 11.3,
-   "scaled_tps": 53.11,
-   "mem": 56.1,
-   "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-quantized.w4a16",
-   "quant": "Q8_0"
+   "raw_tps": 9.0,
+   "scaled_tps": 42.3,
+   "mem": 32.6,
+   "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
+   "quant": "Q5_K_M",
+   "chosen_on": "m5pro_48"
   },
   "Gemma 4 31B": {
    "fit": "Perfect",
-   "raw_tps": 9.0,
-   "scaled_tps": 42.3,
-   "mem": 23.64,
-   "variant": "QuantTrio/gemma-4-31B-it-AWQ",
-   "quant": "AWQ-4bit"
+   "raw_tps": 18.3,
+   "scaled_tps": 86.01,
+   "mem": 12.86,
+   "variant": "mlx-community/gemma-4-31B-it-qat-OptiQ-4bit",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 26.7,
-   "scaled_tps": 125.49,
-   "mem": 13.6,
-   "variant": "google/gemma-4-26B-A4B-it",
-   "quant": "Q8_0"
+   "raw_tps": 24.7,
+   "scaled_tps": 116.09,
+   "mem": 7.4,
+   "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Qwen3.8 27B": {
    "fit": "Perfect",
@@ -2276,39 +2557,44 @@
    "scaled_tps": 54.52,
    "mem": 13.18,
    "variant": "amd/Qwen3.8-27B-Quark-AWQ-INT4-W4A16",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.5,
-   "scaled_tps": 30.55,
-   "mem": 23.85,
+   "raw_tps": 10.3,
+   "scaled_tps": 48.41,
+   "mem": 15.78,
    "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   },
   "Granite 4.1 30B": {
    "fit": "Perfect",
-   "raw_tps": 4.9,
-   "scaled_tps": 23.03,
-   "mem": 31.75,
-   "variant": "mlx-community/granite-4.1-30b-mxfp8",
-   "quant": "Q8_0"
+   "raw_tps": 19.5,
+   "scaled_tps": 91.65,
+   "mem": 13.18,
+   "variant": "ibm-granite/granite-4.1-30b-base",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Nemotron 3 Nano 30B": {
    "fit": "Perfect",
-   "raw_tps": 23.0,
-   "scaled_tps": 108.1,
-   "mem": 16.2,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-   "quant": "Q8_0"
+   "raw_tps": 20.7,
+   "scaled_tps": 97.29,
+   "mem": 8.3,
+   "variant": "Ex0bit/Elbaz-NVIDIA-Nemotron-3-Nano-30B-A3B-PRISM-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Ministral 3 14B": {
    "fit": "Perfect",
-   "raw_tps": 10.1,
-   "scaled_tps": 47.47,
-   "mem": 16.39,
+   "raw_tps": 13.5,
+   "scaled_tps": 63.45,
+   "mem": 12.91,
    "variant": "ccharnkij/Ministral-3-14B-Reasoning-2512-Uncensored",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 12B": {
    "fit": "Perfect",
@@ -2316,15 +2602,17 @@
    "scaled_tps": 110.45,
    "mem": 9.48,
    "variant": "mattbucci/gemma-4-12B-AWQ",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "gpt-oss-20b 21B": {
    "fit": "Perfect",
-   "raw_tps": 31.0,
-   "scaled_tps": 145.7,
+   "raw_tps": 25.9,
+   "scaled_tps": 121.73,
    "mem": 10.7,
-   "variant": "unsloth/gpt-oss-20b-bnb-4bit",
-   "quant": "Q8_0"
+   "variant": "unsloth/gpt-oss-20b-BF16",
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   }
  },
  "m5ultra512": {
@@ -2334,7 +2622,8 @@
    "scaled_tps": 0.47,
    "mem": 3226.07,
    "variant": "moonshotai/Kimi-K3",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Qwen3.8-Max 2.4T": {
    "fit": "Too Tight",
@@ -2342,7 +2631,8 @@
    "scaled_tps": 8.46,
    "mem": 1253.0,
    "variant": "Qwen/Qwen3.8-2.4T-A95B",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "DeepSeek V4-Pro 1.6T": {
    "fit": "Marginal",
@@ -2350,7 +2640,8 @@
    "scaled_tps": 4.23,
    "mem": 466.1,
    "variant": "nvidia/DeepSeek-V4-Pro-NVFP4",
-   "quant": "Q3_K_M"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra512"
   },
   "LongCat 2.0 1.6T": {
    "fit": "Too Tight",
@@ -2358,7 +2649,8 @@
    "scaled_tps": 0.94,
    "mem": 1146.92,
    "variant": "meituan-longcat/LongCat-2.0-INT8",
-   "quant": "Q4_K_M"
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra512"
   },
   "Ling 2.6 1T": {
    "fit": "Good",
@@ -2366,55 +2658,62 @@
    "scaled_tps": 2.35,
    "mem": 413.6,
    "variant": "inclusionAI/Ling-2.6-1T",
-   "quant": "Q2_K"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "GLM-5.2 743B": {
    "fit": "Perfect",
-   "raw_tps": 3.4,
-   "scaled_tps": 15.98,
+   "raw_tps": 4.8,
+   "scaled_tps": 22.56,
    "mem": 217.6,
    "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
-   "quant": "Q8_0"
+   "quant": "Q3_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Perfect",
-   "raw_tps": 1.6,
-   "scaled_tps": 7.52,
+   "raw_tps": 2.0,
+   "scaled_tps": 9.4,
    "mem": 171.6,
    "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Llama 4 Maverick 400B": {
    "fit": "Perfect",
-   "raw_tps": 5.3,
-   "scaled_tps": 24.91,
+   "raw_tps": 3.3,
+   "scaled_tps": 15.51,
    "mem": 205.7,
-   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-   "quant": "Q8_0"
+   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+   "quant": "Q4_K_M",
+   "chosen_on": "m5ultra256"
   },
   "Qwen3.5 397B-A17B": {
    "fit": "Perfect",
-   "raw_tps": 8.3,
-   "scaled_tps": 39.01,
-   "mem": 113.8,
-   "variant": "amd/Qwen3.5-397B-A17B-MXFP4",
-   "quant": "Q8_0"
+   "raw_tps": 7.4,
+   "scaled_tps": 34.78,
+   "mem": 113.6,
+   "variant": "amd/Qwen3.5-397B-A17B-MoE-MXFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Perfect",
-   "raw_tps": 5.3,
-   "scaled_tps": 24.91,
-   "mem": 145.6,
-   "variant": "mlx-community/DeepSeek-V4-Flash-6bit",
-   "quant": "Q8_0"
+   "raw_tps": 5.8,
+   "scaled_tps": 27.26,
+   "mem": 83.3,
+   "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
+   "quant": "Q5_K_M",
+   "chosen_on": "m5max128"
   },
   "MiniMax M3 427B": {
    "fit": "Perfect",
-   "raw_tps": 7.2,
-   "scaled_tps": 33.84,
-   "mem": 232.2,
-   "variant": "cyankiwi/MiniMax-M3-AWQ-INT4",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.7,
+   "scaled_tps": 26.79,
+   "mem": 112.9,
+   "variant": "nvidia/MiniMax-M3-NVFP4",
+   "quant": "Q3_K_M",
+   "chosen_on": "m5max128"
   },
   "Kimi K2.6 1.1T": {
    "fit": "Too Tight",
@@ -2422,47 +2721,53 @@
    "scaled_tps": 17.86,
    "mem": 542.2,
    "variant": "moonshotai/Kimi-K2.6",
-   "quant": "Q2_K"
+   "quant": "Q2_K",
+   "chosen_on": "m5ultra512"
   },
   "Nemotron 3 Super 120B": {
    "fit": "Perfect",
-   "raw_tps": 9.7,
-   "scaled_tps": 45.59,
-   "mem": 65.2,
-   "variant": "cyankiwi/NVIDIA-Nemotron-3-Super-120B-A12B-AWQ-4bit",
-   "quant": "AWQ-4bit"
+   "raw_tps": 5.5,
+   "scaled_tps": 25.85,
+   "mem": 28.81,
+   "variant": "MLXCreator/NVIDIA-Nemotron-3-Super-120B-A12B-oQ8-fp16-mtp",
+   "quant": "Q6_K",
+   "chosen_on": "m6_32"
   },
   "gpt-oss-120b 117B": {
    "fit": "Perfect",
-   "raw_tps": 24.2,
-   "scaled_tps": 113.74,
-   "mem": 59.8,
-   "variant": "unsloth/gpt-oss-120b-unsloth-bnb-4bit",
-   "quant": "Q8_0"
+   "raw_tps": 4.8,
+   "scaled_tps": 22.56,
+   "mem": 47.56,
+   "variant": "mlx-community/gpt-oss-120b-mxfp4-bf16",
+   "quant": "Q2_K",
+   "chosen_on": "m5pro_48"
   },
   "Llama 4 Scout 109B": {
    "fit": "Perfect",
-   "raw_tps": 11.3,
-   "scaled_tps": 53.11,
-   "mem": 56.1,
-   "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-quantized.w4a16",
-   "quant": "Q8_0"
+   "raw_tps": 9.0,
+   "scaled_tps": 42.3,
+   "mem": 32.6,
+   "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
+   "quant": "Q5_K_M",
+   "chosen_on": "m5pro_48"
   },
   "Gemma 4 31B": {
    "fit": "Perfect",
-   "raw_tps": 9.0,
-   "scaled_tps": 42.3,
-   "mem": 23.64,
-   "variant": "QuantTrio/gemma-4-31B-it-AWQ",
-   "quant": "AWQ-4bit"
+   "raw_tps": 18.3,
+   "scaled_tps": 86.01,
+   "mem": 12.86,
+   "variant": "mlx-community/gemma-4-31B-it-qat-OptiQ-4bit",
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 26.7,
-   "scaled_tps": 125.49,
-   "mem": 13.6,
-   "variant": "google/gemma-4-26B-A4B-it",
-   "quant": "Q8_0"
+   "raw_tps": 24.7,
+   "scaled_tps": 116.09,
+   "mem": 7.4,
+   "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Qwen3.8 27B": {
    "fit": "Perfect",
@@ -2470,39 +2775,44 @@
    "scaled_tps": 54.52,
    "mem": 13.18,
    "variant": "amd/Qwen3.8-27B-Quark-AWQ-INT4-W4A16",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.5,
-   "scaled_tps": 30.55,
-   "mem": 23.85,
+   "raw_tps": 10.3,
+   "scaled_tps": 48.41,
+   "mem": 15.78,
    "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-   "quant": "Q8_0"
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   },
   "Granite 4.1 30B": {
    "fit": "Perfect",
-   "raw_tps": 4.9,
-   "scaled_tps": 23.03,
-   "mem": 32.81,
+   "raw_tps": 19.5,
+   "scaled_tps": 91.65,
+   "mem": 13.18,
    "variant": "ibm-granite/granite-4.1-30b-base",
-   "quant": "Q8_0"
+   "quant": "Q2_K",
+   "chosen_on": "m6_16"
   },
   "Nemotron 3 Nano 30B": {
    "fit": "Perfect",
-   "raw_tps": 23.0,
-   "scaled_tps": 108.1,
-   "mem": 16.2,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
-   "quant": "Q8_0"
+   "raw_tps": 20.7,
+   "scaled_tps": 97.29,
+   "mem": 8.3,
+   "variant": "Ex0bit/Elbaz-NVIDIA-Nemotron-3-Nano-30B-A3B-PRISM-NVFP4",
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Ministral 3 14B": {
    "fit": "Perfect",
-   "raw_tps": 10.1,
-   "scaled_tps": 47.47,
-   "mem": 16.39,
+   "raw_tps": 13.5,
+   "scaled_tps": 63.45,
+   "mem": 12.91,
    "variant": "ccharnkij/Ministral-3-14B-Reasoning-2512-Uncensored",
-   "quant": "Q8_0"
+   "quant": "Q6_K",
+   "chosen_on": "m6_16"
   },
   "Gemma 4 12B": {
    "fit": "Perfect",
@@ -2510,15 +2820,17 @@
    "scaled_tps": 110.45,
    "mem": 9.48,
    "variant": "mattbucci/gemma-4-12B-AWQ",
-   "quant": "AWQ-4bit"
+   "quant": "AWQ-4bit",
+   "chosen_on": "m6_16"
   },
   "gpt-oss-20b 21B": {
    "fit": "Perfect",
-   "raw_tps": 31.0,
-   "scaled_tps": 145.7,
+   "raw_tps": 25.9,
+   "scaled_tps": 121.73,
    "mem": 10.7,
-   "variant": "mlx-community/gpt-oss-20b-MXFP4-Q8",
-   "quant": "Q8_0"
+   "variant": "unsloth/gpt-oss-20b-BF16",
+   "quant": "Q5_K_M",
+   "chosen_on": "m6_16"
   }
  }
 }

@@ -13,7 +13,10 @@ for cfg,_ in CFGS:
     RATIOS[cfg] = round(statistics.median(rs), 3)
 print("ratios:", RATIOS)
 
-# (group, display, region, include_re, exclude_re, preferred repo prefixes)
+DETECTOR_BW = 256.0
+EFF = 0.55          # llmfit's own roofline efficiency constant
+SLACK = 1.15        # allow formula slack above the theoretical ceiling
+
 FAM = [
  ("frontier","Kimi K3 2.8T","CN", r'kimi-k3', r'dspark|dflash|eagle|draft|pruned|0\.40b|abliterated|uncensored|derisked|k2\.|distill', ["moonshotai/","unsloth/","mlx-community/","lmstudio-community/"]),
  ("frontier","Qwen3.8-Max 2.4T","CN", r'qwen3\.8-2\.4', r'dspark|pruned|distill', ["qwen/","amd/","mlx-community/"]),
@@ -41,8 +44,6 @@ FAM = [
  ("small","gpt-oss-20b 21B","US", r'gpt-oss-20b', r'vision|internvl|codegpt|heretic', ["openai/","unsloth/","mlx-community/","lmstudio-community/","nvidia/","onnx-community/"]),
 ]
 
-# plausibility floor on memory_required_gb (GB): ~2-bit floor of true params.
-# DB has corrupt entries (mis-parsed community/MLX repos claiming e.g. 117B = 1.2GB).
 MIN_GB = {
  "Kimi K3 2.8T": 600, "Qwen3.8-Max 2.4T": 550, "DeepSeek V4-Pro 1.6T": 350,
  "LongCat 2.0 1.6T": 350, "Ling 2.6 1T": 220, "GLM-5.2 743B": 160,
@@ -54,44 +55,95 @@ MIN_GB = {
  "Gemma 4 12B": 3.5, "gpt-oss-20b 21B": 5.5,
 }
 
-def pick(models, inc, exc, prefs, min_gb):
-    cands = [m for m in models if re.search(inc, m["name"].lower()) and not (exc and re.search(exc, m["name"].lower()))]
-    cands = [m for m in cands if (m["memory_required_gb"] or 0) >= min_gb]
-    if not cands:
-        return None
-    pref = [m for m in cands if any(m["name"].lower().startswith(p) for p in prefs)]
-    pool = pref if pref else cands
-    # a local user runs the fastest quant that still fits well: rank Perfect/Good
-    # equally, then take the highest estimated tok/s. Marginal only as fallback.
+JUNK = re.compile(r'slice|reap|prune|pct$|-\d+pct|fragm|draft|-\d+b$')
+
+def sane(m):
+    """Arithmetic gate on llmfit's own output: a Perfect/Good verdict on a machine whose
+    available memory is smaller than the entry's own memory requirement is corrupt."""
+    mem = m.get("memory_required_gb") or 0
+    avail = m.get("memory_available_gb") or 0
+    fit = m.get("fit_level")
+    if fit in ("Perfect", "Good") and avail and mem > avail * 0.98:
+        return False, f"fit-mem mismatch ({mem:.1f}GB > {avail:.1f}GB)"
+    if JUNK.search(m["name"].lower()):
+        return False, "junk pattern"
+    return True, ""
+
+def candidates(models, inc, exc, min_gb):
+    c = [m for m in models if re.search(inc, m["name"].lower()) and not (exc and re.search(exc, m["name"].lower()))]
+    c = [m for m in c if (m["memory_required_gb"] or 0) >= min_gb]
+    return [m for m in c if sane(m)[0]]
+
+def choose_canonical(by_cfg, prefs):
+    """One variant per family, chosen on the tightest config where a rank-0 (Perfect/Good)
+    candidate survives the gates. Preferred publishers first, then score; tiebreak on
+    smaller memory. Falls back to largest-config Marginal."""
     rank = {"Perfect": 0, "Good": 0, "Marginal": 1, "Too Tight": 2}
-    return min(pool, key=lambda m: (rank.get(m["fit_level"], 9), -(m["estimated_tps"] or 0), -m["score"]))
+    def best(pool):
+        if not pool:
+            return None
+        def key(m):
+            is_pref = 0 if any(m["name"].lower().startswith(p) for p in prefs) else 1
+            return (is_pref, rank.get(m["fit_level"], 9), -m["score"], m["memory_required_gb"] or 0)
+        return min(pool, key=key)
+    # smallest config first: a trusted publisher's Marginal beats an unknown repo's
+    # "Perfect" (community quant perf metadata is unreliable), hence the (pref, rank) key
+    for cfg, _ in CFGS:
+        got = best([m for m in by_cfg.get(cfg, []) if rank.get(m["fit_level"], 9) <= 1])
+        if got and rank.get(got["fit_level"], 9) <= 1:
+            return got, cfg
+    for cfg, _ in reversed(CFGS):
+        got = best(by_cfg.get(cfg, []))
+        if got:
+            return got, cfg
+    return None, None
+
+RAM = {cfg: float(lbl.replace("GB","")) for cfg, lbl in CFGS}
+
+def fit_by_memory(mem, avail):
+    """Fit from the variant's measured footprint vs this machine's usable memory.
+    Thresholds declared in the post: headroom is what separates Perfect from Good."""
+    if mem <= 0.60 * avail: return "Perfect"
+    if mem <= 0.85 * avail: return "Good"
+    if mem <= 0.98 * avail: return "Marginal"
+    return "Too Tight"
 
 out = {}
-for cfg,_ in CFGS:
-    models = json.load(open(f"/tmp/opencode/{cfg}.json"))["models"]
-    fam = {}
-    for grp, disp, region, inc, exc, prefs in FAM:
-        m = pick(models, inc, exc, prefs, MIN_GB[disp])
-        if m is None:
-            fam[disp] = {"fit":"Missing","raw_tps":0,"scaled_tps":0,"mem":0,"variant":None,"quant":None}
-            continue
-        raw = m["estimated_tps"] or 0
-        fam[disp] = {
-            "fit": m["fit_level"], "raw_tps": raw,
-            "scaled_tps": round(raw * RATIOS[cfg], 2),
-            "mem": m["memory_required_gb"], "variant": m["name"],
-            "quant": m["best_quant"],
+audit = {}
+for grp, disp, region, inc, exc, prefs in FAM:
+    by_cfg = {}
+    for cfg, _ in CFGS:
+        models = json.load(open(f"/tmp/opencode/{cfg}.json"))["models"]
+        by_cfg[cfg] = candidates(models, inc, exc, MIN_GB[disp])
+    canon, canon_cfg = choose_canonical(by_cfg, prefs)
+    if canon is None:
+        for cfg, _ in CFGS:
+            out.setdefault(cfg, {})[disp] = {"fit":"Missing","raw_tps":0,"scaled_tps":0,"mem":0,"variant":None,"quant":None}
+        audit[disp] = {"canonical": None, "chosen_on": None}
+        continue
+    mem = canon["memory_required_gb"]
+    avail_home = RAM[canon_cfg]  # usable memory = config RAM; entry field can be corrupt
+    raw_home = canon["estimated_tps"] or 0
+    for cfg, _ in CFGS:
+        avail = avail_home * (RAM[cfg] / RAM[canon_cfg])
+        fam_disp = {
+            "fit": fit_by_memory(mem, avail),
+            "raw_tps": raw_home,
+            "scaled_tps": round(raw_home * RATIOS[cfg], 2),
+            "mem": mem, "variant": canon["name"], "quant": canon["best_quant"],
+            "chosen_on": canon_cfg,
         }
-    out[cfg] = fam
+        out.setdefault(cfg, {})[disp] = fam_disp
+    audit[disp] = {"canonical": canon["name"], "chosen_on": canon_cfg, "mem": mem}
 
 json.dump(out, open("/tmp/opencode/final_matrix3.json","w"), indent=1)
 
-# report: fit + chosen variant per family on a few configs
+print("\ncanonical picks:")
+for disp, a in audit.items():
+    print(f"  {disp:26} {a['chosen_on'] or '-':10} {a['canonical'] or '-'}")
+print("\nfit matrix (fit | scaled tps):")
 for grp, disp, region, *_ in FAM:
-    row = []
-    for cfg,_ in CFGS:
-        row.append(f"{out[cfg][disp]['fit'][:4]}")
-    v = out["m5max128"][disp]["variant"]
-    print(f"{grp:8} {disp:24} {' '.join(row):52} {v}")
-missing = [(cfg,d) for cfg,_ in CFGS for g,d,r,*_2 in FAM if out[cfg][d]["fit"]=="Missing"]
+    row = " ".join(f"{out[cfg][disp]['fit'][:4]:>4}/{out[cfg][disp]['scaled_tps'] or 0:>6.1f}" for cfg,_ in CFGS)
+    print(f"{grp:8} {disp:24} {row}")
+missing = [(cfg,d) for cfg,_ in CFGS for d in out[cfg] if out[cfg][d]["fit"]=="Missing"]
 print("MISSING:", missing)

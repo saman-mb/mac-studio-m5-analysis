@@ -55,22 +55,47 @@ llmfit --memory 512G --ram 512G --cpu-cores 36 fit --json > m5ultra512.json
 
 ## Selection methodology
 
-For each model family, one llmfit entry is picked per config:
+For each model family, one canonical Hugging Face variant is chosen and then reused
+for every machine configuration (a family is never represented by different repos
+on different machines):
 
-1. Match by family pattern (e.g. `deepseek-v4-flash`), excluding draft/speculative
-   and distill variants (`DSpark`, `DFlash`, `EAGLE`, prunes, distills).
+1. Match by family pattern (e.g. `deepseek-v4-flash`), excluding junk variants and
+   mis-parsed repos: draft/speculative/distill variants (`DSpark`, `DFlash`,
+   `EAGLE`, distills) and slice/prune repos (`slice`, `prune`, `reap`, `-Npct`,
+   fragments).
 2. Drop entries whose `memory_required_gb` is below a plausibility floor (roughly a
    2-bit floor of the true parameter count). The HF-derived database contains
    mis-parsed community/MLX repos claiming e.g. 117B models at 1.2GB; without this
    gate they produce nonsense "Perfect on 16GB" verdicts.
-3. Among surviving entries, prefer canonical publishers (meta-llama, deepseek-ai,
-   Qwen, moonshotai, google, openai, nvidia, unsloth, mlx-community, ...) and rank
-   by fit level first, then score. A usable quant beats a higher-scoring unusable
-   one for a "can I run it" matrix.
+3. Arithmetic sanity gate: a "Perfect/Good" verdict is discarded when the entry's
+   own `memory_required_gb` exceeds the machine's available memory — the HF-derived
+   database contains corrupt entries whose fit verdict contradicts their own memory
+   numbers.
+4. The canonical variant is the best candidate on the tightest machine configuration
+   where it achieves a usable verdict (Perfect/Good; falls back to a Marginal
+   candidate on the largest machine). Official publishers (meta-llama, deepseek-ai,
+   Qwen, moonshotai, google, openai, nvidia, ibm-granite, baidu, redhatai, unsloth,
+   mlx-community) are preferred over community repos — a trusted publisher's
+   Marginal beats an unknown repo's "Perfect", since community quant perf metadata
+   is unreliable.
+5. Fit levels for every configuration are recomputed from the canonical variant's
+   measured memory footprint against each machine's usable RAM with declared
+   thresholds: **Perfect** if footprint ≤ 60% of RAM, **Good** ≤ 85%, **Marginal**
+   ≤ 98%, otherwise **Too Tight**. Because the thresholds are ratios of RAM, rows
+   are monotonic: a model never rates worse on a bigger machine.
+6. Decode tok/s = the canonical variant's llmfit estimate, scaled per configuration
+   by the published memory-bandwidth ratio (median of prior scaled/raw measurements;
+   256GB/s detector baseline — llmfit has no bandwidth override flag).
 
 ## Caveats
 
-- Fit levels (Perfect/Good/Marginal/Too Tight) are memory-driven and reliable.
+- Reported tok/s are llmfit roofline estimates, not measurements. Prefill (time to
+  first token) is NOT modelled by llmfit at all — treat all tok/s numbers as
+  relative guidance between machines, not benchmarks.
+- Fit levels are recomputed from the canonical variant's measured memory footprint
+  against each machine's usable RAM (60/85/98% thresholds), so verdicts are
+  monotonic across machine sizes and independent of llmfit's per-entry fit verdict,
+  which can be corrupt.
 - Tok/s estimates are scaled by the published memory-bandwidth ratio against the
   machine llmfit ran on (256GB/s detector). llmfit has no bandwidth override flag,
   so treat scaled tok/s as a rough guide.

@@ -1,0 +1,574 @@
+{
+ "llama-3.1-70b": {
+  "m6_16": {
+   "fit": "Too Tight",
+   "tps": 4.0,
+   "mem": 38.28,
+   "quant": "AWQ-4bit",
+   "name": "mbley/NousResearch-Hermes-3-Llama-3.1-70B-AWQ"
+  },
+  "m6_24": {
+   "fit": "Marginal",
+   "tps": 9.2,
+   "mem": 21.32,
+   "quant": "Q3_K_M",
+   "name": "RedHatAI/Llama-3.1-70B-Instruct-NVFP4"
+  },
+  "m6_32": {
+   "fit": "Marginal",
+   "tps": 8.0,
+   "mem": 28.92,
+   "quant": "Q2_K",
+   "name": "NousResearch/Meta-Llama-3.1-70B"
+  },
+  "m5pro_24": {
+   "fit": "Marginal",
+   "tps": 9.2,
+   "mem": 21.32,
+   "quant": "Q3_K_M",
+   "name": "RedHatAI/Llama-3.1-70B-Instruct-NVFP4"
+  },
+  "m5pro_48": {
+   "fit": "Good",
+   "tps": 4.0,
+   "mem": 38.28,
+   "quant": "AWQ-4bit",
+   "name": "mbley/NousResearch-Hermes-3-Llama-3.1-70B-AWQ"
+  },
+  "m5pro_64": {
+   "fit": "Good",
+   "tps": 4.0,
+   "mem": 38.28,
+   "quant": "AWQ-4bit",
+   "name": "mbley/NousResearch-Hermes-3-Llama-3.1-70B-AWQ"
+  }
+ },
+ "llama-3.3-70b": {
+  "m6_16": {
+   "fit": "Perfect",
+   "tps": 57.4,
+   "mem": 3.16,
+   "quant": "Q8_0",
+   "name": "RedHatAI/Llama-3.3-70B-Instruct-speculator.eagle3"
+  },
+  "m6_24": {
+   "fit": "Perfect",
+   "tps": 57.4,
+   "mem": 3.16,
+   "quant": "Q8_0",
+   "name": "RedHatAI/Llama-3.3-70B-Instruct-speculator.eagle3"
+  },
+  "m6_32": {
+   "fit": "Perfect",
+   "tps": 57.4,
+   "mem": 3.16,
+   "quant": "Q8_0",
+   "name": "RedHatAI/Llama-3.3-70B-Instruct-speculator.eagle3"
+  },
+  "m5pro_24": {
+   "fit": "Perfect",
+   "tps": 57.4,
+   "mem": 3.16,
+   "quant": "Q8_0",
+   "name": "RedHatAI/Llama-3.3-70B-Instruct-speculator.eagle3"
+  },
+  "m5pro_48": {
+   "fit": "Perfect",
+   "tps": 47.6,
+   "mem": 3.64,
+   "quant": "Q8_0",
+   "name": "nebius/EAGLE3-Llama-3.3-70B-Instruct"
+  },
+  "m5pro_64": {
+   "fit": "Perfect",
+   "tps": 57.4,
+   "mem": 3.16,
+   "quant": "Q8_0",
+   "name": "RedHatAI/Llama-3.3-70B-Instruct-speculator.eagle3"
+  }
+ },
+ "gpt-oss-120b": {
+  "m6_16": {
+   "fit": "Perfect",
+   "tps": 74.0,
+   "mem": 2.62,
+   "quant": "Q8_0",
+   "name": "z-lab/gpt-oss-120b-DFlash"
+  },
+  "m6_24": {
+   "fit": "Perfect",
+   "tps": 74.0,
+   "mem": 2.62,
+   "quant": "Q8_0",
+   "name": "z-lab/gpt-oss-120b-DFlash"
+  },
+  "m6_32": {
+   "fit": "Perfect",
+   "tps": 74.0,
+   "mem": 2.62,
+   "quant": "Q8_0",
+   "name": "z-lab/gpt-oss-120b-DFlash"
+  },
+  "m5pro_24": {
+   "fit": "Perfect",
+   "tps": 74.0,
+   "mem": 2.62,
+   "quant": "Q8_0",
+   "name": "z-lab/gpt-oss-120b-DFlash"
+  },
+  "m5pro_48": {
+   "fit": "Perfect",
+   "tps": 74.0,
+   "mem": 2.62,
+   "quant": "Q8_0",
+   "name": "z-lab/gpt-oss-120b-DFlash"
+  },
+  "m5pro_64": {
+   "fit": "Perfect",
+   "tps": 74.0,
+   "mem": 2.62,
+   "quant": "Q8_0",
+   "name": "z-lab/gpt-oss-120b-DFlash"
+  }
+ },
+ "qwen3-32b": {
+  "m6_16": {
+   "fit": "Marginal",
+   "tps": 16.5,
+   "mem": 15.13,
+   "quant": "Q2_K",
+   "name": "amazon/GKA-primed-HQwen3-32B-Reasoner"
+  },
+  "m6_24": {
+   "fit": "Marginal",
+   "tps": 8.2,
+   "mem": 22.3,
+   "quant": "Q4_K_M",
+   "name": "amazon/GKA-primed-HQwen3-32B-Reasoner"
+  },
+  "m6_32": {
+   "fit": "Perfect",
+   "tps": 5.5,
+   "mem": 29.81,
+   "quant": "Q6_K",
+   "name": "amazon/GKA-primed-HQwen3-32B-Reasoner"
+  },
+  "m5pro_24": {
+   "fit": "Marginal",
+   "tps": 8.2,
+   "mem": 22.3,
+   "quant": "Q4_K_M",
+   "name": "amazon/GKA-primed-HQwen3-32B-Reasoner"
+  },
+  "m5pro_48": {
+   "fit": "Perfect",
+   "tps": 4.1,
+   "mem": 38.34,
+   "quant": "Q8_0",
+   "name": "amazon/GKA-primed-HQwen3-32B-Reasoner"
+  },
+  "m5pro_64": {
+   "fit": "Perfect",
+   "tps": 4.1,
+   "mem": 38.34,
+   "quant": "Q8_0",
+   "name": "amazon/GKA-primed-HQwen3-32B-Reasoner"
+  }
+ },
+ "qwen3-235b": {
+  "m6_16": {
+   "fit": "Perfect",
+   "tps": 31.0,
+   "mem": 8.4,
+   "quant": "Q6_K",
+   "name": "manjunathshiva/Qwen3-235B-A22B-Instruct-2507-tq3a-tqTe-g64"
+  },
+  "m6_24": {
+   "fit": "Perfect",
+   "tps": 26.5,
+   "mem": 8.4,
+   "quant": "Q8_0",
+   "name": "manjunathshiva/Qwen3-235B-A22B-Instruct-2507-tq3a-tqTe-g64"
+  },
+  "m6_32": {
+   "fit": "Perfect",
+   "tps": 29.8,
+   "mem": 8.4,
+   "quant": "Q8_0",
+   "name": "manjunathshiva/Qwen3-235B-A22B-Instruct-2507-tq3a-tqTe-g64"
+  },
+  "m5pro_24": {
+   "fit": "Perfect",
+   "tps": 26.5,
+   "mem": 8.4,
+   "quant": "Q8_0",
+   "name": "manjunathshiva/Qwen3-235B-A22B-Instruct-2507-tq3a-tqTe-g64"
+  },
+  "m5pro_48": {
+   "fit": "Perfect",
+   "tps": 29.8,
+   "mem": 8.4,
+   "quant": "Q8_0",
+   "name": "manjunathshiva/Qwen3-235B-A22B-Instruct-2507-tq3a-tqTe-g64"
+  },
+  "m5pro_64": {
+   "fit": "Perfect",
+   "tps": 29.8,
+   "mem": 8.4,
+   "quant": "Q8_0",
+   "name": "manjunathshiva/Qwen3-235B-A22B-Instruct-2507-tq3a-tqTe-g64"
+  }
+ },
+ "deepseek-r1": {
+  "m6_16": {
+   "fit": "Perfect",
+   "tps": 17.2,
+   "mem": 10.23,
+   "quant": "Q8_0",
+   "name": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
+  },
+  "m6_24": {
+   "fit": "Perfect",
+   "tps": 17.2,
+   "mem": 10.23,
+   "quant": "Q8_0",
+   "name": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
+  },
+  "m6_32": {
+   "fit": "Perfect",
+   "tps": 17.2,
+   "mem": 10.23,
+   "quant": "Q8_0",
+   "name": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
+  },
+  "m5pro_24": {
+   "fit": "Perfect",
+   "tps": 17.2,
+   "mem": 10.23,
+   "quant": "Q8_0",
+   "name": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
+  },
+  "m5pro_48": {
+   "fit": "Perfect",
+   "tps": 17.2,
+   "mem": 10.23,
+   "quant": "Q8_0",
+   "name": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
+  },
+  "m5pro_64": {
+   "fit": "Perfect",
+   "tps": 17.2,
+   "mem": 10.23,
+   "quant": "Q8_0",
+   "name": "deepseek-ai/DeepSeek-R1-0528-Qwen3-8B"
+  }
+ },
+ "deepseek-v3": {
+  "m6_16": {
+   "fit": "Perfect",
+   "tps": 15.4,
+   "mem": 13.25,
+   "quant": "Q6_K",
+   "name": "DavidAU/gemma-3-12b-it-vl-Deepseek-v3.1-Heretic-Uncensored-Thinking"
+  },
+  "m6_24": {
+   "fit": "Perfect",
+   "tps": 11.6,
+   "mem": 16.3,
+   "quant": "Q8_0",
+   "name": "DavidAU/gemma-3-12b-it-vl-Deepseek-v3.1-Heretic-Uncensored-Thinking"
+  },
+  "m6_32": {
+   "fit": "Perfect",
+   "tps": 11.6,
+   "mem": 16.3,
+   "quant": "Q8_0",
+   "name": "DavidAU/gemma-3-12b-it-vl-Deepseek-v3.1-Heretic-Uncensored-Thinking"
+  },
+  "m5pro_24": {
+   "fit": "Perfect",
+   "tps": 11.6,
+   "mem": 16.3,
+   "quant": "Q8_0",
+   "name": "DavidAU/gemma-3-12b-it-vl-Deepseek-v3.1-Heretic-Uncensored-Thinking"
+  },
+  "m5pro_48": {
+   "fit": "Perfect",
+   "tps": 11.6,
+   "mem": 16.3,
+   "quant": "Q8_0",
+   "name": "DavidAU/gemma-3-12b-it-vl-Deepseek-v3.1-Heretic-Uncensored-Thinking"
+  },
+  "m5pro_64": {
+   "fit": "Perfect",
+   "tps": 11.6,
+   "mem": 16.3,
+   "quant": "Q8_0",
+   "name": "DavidAU/gemma-3-12b-it-vl-Deepseek-v3.1-Heretic-Uncensored-Thinking"
+  }
+ },
+ "mistral-large": {
+  "m6_16": {
+   "fit": "Too Tight",
+   "tps": 2.3,
+   "mem": 75.63,
+   "quant": "Q4_K_M",
+   "name": "mistralai/Mistral-Large-Instruct-2407"
+  },
+  "m6_24": {
+   "fit": "Too Tight",
+   "tps": 2.3,
+   "mem": 75.63,
+   "quant": "Q4_K_M",
+   "name": "mistralai/Mistral-Large-Instruct-2407"
+  },
+  "m6_32": {
+   "fit": "Too Tight",
+   "tps": 2.3,
+   "mem": 75.63,
+   "quant": "Q4_K_M",
+   "name": "mistralai/Mistral-Large-Instruct-2407"
+  },
+  "m5pro_24": {
+   "fit": "Too Tight",
+   "tps": 2.3,
+   "mem": 75.63,
+   "quant": "Q4_K_M",
+   "name": "mistralai/Mistral-Large-Instruct-2407"
+  },
+  "m5pro_48": {
+   "fit": "Marginal",
+   "tps": 4.6,
+   "mem": 47.87,
+   "quant": "Q2_K",
+   "name": "mistralai/Mistral-Large-Instruct-2407"
+  },
+  "m5pro_64": {
+   "fit": "Marginal",
+   "tps": 3.1,
+   "mem": 63.37,
+   "quant": "Q3_K_M",
+   "name": "mistralai/Mistral-Large-Instruct-2407"
+  }
+ },
+ "llama-3.1-405b": {
+  "m6_16": {
+   "fit": "Too Tight",
+   "tps": 0.7,
+   "mem": 249.19,
+   "quant": "Q4_K_M",
+   "name": "NousResearch/Hermes-3-Llama-3.1-405B"
+  },
+  "m6_24": {
+   "fit": "Too Tight",
+   "tps": 0.7,
+   "mem": 249.19,
+   "quant": "Q4_K_M",
+   "name": "NousResearch/Hermes-3-Llama-3.1-405B"
+  },
+  "m6_32": {
+   "fit": "Too Tight",
+   "tps": 0.7,
+   "mem": 249.2,
+   "quant": "Q4_K_M",
+   "name": "meta-llama/Llama-3.1-405B-FP8"
+  },
+  "m5pro_24": {
+   "fit": "Too Tight",
+   "tps": 0.7,
+   "mem": 249.2,
+   "quant": "Q4_K_M",
+   "name": "meta-llama/Llama-3.1-405B-FP8"
+  },
+  "m5pro_48": {
+   "fit": "Too Tight",
+   "tps": 0.7,
+   "mem": 249.19,
+   "quant": "Q4_K_M",
+   "name": "meta-llama/Llama-3.1-405B"
+  },
+  "m5pro_64": {
+   "fit": "Too Tight",
+   "tps": 0.7,
+   "mem": 249.19,
+   "quant": "Q4_K_M",
+   "name": "NousResearch/Hermes-3-Llama-3.1-405B"
+  }
+ },
+ "qwen3-coder-480b": {
+  "m6_16": {
+   "fit": "Too Tight",
+   "tps": 4.9,
+   "mem": 245.9,
+   "quant": "Q4_K_M",
+   "name": "jarradh/Qwen3-Coder-480B-A35B-Instruct-heretic"
+  },
+  "m6_24": {
+   "fit": "Too Tight",
+   "tps": 4.9,
+   "mem": 245.9,
+   "quant": "Q4_K_M",
+   "name": "jarradh/Qwen3-Coder-480B-A35B-Instruct-heretic"
+  },
+  "m6_32": {
+   "fit": "Too Tight",
+   "tps": 5.1,
+   "mem": 245.9,
+   "quant": "AWQ-4bit",
+   "name": "QuantTrio/Qwen3-Coder-480B-A35B-Instruct-AWQ"
+  },
+  "m5pro_24": {
+   "fit": "Too Tight",
+   "tps": 4.9,
+   "mem": 245.9,
+   "quant": "Q4_K_M",
+   "name": "mlx-community/Qwen3-Coder-480B-A35B-Instruct-4bit"
+  },
+  "m5pro_48": {
+   "fit": "Too Tight",
+   "tps": 4.9,
+   "mem": 245.9,
+   "quant": "Q4_K_M",
+   "name": "mlx-community/Qwen3-Coder-480B-A35B-Instruct-4bit"
+  },
+  "m5pro_64": {
+   "fit": "Too Tight",
+   "tps": 4.9,
+   "mem": 245.9,
+   "quant": "Q4_K_M",
+   "name": "jarradh/Qwen3-Coder-480B-A35B-Instruct-heretic"
+  }
+ },
+ "minimax-m2": {
+  "m6_16": {
+   "fit": "Perfect",
+   "tps": 107.2,
+   "mem": 2.5,
+   "quant": "Q8_0",
+   "name": "nvidia/MiniMax-M2.7-DFlash"
+  },
+  "m6_24": {
+   "fit": "Good",
+   "tps": 40.4,
+   "mem": 15.0,
+   "quant": "Q5_K_M",
+   "name": "OsaurusAI/MiniMax-M2.7-JANGTQ4"
+  },
+  "m6_32": {
+   "fit": "Perfect",
+   "tps": 56.0,
+   "mem": 16.2,
+   "quant": "AutoRound-4bit",
+   "name": "Lasimeri/MiniMax-M2.7-int4-AutoRound"
+  },
+  "m5pro_24": {
+   "fit": "Good",
+   "tps": 40.4,
+   "mem": 15.0,
+   "quant": "Q5_K_M",
+   "name": "OsaurusAI/MiniMax-M2.7-JANGTQ4"
+  },
+  "m5pro_48": {
+   "fit": "Perfect",
+   "tps": 56.0,
+   "mem": 16.2,
+   "quant": "AutoRound-4bit",
+   "name": "Lasimeri/MiniMax-M2.7-int4-AutoRound"
+  },
+  "m5pro_64": {
+   "fit": "Perfect",
+   "tps": 52.7,
+   "mem": 20.0,
+   "quant": "AWQ-4bit",
+   "name": "mratsim/MiniMax-M2.5-BF16-INT4-AWQ"
+  }
+ },
+ "glm-4.5": {
+  "m6_16": {
+   "fit": "Perfect",
+   "tps": 27.7,
+   "mem": 6.0,
+   "quant": "Q8_0",
+   "name": "facebook/xglm-4.5B"
+  },
+  "m6_24": {
+   "fit": "Perfect",
+   "tps": 27.7,
+   "mem": 6.0,
+   "quant": "Q8_0",
+   "name": "facebook/xglm-4.5B"
+  },
+  "m6_32": {
+   "fit": "Perfect",
+   "tps": 27.7,
+   "mem": 6.0,
+   "quant": "Q8_0",
+   "name": "facebook/xglm-4.5B"
+  },
+  "m5pro_24": {
+   "fit": "Perfect",
+   "tps": 27.7,
+   "mem": 6.0,
+   "quant": "Q8_0",
+   "name": "facebook/xglm-4.5B"
+  },
+  "m5pro_48": {
+   "fit": "Perfect",
+   "tps": 27.7,
+   "mem": 6.0,
+   "quant": "Q8_0",
+   "name": "facebook/xglm-4.5B"
+  },
+  "m5pro_64": {
+   "fit": "Perfect",
+   "tps": 27.7,
+   "mem": 6.0,
+   "quant": "Q8_0",
+   "name": "facebook/xglm-4.5B"
+  }
+ },
+ "llama-4-maverick": {
+  "m6_16": {
+   "fit": "Too Tight",
+   "tps": 12.1,
+   "mem": 205.7,
+   "quant": "Q4_K_M",
+   "name": "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+  },
+  "m6_24": {
+   "fit": "Too Tight",
+   "tps": 12.1,
+   "mem": 205.7,
+   "quant": "Q4_K_M",
+   "name": "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+  },
+  "m6_32": {
+   "fit": "Too Tight",
+   "tps": 12.1,
+   "mem": 205.7,
+   "quant": "Q4_K_M",
+   "name": "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+  },
+  "m5pro_24": {
+   "fit": "Too Tight",
+   "tps": 12.1,
+   "mem": 205.7,
+   "quant": "Q4_K_M",
+   "name": "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+  },
+  "m5pro_48": {
+   "fit": "Too Tight",
+   "tps": 12.1,
+   "mem": 205.7,
+   "quant": "Q4_K_M",
+   "name": "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+  },
+  "m5pro_64": {
+   "fit": "Too Tight",
+   "tps": 12.1,
+   "mem": 205.7,
+   "quant": "Q4_K_M",
+   "name": "meta-llama/Llama-4-Maverick-17B-128E-Instruct"
+  }
+ }
+}

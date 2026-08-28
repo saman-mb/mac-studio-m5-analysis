@@ -8,10 +8,10 @@ Description (frontmatter): "Apple opened pre-orders for the M5 Mac Studio and M6
 
 Tags: `["AI", "hardware", "local-inference", "agentic", "infrastructure"]`
 
-Data backing (NOT guestimation, all llmfit sims):
-- `~/dev/mac-studio-m5-analysis/raw/scaled_full.json` — 13 configs × 11 models, fit + raw t/s + scaled t/s
-- `~/dev/mac-studio-m5-analysis/raw/m5max48.json` etc. — full DB per config
-- Bandwidth scale factors: detector 256GB/s → ×0.6 (M6 16GB), ×0.66 (M6 24/32GB), ×1.2 (M5 Pro), ×1.8 (Max 36GB), ×2.4 (Max 48/64/128GB), ×4.7 (Ultra)
+Data backing (all llmfit sims, no repo references in post):
+- 13 configs × 11 models, fit + raw t/s + scaled t/s (kept in private analysis repo)
+- Bandwidth scale factors: detector 256GB/s → ×0.6 (M6 16GB), ×0.66 (M6 24/32GB),
+  ×1.2 (M5 Pro), ×1.8 (Max 36GB), ×2.4 (Max 48/64/128GB), ×4.7 (Ultra)
 
 ---
 
@@ -28,8 +28,9 @@ Frontload verdict: skip 36GB Max / 16GB Mini / 96GB Ultra (worst tier). Frontloa
 - LLM fit on Apple Silicon = unified memory capacity + memory bandwidth. Everything
   else (Neural Engine, "Neural Accelerators") is irrelevant to whether a given model
   loads and decodes at usable t/s.
-- llmfit checks every model in the HF database for weight + KV cache fit at a given
-  quant, and estimates t/s from memory-bandwidth roofline.
+- llmfit checks every model in the Hugging Face database for weight + KV cache fit
+  at a given quant, and estimates t/s from memory-bandwidth roofline. Open source:
+  [github.com/alexsjones/llmfit](https://github.com/alexsjones/llmfit).
 - Simulate mode: `llmfit --memory X --ram X --cpu-cores N fit --json`.
 - Sanity-checked the simulator against my Strix Halo box (128GB, 256GB/s). Numbers
   tracked. Then same flags against every Apple config from the tech-specs pages.

@@ -61,8 +61,10 @@ def pick(models, inc, exc, prefs, min_gb):
         return None
     pref = [m for m in cands if any(m["name"].lower().startswith(p) for p in prefs)]
     pool = pref if pref else cands
-    rank = {"Perfect": 0, "Good": 1, "Marginal": 2, "Too Tight": 3}
-    return min(pool, key=lambda m: (rank.get(m["fit_level"], 9), -m["score"]))
+    # a local user runs the fastest quant that still fits well: rank Perfect/Good
+    # equally, then take the highest estimated tok/s. Marginal only as fallback.
+    rank = {"Perfect": 0, "Good": 0, "Marginal": 1, "Too Tight": 2}
+    return min(pool, key=lambda m: (rank.get(m["fit_level"], 9), -(m["estimated_tps"] or 0), -m["score"]))
 
 out = {}
 for cfg,_ in CFGS:

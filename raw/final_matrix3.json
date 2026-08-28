@@ -42,18 +42,18 @@
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 2.7,
-   "scaled_tps": 1.62,
-   "mem": 385.9,
-   "variant": "zai-org/GLM-5.2",
+   "raw_tps": 5.7,
+   "scaled_tps": 3.42,
+   "mem": 217.6,
+   "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 1.9,
-   "scaled_tps": 1.14,
-   "mem": 287.1,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+   "raw_tps": 3.2,
+   "scaled_tps": 1.92,
+   "mem": 171.6,
+   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
    "quant": "Q4_K_M"
   },
   "Llama 4 Maverick 400B": {
@@ -74,10 +74,10 @@
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 3.42,
-   "mem": 145.6,
-   "variant": "crusoeai/DeepSeek-V4-Flash-BF16",
+   "raw_tps": 9.2,
+   "scaled_tps": 5.52,
+   "mem": 83.3,
+   "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "MiniMax M3 427B": {
@@ -129,12 +129,12 @@
    "quant": "Q2_K"
   },
   "Gemma 4 26B-A4B": {
-   "fit": "Perfect",
-   "raw_tps": 24.7,
-   "scaled_tps": 14.82,
-   "mem": 7.4,
-   "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
-   "quant": "Q6_K"
+   "fit": "Good",
+   "raw_tps": 24.9,
+   "scaled_tps": 14.94,
+   "mem": 12.9,
+   "variant": "mlx-community/gemma-4-26B-A4B-it-OptiQ-4bit",
+   "quant": "Q3_K_M"
   },
   "Qwen3.8 27B": {
    "fit": "Good",
@@ -236,18 +236,18 @@
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 2.7,
-   "scaled_tps": 1.78,
-   "mem": 385.9,
-   "variant": "zai-org/GLM-5.2",
+   "raw_tps": 5.7,
+   "scaled_tps": 3.76,
+   "mem": 217.6,
+   "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 1.9,
-   "scaled_tps": 1.25,
-   "mem": 287.1,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+   "raw_tps": 3.2,
+   "scaled_tps": 2.11,
+   "mem": 171.6,
+   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
    "quant": "Q4_K_M"
   },
   "Llama 4 Maverick 400B": {
@@ -268,10 +268,10 @@
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 3.76,
-   "mem": 145.6,
-   "variant": "crusoeai/DeepSeek-V4-Flash-BF16",
+   "raw_tps": 9.2,
+   "scaled_tps": 6.07,
+   "mem": 83.3,
+   "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "MiniMax M3 427B": {
@@ -324,11 +324,11 @@
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 21.4,
-   "scaled_tps": 14.12,
-   "mem": 13.0,
-   "variant": "mlx-community/gemma-4-26b-a4b-it-6bit",
-   "quant": "Q6_K"
+   "raw_tps": 26.0,
+   "scaled_tps": 17.16,
+   "mem": 7.4,
+   "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
+   "quant": "Q8_0"
   },
   "Qwen3.8 27B": {
    "fit": "Perfect",
@@ -430,18 +430,18 @@
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 2.7,
-   "scaled_tps": 1.78,
-   "mem": 385.9,
-   "variant": "zai-org/GLM-5.2",
+   "raw_tps": 5.7,
+   "scaled_tps": 3.76,
+   "mem": 217.6,
+   "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 1.9,
-   "scaled_tps": 1.25,
-   "mem": 287.1,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+   "raw_tps": 3.2,
+   "scaled_tps": 2.11,
+   "mem": 171.6,
+   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
    "quant": "Q4_K_M"
   },
   "Llama 4 Maverick 400B": {
@@ -462,10 +462,10 @@
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 3.76,
-   "mem": 155.8,
-   "variant": "deepseek-ai/DeepSeek-V4-Flash-0731",
+   "raw_tps": 9.2,
+   "scaled_tps": 6.07,
+   "mem": 83.3,
+   "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "MiniMax M3 427B": {
@@ -518,10 +518,10 @@
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 19.9,
-   "scaled_tps": 13.13,
-   "mem": 13.6,
-   "variant": "google/gemma-4-26B-A4B-it",
+   "raw_tps": 26.7,
+   "scaled_tps": 17.62,
+   "mem": 7.4,
+   "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
    "quant": "Q8_0"
   },
   "Qwen3.8 27B": {
@@ -624,18 +624,18 @@
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 2.7,
-   "scaled_tps": 3.24,
-   "mem": 385.9,
-   "variant": "zai-org/GLM-5.2",
+   "raw_tps": 5.7,
+   "scaled_tps": 6.84,
+   "mem": 217.6,
+   "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 1.9,
-   "scaled_tps": 2.28,
-   "mem": 287.1,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+   "raw_tps": 3.2,
+   "scaled_tps": 3.84,
+   "mem": 171.6,
+   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
    "quant": "Q4_K_M"
   },
   "Llama 4 Maverick 400B": {
@@ -656,10 +656,10 @@
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 6.84,
-   "mem": 145.6,
-   "variant": "crusoeai/DeepSeek-V4-Flash-BF16",
+   "raw_tps": 9.2,
+   "scaled_tps": 11.04,
+   "mem": 83.3,
+   "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "MiniMax M3 427B": {
@@ -712,11 +712,11 @@
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 21.4,
-   "scaled_tps": 25.68,
-   "mem": 13.0,
-   "variant": "mlx-community/gemma-4-26b-a4b-it-6bit",
-   "quant": "Q6_K"
+   "raw_tps": 26.0,
+   "scaled_tps": 31.2,
+   "mem": 7.4,
+   "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
+   "quant": "Q8_0"
   },
   "Qwen3.8 27B": {
    "fit": "Perfect",
@@ -818,18 +818,18 @@
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 2.7,
-   "scaled_tps": 3.24,
-   "mem": 385.9,
-   "variant": "zai-org/GLM-5.2",
+   "raw_tps": 5.7,
+   "scaled_tps": 6.84,
+   "mem": 217.6,
+   "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 1.9,
-   "scaled_tps": 2.28,
-   "mem": 287.1,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+   "raw_tps": 3.2,
+   "scaled_tps": 3.84,
+   "mem": 171.6,
+   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
    "quant": "Q4_K_M"
   },
   "Llama 4 Maverick 400B": {
@@ -850,10 +850,10 @@
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 6.84,
-   "mem": 155.8,
-   "variant": "deepseek-ai/DeepSeek-V4-Flash-0731",
+   "raw_tps": 9.2,
+   "scaled_tps": 11.04,
+   "mem": 83.3,
+   "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "MiniMax M3 427B": {
@@ -1012,18 +1012,18 @@
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 2.7,
-   "scaled_tps": 3.24,
-   "mem": 385.9,
-   "variant": "zai-org/GLM-5.2",
+   "raw_tps": 5.7,
+   "scaled_tps": 6.84,
+   "mem": 217.6,
+   "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 1.9,
-   "scaled_tps": 2.28,
-   "mem": 287.1,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+   "raw_tps": 3.2,
+   "scaled_tps": 3.84,
+   "mem": 171.6,
+   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
    "quant": "Q4_K_M"
   },
   "Llama 4 Maverick 400B": {
@@ -1044,11 +1044,11 @@
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 6.84,
-   "mem": 155.8,
-   "variant": "deepseek-ai/DeepSeek-V4-Flash-0731",
-   "quant": "Q4_K_M"
+   "raw_tps": 9.6,
+   "scaled_tps": 11.52,
+   "mem": 83.3,
+   "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
+   "quant": "Q2_K"
   },
   "MiniMax M3 427B": {
    "fit": "Too Tight",
@@ -1124,10 +1124,10 @@
   },
   "Granite 4.1 30B": {
    "fit": "Perfect",
-   "raw_tps": 4.8,
-   "scaled_tps": 5.76,
-   "mem": 33.25,
-   "variant": "ibm-granite/granite-4.1-30b-fp8",
+   "raw_tps": 4.9,
+   "scaled_tps": 5.88,
+   "mem": 32.81,
+   "variant": "ibm-granite/granite-4.1-30b-base",
    "quant": "Q8_0"
   },
   "Nemotron 3 Nano 30B": {
@@ -1206,18 +1206,18 @@
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 2.7,
-   "scaled_tps": 4.86,
-   "mem": 385.9,
-   "variant": "zai-org/GLM-5.2",
+   "raw_tps": 5.7,
+   "scaled_tps": 10.26,
+   "mem": 217.6,
+   "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 1.9,
-   "scaled_tps": 3.42,
-   "mem": 287.1,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+   "raw_tps": 3.2,
+   "scaled_tps": 5.76,
+   "mem": 171.6,
+   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
    "quant": "Q4_K_M"
   },
   "Llama 4 Maverick 400B": {
@@ -1238,10 +1238,10 @@
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 10.26,
-   "mem": 145.6,
-   "variant": "crusoeai/DeepSeek-V4-Flash-BF16",
+   "raw_tps": 9.2,
+   "scaled_tps": 16.56,
+   "mem": 83.3,
+   "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "MiniMax M3 427B": {
@@ -1294,10 +1294,10 @@
   },
   "Gemma 4 26B-A4B": {
    "fit": "Perfect",
-   "raw_tps": 22.4,
-   "scaled_tps": 40.32,
-   "mem": 13.6,
-   "variant": "google/gemma-4-26B-A4B-it",
+   "raw_tps": 26.7,
+   "scaled_tps": 48.06,
+   "mem": 7.4,
+   "variant": "nvidia/Gemma-4-26B-A4B-NVFP4",
    "quant": "Q8_0"
   },
   "Qwen3.8 27B": {
@@ -1400,18 +1400,18 @@
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 2.7,
-   "scaled_tps": 6.48,
-   "mem": 385.9,
-   "variant": "zai-org/GLM-5.2",
+   "raw_tps": 5.7,
+   "scaled_tps": 13.68,
+   "mem": 217.6,
+   "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 1.9,
-   "scaled_tps": 4.56,
-   "mem": 287.1,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+   "raw_tps": 3.2,
+   "scaled_tps": 7.68,
+   "mem": 171.6,
+   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
    "quant": "Q4_K_M"
   },
   "Llama 4 Maverick 400B": {
@@ -1432,10 +1432,10 @@
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 13.68,
-   "mem": 155.8,
-   "variant": "deepseek-ai/DeepSeek-V4-Flash-0731",
+   "raw_tps": 9.2,
+   "scaled_tps": 22.08,
+   "mem": 83.3,
+   "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "MiniMax M3 427B": {
@@ -1504,10 +1504,10 @@
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.4,
-   "scaled_tps": 15.36,
-   "mem": 23.98,
-   "variant": "baidu/ERNIE-4.5-21B-A3B-PT",
+   "raw_tps": 6.5,
+   "scaled_tps": 15.6,
+   "mem": 23.85,
+   "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
    "quant": "Q8_0"
   },
   "Granite 4.1 30B": {
@@ -1594,18 +1594,18 @@
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 2.7,
-   "scaled_tps": 6.48,
-   "mem": 385.9,
-   "variant": "zai-org/GLM-5.2",
+   "raw_tps": 5.7,
+   "scaled_tps": 13.68,
+   "mem": 217.6,
+   "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 1.9,
-   "scaled_tps": 4.56,
-   "mem": 287.1,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+   "raw_tps": 3.2,
+   "scaled_tps": 7.68,
+   "mem": 171.6,
+   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
    "quant": "Q4_K_M"
   },
   "Llama 4 Maverick 400B": {
@@ -1626,11 +1626,11 @@
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Too Tight",
-   "raw_tps": 5.7,
-   "scaled_tps": 13.68,
-   "mem": 145.6,
-   "variant": "crusoeai/DeepSeek-V4-Flash-BF16",
-   "quant": "Q4_K_M"
+   "raw_tps": 9.6,
+   "scaled_tps": 23.04,
+   "mem": 83.3,
+   "variant": "RedHatAI/DeepSeek-V4-Flash-NVFP4-FP8",
+   "quant": "Q2_K"
   },
   "MiniMax M3 427B": {
    "fit": "Too Tight",
@@ -1698,10 +1698,10 @@
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.4,
-   "scaled_tps": 15.36,
-   "mem": 23.98,
-   "variant": "baidu/ERNIE-4.5-21B-A3B-PT",
+   "raw_tps": 6.5,
+   "scaled_tps": 15.6,
+   "mem": 23.85,
+   "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
    "quant": "Q8_0"
   },
   "Granite 4.1 30B": {
@@ -1788,18 +1788,18 @@
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 2.7,
-   "scaled_tps": 6.48,
-   "mem": 385.9,
-   "variant": "zai-org/GLM-5.2",
+   "raw_tps": 5.7,
+   "scaled_tps": 13.68,
+   "mem": 217.6,
+   "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 1.9,
-   "scaled_tps": 4.56,
-   "mem": 287.1,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+   "raw_tps": 3.2,
+   "scaled_tps": 7.68,
+   "mem": 171.6,
+   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
    "quant": "Q4_K_M"
   },
   "Llama 4 Maverick 400B": {
@@ -1860,10 +1860,10 @@
   },
   "Llama 4 Scout 109B": {
    "fit": "Perfect",
-   "raw_tps": 8.2,
-   "scaled_tps": 19.68,
-   "mem": 56.1,
-   "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-quantized.w4a16",
+   "raw_tps": 11.3,
+   "scaled_tps": 27.12,
+   "mem": 32.6,
+   "variant": "RedHatAI/Llama-4-Scout-17B-16E-Instruct-NVFP4",
    "quant": "Q8_0"
   },
   "Gemma 4 31B": {
@@ -1892,18 +1892,18 @@
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.4,
-   "scaled_tps": 15.36,
-   "mem": 23.98,
-   "variant": "baidu/ERNIE-4.5-21B-A3B-PT",
+   "raw_tps": 6.5,
+   "scaled_tps": 15.6,
+   "mem": 23.85,
+   "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
    "quant": "Q8_0"
   },
   "Granite 4.1 30B": {
    "fit": "Perfect",
-   "raw_tps": 4.8,
-   "scaled_tps": 11.52,
-   "mem": 33.25,
-   "variant": "ibm-granite/granite-4.1-30b-fp8",
+   "raw_tps": 4.9,
+   "scaled_tps": 11.76,
+   "mem": 31.75,
+   "variant": "mlx-community/granite-4.1-30b-mxfp8",
    "quant": "Q8_0"
   },
   "Nemotron 3 Nano 30B": {
@@ -1982,18 +1982,18 @@
   },
   "GLM-5.2 743B": {
    "fit": "Too Tight",
-   "raw_tps": 2.7,
-   "scaled_tps": 12.69,
-   "mem": 385.9,
-   "variant": "zai-org/GLM-5.2",
+   "raw_tps": 5.7,
+   "scaled_tps": 26.79,
+   "mem": 217.6,
+   "variant": "RedHatAI/GLM-5.2-NVFP4-FP8",
    "quant": "Q4_K_M"
   },
   "Nemotron 3 Ultra 550B": {
    "fit": "Too Tight",
-   "raw_tps": 1.9,
-   "scaled_tps": 8.93,
-   "mem": 287.1,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
+   "raw_tps": 3.2,
+   "scaled_tps": 15.04,
+   "mem": 171.6,
+   "variant": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-NVFP4",
    "quant": "Q4_K_M"
   },
   "Llama 4 Maverick 400B": {
@@ -2037,12 +2037,12 @@
    "quant": "Q4_K_M"
   },
   "Nemotron 3 Super 120B": {
-   "fit": "Perfect",
-   "raw_tps": 2.7,
-   "scaled_tps": 12.69,
-   "mem": 34.4,
-   "variant": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-NVFP4",
-   "quant": "Q8_0"
+   "fit": "Good",
+   "raw_tps": 9.2,
+   "scaled_tps": 43.24,
+   "mem": 65.2,
+   "variant": "cyankiwi/NVIDIA-Nemotron-3-Super-120B-A12B-AWQ-4bit",
+   "quant": "AWQ-4bit"
   },
   "gpt-oss-120b 117B": {
    "fit": "Good",
@@ -2086,10 +2086,10 @@
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.4,
-   "scaled_tps": 30.08,
-   "mem": 23.98,
-   "variant": "baidu/ERNIE-4.5-21B-A3B-PT",
+   "raw_tps": 6.5,
+   "scaled_tps": 30.55,
+   "mem": 23.85,
+   "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
    "quant": "Q8_0"
   },
   "Granite 4.1 30B": {
@@ -2192,19 +2192,19 @@
   },
   "Llama 4 Maverick 400B": {
    "fit": "Good",
-   "raw_tps": 3.3,
-   "scaled_tps": 15.51,
+   "raw_tps": 8.6,
+   "scaled_tps": 40.42,
    "mem": 205.7,
-   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct-FP8",
+   "variant": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
    "quant": "Q4_K_M"
   },
   "Qwen3.5 397B-A17B": {
-   "fit": "Perfect",
-   "raw_tps": 5.7,
-   "scaled_tps": 26.79,
-   "mem": 113.8,
-   "variant": "amd/Qwen3.5-397B-A17B-MXFP4",
-   "quant": "Q8_0"
+   "fit": "Good",
+   "raw_tps": 6.7,
+   "scaled_tps": 31.49,
+   "mem": 201.7,
+   "variant": "mlx-community/Qwen3.5-397B-A17B-8bit",
+   "quant": "Q4_K_M"
   },
   "DeepSeek V4-Flash 284B": {
    "fit": "Perfect",
@@ -2232,11 +2232,11 @@
   },
   "Nemotron 3 Super 120B": {
    "fit": "Perfect",
-   "raw_tps": 1.1,
-   "scaled_tps": 5.17,
-   "mem": 134.34,
-   "variant": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B",
-   "quant": "Q8_0"
+   "raw_tps": 9.7,
+   "scaled_tps": 45.59,
+   "mem": 65.2,
+   "variant": "cyankiwi/NVIDIA-Nemotron-3-Super-120B-A12B-AWQ-4bit",
+   "quant": "AWQ-4bit"
   },
   "gpt-oss-120b 117B": {
    "fit": "Perfect",
@@ -2394,10 +2394,10 @@
   },
   "Qwen3.5 397B-A17B": {
    "fit": "Perfect",
-   "raw_tps": 6.6,
-   "scaled_tps": 31.02,
-   "mem": 201.7,
-   "variant": "mlx-community/Qwen3.5-397B-A17B-8bit",
+   "raw_tps": 8.3,
+   "scaled_tps": 39.01,
+   "mem": 113.8,
+   "variant": "amd/Qwen3.5-397B-A17B-MXFP4",
    "quant": "Q8_0"
   },
   "DeepSeek V4-Flash 284B": {
@@ -2426,11 +2426,11 @@
   },
   "Nemotron 3 Super 120B": {
    "fit": "Perfect",
-   "raw_tps": 1.1,
-   "scaled_tps": 5.17,
-   "mem": 134.34,
-   "variant": "unsloth/NVIDIA-Nemotron-3-Super-120B-A12B",
-   "quant": "Q8_0"
+   "raw_tps": 9.7,
+   "scaled_tps": 45.59,
+   "mem": 65.2,
+   "variant": "cyankiwi/NVIDIA-Nemotron-3-Super-120B-A12B-AWQ-4bit",
+   "quant": "AWQ-4bit"
   },
   "gpt-oss-120b 117B": {
    "fit": "Perfect",
@@ -2474,18 +2474,18 @@
   },
   "ERNIE 4.5 21B-A3B": {
    "fit": "Perfect",
-   "raw_tps": 6.4,
-   "scaled_tps": 30.08,
-   "mem": 23.98,
-   "variant": "baidu/ERNIE-4.5-21B-A3B-PT",
+   "raw_tps": 6.5,
+   "scaled_tps": 30.55,
+   "mem": 23.85,
+   "variant": "baidu/ERNIE-4.5-21B-A3B-Thinking",
    "quant": "Q8_0"
   },
   "Granite 4.1 30B": {
    "fit": "Perfect",
-   "raw_tps": 4.8,
-   "scaled_tps": 22.56,
-   "mem": 33.25,
-   "variant": "ibm-granite/granite-4.1-30b-fp8",
+   "raw_tps": 4.9,
+   "scaled_tps": 23.03,
+   "mem": 32.81,
+   "variant": "ibm-granite/granite-4.1-30b-base",
    "quant": "Q8_0"
   },
   "Nemotron 3 Nano 30B": {

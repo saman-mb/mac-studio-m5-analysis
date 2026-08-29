@@ -103,3 +103,30 @@ on different machines):
   llmfit's catalog at publication time, so the GLM rows use GLM-5.2 (same 743B
   base). Mistral Large 3 675B was likewise not yet scoreable.
 - Specs sourced from Apple UK tech-specs pages, 28 Aug 2026.
+
+## Comfortable SSD size (from llmfit `disk_size_gb`)
+
+llmfit already reports on-disk weight size as `disk_size_gb` on every fit row
+(`llmfit info <model> --json`). Model file sizes are not guessed.
+
+```sh
+# From local fit dumps (if you have raw/m6_16.json etc.):
+python3 scripts/disk_comfort.py --raw-dir /path/to/dumps
+
+# Or query llmfit live (no multi-MB dumps required):
+python3 scripts/disk_comfort.py --via-llmfit
+```
+
+Writes `raw/disk/comfort.json` and `raw/disk/comfort.md`.
+
+Formula (policy constants only):  
+`need = 100GB OS/apps + sum(top 3 fitting blog-model disks) + max(those) download scratch`,  
+round up to an Apple SSD SKU, bump one tier if that SKU would be >85% full.
+
+| Config | Need | Comfortable SSD |
+|---|---:|---|
+| mini M6 16–32GB | 158–212GB | 256GB |
+| Pro mini / Max ≤64GB | 232–329GB | 512GB |
+| Max 128GB | 566GB | 1TB |
+| Ultra 256GB | 1,073GB | 2TB |
+| Ultra 512GB | 1,882GB | 4TB |

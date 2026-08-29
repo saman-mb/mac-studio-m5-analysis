@@ -100,6 +100,21 @@ def choose_canonical(by_cfg, prefs):
 
 RAM = {cfg: float(lbl.replace("GB","")) for cfg, lbl in CFGS}
 
+BW_CFG = {"m6_16": 153, "m6_24": 170, "m6_32": 170,
+          "m5pro_24": 307, "m5pro_48": 307, "m5pro_64": 307,
+          "m5max36": 460, "m5max48": 614, "m5max64": 614, "m5max128": 614,
+          "m5ultra96": 1200, "m5ultra256": 1200, "m5ultra512": 1200}
+
+# active (per-token) parameter counts in billions, from published model cards
+ACTIVE_B = {
+ "Kimi K3 2.8T": 50, "Qwen3.8-Max 2.4T": 95, "DeepSeek V4-Pro 1.6T": 49,
+ "LongCat 2.0 1.6T": 48, "GLM-5.2 743B": 40, "Nemotron 3 Ultra 550B": 55,
+ "Llama 4 Maverick 400B": 17, "Qwen3.5 397B-A17B": 17, "DeepSeek V4-Flash 284B": 13,
+ "MiniMax M3 427B": 10, "Kimi K2.6 1.1T": 32, "Nemotron 3 Super 120B": 12,
+ "gpt-oss-120b 117B": 5.1, "Llama 4 Scout 109B": 17,
+ "Gemma 4 26B-A4B": 4, "ERNIE 4.5 21B-A3B": 3, "Nemotron 3 Nano 30B": 3.2,
+}
+
 def fit_by_memory(mem, avail):
     """Fit from the variant's measured footprint vs this machine's usable memory.
     Thresholds declared in the post: headroom is what separates Perfect from Good."""
@@ -124,14 +139,26 @@ for grp, disp, region, inc, exc, prefs in FAM:
     mem = canon["memory_required_gb"]
     avail_home = RAM[canon_cfg]  # usable memory = config RAM; entry field can be corrupt
     raw_home = canon["estimated_tps"] or 0
+    # MoE decode roofline: only active experts are read per token. llmfit 1.1.12 roofs
+    # MoE on total bytes (issue #474, fixed by PR #475 upstream), underestimating 6-12x.
+    # Corrected: naive bytes/token = active_params x (footprint/total), efficiency 0.25
+    # calibrated against measured gpt-oss-120b (95 pred vs 88 measured, M5 Max 614GB/s)
+    # and DeepSeek V4-Flash (40 pred vs 34 measured, MLX, M5 Max 128GB).
+    active_b = ACTIVE_B.get(disp)
+    is_moe_row = disp in ACTIVE_B
     for cfg, _ in CFGS:
-        avail = avail_home * (RAM[cfg] / RAM[canon_cfg])
+        avail = RAM[cfg]
+        if is_moe_row and active_b and mem and canon["params_b"]:
+            gb_per_tok = active_b * (mem / canon["params_b"])
+            tps = BW_CFG[cfg] * 0.25 / gb_per_tok
+        else:
+            tps = raw_home * RATIOS[cfg]
         fam_disp = {
             "fit": fit_by_memory(mem, avail),
-            "raw_tps": raw_home,
-            "scaled_tps": round(raw_home * RATIOS[cfg], 2),
+            "raw_tps": round(tps, 2),
+            "scaled_tps": round(tps, 2),
             "mem": mem, "variant": canon["name"], "quant": canon["best_quant"],
-            "chosen_on": canon_cfg,
+            "chosen_on": canon_cfg, "tps_method": "moe-active" if is_moe_row else "llmfit-scaled",
         }
         out.setdefault(cfg, {})[disp] = fam_disp
     audit[disp] = {"canonical": canon["name"], "chosen_on": canon_cfg, "mem": mem}

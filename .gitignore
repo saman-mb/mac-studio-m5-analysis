@@ -1,0 +1,7 @@
+
+# Large generated fit dumps (regenerate with scripts/run_sims.py)
+raw/sims/
+raw/rerun-969/
+scripts/__pycache__/
+**/__pycache__/
+raw/disk/run.log

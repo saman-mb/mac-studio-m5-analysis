@@ -1,7 +1,7 @@
 # Mac mini — M6 / M5 Pro — full configuration coverage
 
 *Specs verified against [Apple UK tech-specs](https://www.apple.com/uk/mac-mini/specs/).*
-*All fit levels from llmfit v1.1.12 with `--memory/--ram/--cpu-cores` simulation.*
+*Fit levels + tok/s from llmfit hardware profiles (`profiles/*.json`, issue #969) — published RAM **and** GB/s per SKU; no detector-BW post-scale.*
 
 **Note: 2026 Mac mini ships M6 (not M5), plus M5 Pro option.** No M5 Max/Ultra.
 
@@ -61,7 +61,7 @@ Models 1 and 2 differ only in storage. Model 4 has an 18c/20c die upgrade option
 
 ## Bandwidth scaling vs detector box
 
-llmfit detected this box's GPU at 256GB/s. Scale raw t/s:
+Tok/s already use each profile's published GB/s (no scale step):
 
 | Config | Bandwidth | Scale factor |
 |---|---|---|
@@ -81,12 +81,7 @@ Fit levels (Perfect/Good/Marginal/Too Tight) are memory-driven and don't need sc
 ## Reproduce
 
 ```sh
-llmfit --memory 16G --ram 16G --cpu-cores 12 fit --json > raw/m6_16.json
-llmfit --memory 24G --ram 24G --cpu-cores 12 fit --json > raw/m6_24.json
-llmfit --memory 32G --ram 32G --cpu-cores 12 fit --json > raw/m6_32.json
-llmfit --memory 24G --ram 24G --cpu-cores 15 fit --json > raw/m5pro_24.json
-llmfit --memory 48G --ram 48G --cpu-cores 15 fit --json > raw/m5pro_48.json
-llmfit --memory 64G --ram 64G --cpu-cores 18 fit --json > raw/m5pro_64.json
+python3 scripts/run_sims.py   # or: llmfit --profile profiles/<sku>.json fit --json
 ```
 
 Full per-model detail in `raw/mini_flagship.json`.

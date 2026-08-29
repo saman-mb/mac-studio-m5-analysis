@@ -2,9 +2,9 @@
 """Compute comfortable internal SSD size per Mac config from llmfit disk_size_gb.
 
 llmfit already publishes on-disk weight size as `disk_size_gb` on every fit row
-(see `llmfit info <model> --json` and the `raw/*.json` dumps from
-`llmfit --memory … --ram … fit --json`). This script does not guess those
-sizes. It only:
+(see `llmfit info <model> --json` and the `raw/sims/*.json` dumps from
+`scripts/run_sims.py` / `llmfit --profile profiles/<sku>.json fit --json`).
+This script does not guess those sizes. It only:
 
 1. Looks up a fixed list of canonical Hugging Face model IDs in each config dump
 2. Keeps rows that fit (Perfect / Good / Marginal)
@@ -107,21 +107,16 @@ def load_index(path: Path) -> dict[str, dict]:
     return {m["name"]: m for m in models}
 
 
-def load_index_via_llmfit(memory_gb: int, cpu_cores: int) -> dict[str, dict]:
-    """Query llmfit info for each canonical model under a simulated machine.
-
-    Prefer committed raw/*.json dumps when available; this path exists so the
-    script can regenerate without multi-megabyte fit dumps in git.
-    """
+def load_index_via_llmfit(profile: Path) -> dict[str, dict]:
+    """Query llmfit info for each canonical model under a hardware profile."""
     import subprocess
 
     index: dict[str, dict] = {}
     for _label, hf_id in BLOG_MODELS:
         cmd = [
             "llmfit",
-            f"--memory={memory_gb}G",
-            f"--ram={memory_gb}G",
-            f"--cpu-cores={cpu_cores}",
+            "--profile",
+            str(profile),
             "info",
             hf_id,
             "--json",
@@ -135,30 +130,15 @@ def load_index_via_llmfit(memory_gb: int, cpu_cores: int) -> dict[str, dict]:
             continue
         models = payload.get("models") or []
         if not models:
-            continue
+            # Some llmfit builds return a single object for `info --json`.
+            if isinstance(payload, dict) and payload.get("name"):
+                models = [payload]
+            else:
+                continue
         m = models[0]
         index[m.get("name") or hf_id] = m
-        # Also key by requested id so exact lookups work when name matches.
         index[hf_id] = m
     return index
-
-
-# Memory/CPU for --via-llmfit mode (matches Apple configs used in the blog).
-CONFIG_SPECS: dict[str, tuple[int, int]] = {
-    "m6_16": (16, 12),
-    "m6_24": (24, 12),
-    "m6_32": (32, 12),
-    "m5pro_24": (24, 15),
-    "m5pro_48": (48, 15),
-    "m5pro_64": (64, 18),
-    "m5max36": (36, 18),
-    "m5max48": (48, 18),
-    "m5max64": (64, 18),
-    "m5max128": (128, 18),
-    "m5ultra96": (96, 30),
-    "m5ultra256": (256, 30),
-    "m5ultra512": (512, 36),
-}
 
 
 def fitting_disks(index: dict[str, dict]) -> list[dict]:
@@ -247,7 +227,7 @@ def main() -> int:
     ap.add_argument(
         "--raw-dir",
         type=Path,
-        default=Path(__file__).resolve().parents[1] / "raw",
+        default=Path(__file__).resolve().parents[1] / "raw" / "sims",
     )
     ap.add_argument(
         "--out",
@@ -279,12 +259,16 @@ def main() -> int:
     }
 
     missing_files = []
+    profiles_dir = Path(__file__).resolve().parents[1] / "profiles"
     for stem, title in CONFIGS:
         if args.via_llmfit:
-            mem, cores = CONFIG_SPECS[stem]
-            print(f"llmfit {stem} ({mem}G, {cores} cores)…", file=sys.stderr)
-            index = load_index_via_llmfit(mem, cores)
-            source_file = f"llmfit info --memory={mem}G --cpu-cores={cores}"
+            profile = profiles_dir / f"{stem}.json"
+            if not profile.exists():
+                missing_files.append(str(profile))
+                continue
+            print(f"llmfit --profile {profile.name}…", file=sys.stderr)
+            index = load_index_via_llmfit(profile)
+            source_file = f"llmfit --profile profiles/{stem}.json info"
         else:
             path = args.raw_dir / f"{stem}.json"
             if not path.exists():
@@ -302,9 +286,9 @@ def main() -> int:
         }
 
     if missing_files:
-        print("Missing raw dumps:", *missing_files, sep="\n  ", file=sys.stderr)
+        print("Missing files:", *missing_files, sep="\n  ", file=sys.stderr)
         print(
-            "Hint: pass --via-llmfit to query llmfit live, or point --raw-dir at fit JSON dumps.",
+            "Hint: run scripts/run_sims.py, or pass --via-llmfit with profiles/ present.",
             file=sys.stderr,
         )
         return 1

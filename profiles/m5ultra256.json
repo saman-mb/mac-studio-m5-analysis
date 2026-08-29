@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "name": "m5ultra256",
+  "match": {
+    "gpu_name_contains": "M5 Ultra"
+  },
+  "hardware": {
+    "total_ram_gb": 256.0,
+    "unified_memory": true,
+    "gpu_memory_bandwidth_gbps": 1200.0,
+    "ddr_bandwidth_gbps": 1200.0
+  }
+}

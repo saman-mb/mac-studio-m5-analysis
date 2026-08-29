@@ -1,0 +1,109 @@
+{
+  "detector_note": "llmfit --profile <file> supplies RAM + bandwidth; no post-hoc BW scale",
+  "machines": [
+    {
+      "stem": "m6_16",
+      "label": "Mac mini M6 16GB",
+      "ram_gb": 16,
+      "bandwidth_gbps": 153,
+      "cpu_cores": 12,
+      "profile": "profiles/m6_16.json"
+    },
+    {
+      "stem": "m6_24",
+      "label": "Mac mini M6 24GB",
+      "ram_gb": 24,
+      "bandwidth_gbps": 170,
+      "cpu_cores": 12,
+      "profile": "profiles/m6_24.json"
+    },
+    {
+      "stem": "m6_32",
+      "label": "Mac mini M6 32GB",
+      "ram_gb": 32,
+      "bandwidth_gbps": 170,
+      "cpu_cores": 12,
+      "profile": "profiles/m6_32.json"
+    },
+    {
+      "stem": "m5pro_24",
+      "label": "Mac mini M5 Pro 24GB",
+      "ram_gb": 24,
+      "bandwidth_gbps": 307,
+      "cpu_cores": 15,
+      "profile": "profiles/m5pro_24.json"
+    },
+    {
+      "stem": "m5pro_48",
+      "label": "Mac mini M5 Pro 48GB",
+      "ram_gb": 48,
+      "bandwidth_gbps": 307,
+      "cpu_cores": 15,
+      "profile": "profiles/m5pro_48.json"
+    },
+    {
+      "stem": "m5pro_64",
+      "label": "Mac mini M5 Pro 64GB",
+      "ram_gb": 64,
+      "bandwidth_gbps": 307,
+      "cpu_cores": 18,
+      "profile": "profiles/m5pro_64.json"
+    },
+    {
+      "stem": "m5max36",
+      "label": "Mac Studio M5 Max 36GB",
+      "ram_gb": 36,
+      "bandwidth_gbps": 460,
+      "cpu_cores": 18,
+      "profile": "profiles/m5max36.json"
+    },
+    {
+      "stem": "m5max48",
+      "label": "Mac Studio M5 Max 48GB",
+      "ram_gb": 48,
+      "bandwidth_gbps": 614,
+      "cpu_cores": 18,
+      "profile": "profiles/m5max48.json"
+    },
+    {
+      "stem": "m5max64",
+      "label": "Mac Studio M5 Max 64GB",
+      "ram_gb": 64,
+      "bandwidth_gbps": 614,
+      "cpu_cores": 18,
+      "profile": "profiles/m5max64.json"
+    },
+    {
+      "stem": "m5max128",
+      "label": "Mac Studio M5 Max 128GB",
+      "ram_gb": 128,
+      "bandwidth_gbps": 614,
+      "cpu_cores": 18,
+      "profile": "profiles/m5max128.json"
+    },
+    {
+      "stem": "m5ultra96",
+      "label": "Mac Studio M5 Ultra 96GB",
+      "ram_gb": 96,
+      "bandwidth_gbps": 1200,
+      "cpu_cores": 30,
+      "profile": "profiles/m5ultra96.json"
+    },
+    {
+      "stem": "m5ultra256",
+      "label": "Mac Studio M5 Ultra 256GB",
+      "ram_gb": 256,
+      "bandwidth_gbps": 1200,
+      "cpu_cores": 30,
+      "profile": "profiles/m5ultra256.json"
+    },
+    {
+      "stem": "m5ultra512",
+      "label": "Mac Studio M5 Ultra 512GB",
+      "ram_gb": 512,
+      "bandwidth_gbps": 1200,
+      "cpu_cores": 36,
+      "profile": "profiles/m5ultra512.json"
+    }
+  ]
+}

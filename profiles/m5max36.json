@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "name": "m5max36",
+  "match": {
+    "gpu_name_contains": "M5 Max"
+  },
+  "hardware": {
+    "total_ram_gb": 36.0,
+    "unified_memory": true,
+    "gpu_memory_bandwidth_gbps": 460.0,
+    "ddr_bandwidth_gbps": 460.0
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "name": "m6_16",
+  "match": {
+    "gpu_name_contains": "M6"
+  },
+  "hardware": {
+    "total_ram_gb": 16.0,
+    "unified_memory": true,
+    "gpu_memory_bandwidth_gbps": 153.0,
+    "ddr_bandwidth_gbps": 153.0
+  }
+}

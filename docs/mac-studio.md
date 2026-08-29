@@ -1,7 +1,7 @@
 # Mac Studio M5 — full configuration coverage
 
 *Specs verified against [Apple UK tech-specs](https://www.apple.com/uk/mac-studio/specs/).*
-*All fit levels from llmfit v1.1.12 with `--memory/--ram/--cpu-cores` simulation.*
+*Fit levels + tok/s from llmfit hardware profiles (`profiles/*.json`, issue #969) — published RAM **and** GB/s per SKU; no detector-BW post-scale.*
 
 ## Every config (Apple UK, verified)
 
@@ -71,7 +71,7 @@ Pre-order open, availability 22 Sep. 512GB listed but checkout-hidden until late
 
 ## Bandwidth scaling vs detector box
 
-llmfit detected this box's GPU at 256GB/s. Scale raw t/s:
+Tok/s already use each profile's published GB/s (no scale step):
 
 | Config | Bandwidth | Scale factor |
 |---|---|---|
@@ -101,13 +101,7 @@ Fit levels (Perfect/Good/Marginal/Too Tight) are memory-driven and don't need sc
 ## Reproduce
 
 ```sh
-llmfit --memory 36G  --ram 36G  --cpu-cores 18 fit --json > raw/m5max36.json
-llmfit --memory 48G  --ram 48G  --cpu-cores 18 fit --json > raw/m5max48.json
-llmfit --memory 64G  --ram 64G  --cpu-cores 18 fit --json > raw/m5max64.json
-llmfit --memory 128G --ram 128G --cpu-cores 18 fit --json > raw/m5max128.json
-llmfit --memory 96G  --ram 96G  --cpu-cores 30 fit --json > raw/m5ultra96.json
-llmfit --memory 256G --ram 256G --cpu-cores 30 fit --json > raw/m5ultra256.json
-llmfit --memory 512G --ram 512G --cpu-cores 36 fit --json > raw/m5ultra512.json
+python3 scripts/run_sims.py   # or: llmfit --profile profiles/<sku>.json fit --json
 ```
 
 Full per-model detail in `raw/studio_complete.json`.

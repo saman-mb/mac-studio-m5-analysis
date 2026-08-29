@@ -100,45 +100,10 @@
     "m6_16": {
       "title": "Entry: Mac mini M6 16GB",
       "source_file": "m6_16.json",
-      "fitting_count": 6,
+      "fitting_count": 5,
       "keep_n": 3,
       "os_apps_gb": 100.0,
       "keep_models": [
-        {
-          "label": "ERNIE 4.5 21B-A3B",
-          "hf_id": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-          "disk_size_gb": 14.84,
-          "fit_level": "Marginal",
-          "best_quant": "Q5_K_M"
-        },
-        {
-          "label": "gpt-oss-20b 21B",
-          "hf_id": "openai/gpt-oss-20b",
-          "disk_size_gb": 14.63,
-          "fit_level": "Good",
-          "best_quant": "Q5_K_M"
-        },
-        {
-          "label": "Qwen3.8 27B",
-          "hf_id": "Qwen/Qwen3.8-27B",
-          "disk_size_gb": 13.34,
-          "fit_level": "Marginal",
-          "best_quant": "Q3_K_M"
-        }
-      ],
-      "keep_sum_gb": 42.81,
-      "download_scratch_gb": 14.84,
-      "need_gb": 157.65,
-      "comfortable_ssd_gb": 256,
-      "floor_ssd_gb": 256,
-      "all_fitting": [
-        {
-          "label": "ERNIE 4.5 21B-A3B",
-          "hf_id": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-          "disk_size_gb": 14.84,
-          "fit_level": "Marginal",
-          "best_quant": "Q5_K_M"
-        },
         {
           "label": "gpt-oss-20b 21B",
           "hf_id": "openai/gpt-oss-20b",
@@ -157,7 +122,35 @@
           "label": "Gemma 4 26B-A4B",
           "hf_id": "google/gemma-4-26B-A4B-it",
           "disk_size_gb": 12.74,
+          "fit_level": "Good",
+          "best_quant": "Q3_K_M"
+        }
+      ],
+      "keep_sum_gb": 40.71,
+      "download_scratch_gb": 14.63,
+      "need_gb": 155.34,
+      "comfortable_ssd_gb": 256,
+      "floor_ssd_gb": 256,
+      "all_fitting": [
+        {
+          "label": "gpt-oss-20b 21B",
+          "hf_id": "openai/gpt-oss-20b",
+          "disk_size_gb": 14.63,
+          "fit_level": "Good",
+          "best_quant": "Q5_K_M"
+        },
+        {
+          "label": "Qwen3.8 27B",
+          "hf_id": "Qwen/Qwen3.8-27B",
+          "disk_size_gb": 13.34,
           "fit_level": "Marginal",
+          "best_quant": "Q3_K_M"
+        },
+        {
+          "label": "Gemma 4 26B-A4B",
+          "hf_id": "google/gemma-4-26B-A4B-it",
+          "disk_size_gb": 12.74,
+          "fit_level": "Good",
           "best_quant": "Q3_K_M"
         },
         {
@@ -171,7 +164,7 @@
           "label": "Gemma 4 12B",
           "hf_id": "unsloth/gemma-4-12b-it",
           "disk_size_gb": 9.57,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "best_quant": "Q6_K"
         }
       ],
@@ -239,12 +232,11 @@
         {
           "label": "Llama 4 Maverick 400B",
           "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 232.92,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 205.7,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Qwen3.5 397B-A17B",
@@ -309,12 +301,11 @@
         {
           "label": "Llama 4 Scout 109B",
           "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 63.01,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 55.6,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Gemma 4 31B",
@@ -330,7 +321,7 @@
           "label": "Gemma 4 26B-A4B",
           "hf_id": "google/gemma-4-26B-A4B-it",
           "found": true,
-          "fit_level": "Marginal",
+          "fit_level": "Good",
           "disk_size_gb": 12.74,
           "best_quant": "Q3_K_M",
           "memory_required_gb": 13.6,
@@ -350,11 +341,11 @@
           "label": "ERNIE 4.5 21B-A3B",
           "hf_id": "baidu/ERNIE-4.5-21B-A3B-Thinking",
           "found": true,
-          "fit_level": "Marginal",
+          "fit_level": "Too Tight",
           "disk_size_gb": 14.84,
           "best_quant": "Q5_K_M",
           "memory_required_gb": 15.78,
-          "fits": true
+          "fits": false
         },
         {
           "label": "Granite 4.1 30B",
@@ -380,7 +371,7 @@
           "label": "Gemma 4 12B",
           "hf_id": "unsloth/gemma-4-12b-it",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "disk_size_gb": 9.57,
           "best_quant": "Q6_K",
           "memory_required_gb": 13.07,
@@ -401,17 +392,10 @@
     "m6_24": {
       "title": "Compact-: Mac mini M6 24GB",
       "source_file": "m6_24.json",
-      "fitting_count": 8,
+      "fitting_count": 6,
       "keep_n": 3,
       "os_apps_gb": 100.0,
       "keep_models": [
-        {
-          "label": "ERNIE 4.5 21B-A3B",
-          "hf_id": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-          "disk_size_gb": 22.92,
-          "fit_level": "Perfect",
-          "best_quant": "Q8_0"
-        },
         {
           "label": "gpt-oss-20b 21B",
           "hf_id": "openai/gpt-oss-20b",
@@ -425,21 +409,21 @@
           "disk_size_gb": 22.23,
           "fit_level": "Marginal",
           "best_quant": "Q6_K"
+        },
+        {
+          "label": "Nemotron 3 Nano 30B",
+          "hf_id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+          "disk_size_gb": 21.47,
+          "fit_level": "Good",
+          "best_quant": "Q5_K_M"
         }
       ],
-      "keep_sum_gb": 67.74,
-      "download_scratch_gb": 22.92,
-      "need_gb": 190.66,
+      "keep_sum_gb": 66.29,
+      "download_scratch_gb": 22.59,
+      "need_gb": 188.88,
       "comfortable_ssd_gb": 256,
       "floor_ssd_gb": 256,
       "all_fitting": [
-        {
-          "label": "ERNIE 4.5 21B-A3B",
-          "hf_id": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-          "disk_size_gb": 22.92,
-          "fit_level": "Perfect",
-          "best_quant": "Q8_0"
-        },
         {
           "label": "gpt-oss-20b 21B",
           "hf_id": "openai/gpt-oss-20b",
@@ -465,7 +449,7 @@
           "label": "Gemma 4 26B-A4B",
           "hf_id": "google/gemma-4-26B-A4B-it",
           "disk_size_gb": 21.24,
-          "fit_level": "Good",
+          "fit_level": "Perfect",
           "best_quant": "Q6_K"
         },
         {
@@ -476,17 +460,10 @@
           "best_quant": "Q5_K_M"
         },
         {
-          "label": "Gemma 4 31B",
-          "hf_id": "google/gemma-4-31B-it",
-          "disk_size_gb": 15.69,
-          "fit_level": "Marginal",
-          "best_quant": "Q3_K_M"
-        },
-        {
           "label": "Gemma 4 12B",
           "hf_id": "unsloth/gemma-4-12b-it",
           "disk_size_gb": 12.56,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "best_quant": "Q8_0"
         }
       ],
@@ -554,12 +531,11 @@
         {
           "label": "Llama 4 Maverick 400B",
           "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 232.92,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 205.7,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Qwen3.5 397B-A17B",
@@ -624,28 +600,27 @@
         {
           "label": "Llama 4 Scout 109B",
           "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 63.01,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 55.6,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "found": true,
-          "fit_level": "Marginal",
+          "fit_level": "Too Tight",
           "disk_size_gb": 15.69,
           "best_quant": "Q3_K_M",
           "memory_required_gb": 23.69,
-          "fits": true
+          "fits": false
         },
         {
           "label": "Gemma 4 26B-A4B",
           "hf_id": "google/gemma-4-26B-A4B-it",
           "found": true,
-          "fit_level": "Good",
+          "fit_level": "Perfect",
           "disk_size_gb": 21.24,
           "best_quant": "Q6_K",
           "memory_required_gb": 13.6,
@@ -665,11 +640,11 @@
           "label": "ERNIE 4.5 21B-A3B",
           "hf_id": "baidu/ERNIE-4.5-21B-A3B-Thinking",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Too Tight",
           "disk_size_gb": 22.92,
           "best_quant": "Q8_0",
           "memory_required_gb": 23.85,
-          "fits": true
+          "fits": false
         },
         {
           "label": "Granite 4.1 30B",
@@ -695,7 +670,7 @@
           "label": "Gemma 4 12B",
           "hf_id": "unsloth/gemma-4-12b-it",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "disk_size_gb": 12.56,
           "best_quant": "Q8_0",
           "memory_required_gb": 16.06,
@@ -724,7 +699,7 @@
           "label": "Qwen3.8 27B",
           "hf_id": "Qwen/Qwen3.8-27B",
           "disk_size_gb": 29.17,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "best_quant": "Q8_0"
         },
         {
@@ -752,7 +727,7 @@
           "label": "Qwen3.8 27B",
           "hf_id": "Qwen/Qwen3.8-27B",
           "disk_size_gb": 29.17,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "best_quant": "Q8_0"
         },
         {
@@ -773,14 +748,14 @@
           "label": "Granite 4.1 30B",
           "hf_id": "ibm-granite/granite-4.1-30b",
           "disk_size_gb": 23.09,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "best_quant": "Q6_K"
         },
         {
           "label": "ERNIE 4.5 21B-A3B",
           "hf_id": "baidu/ERNIE-4.5-21B-A3B-Thinking",
           "disk_size_gb": 22.92,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "best_quant": "Q8_0"
         },
         {
@@ -794,7 +769,7 @@
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "disk_size_gb": 22.22,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "best_quant": "Q5_K_M"
         },
         {
@@ -869,12 +844,11 @@
         {
           "label": "Llama 4 Maverick 400B",
           "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 232.92,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 205.7,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Qwen3.5 397B-A17B",
@@ -939,18 +913,17 @@
         {
           "label": "Llama 4 Scout 109B",
           "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 63.01,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 55.6,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "disk_size_gb": 22.22,
           "best_quant": "Q5_K_M",
           "memory_required_gb": 30.22,
@@ -970,7 +943,7 @@
           "label": "Qwen3.8 27B",
           "hf_id": "Qwen/Qwen3.8-27B",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "disk_size_gb": 29.17,
           "best_quant": "Q8_0",
           "memory_required_gb": 30.17,
@@ -980,7 +953,7 @@
           "label": "ERNIE 4.5 21B-A3B",
           "hf_id": "baidu/ERNIE-4.5-21B-A3B-Thinking",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "disk_size_gb": 22.92,
           "best_quant": "Q8_0",
           "memory_required_gb": 23.85,
@@ -990,7 +963,7 @@
           "label": "Granite 4.1 30B",
           "hf_id": "ibm-granite/granite-4.1-30b",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "disk_size_gb": 23.09,
           "best_quant": "Q6_K",
           "memory_required_gb": 25.59,
@@ -1031,17 +1004,10 @@
     "m5pro_24": {
       "title": "Pro mini: M5 Pro 24GB",
       "source_file": "m5pro_24.json",
-      "fitting_count": 8,
+      "fitting_count": 6,
       "keep_n": 3,
       "os_apps_gb": 100.0,
       "keep_models": [
-        {
-          "label": "ERNIE 4.5 21B-A3B",
-          "hf_id": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-          "disk_size_gb": 22.92,
-          "fit_level": "Perfect",
-          "best_quant": "Q8_0"
-        },
         {
           "label": "gpt-oss-20b 21B",
           "hf_id": "openai/gpt-oss-20b",
@@ -1055,21 +1021,21 @@
           "disk_size_gb": 22.23,
           "fit_level": "Marginal",
           "best_quant": "Q6_K"
+        },
+        {
+          "label": "Nemotron 3 Nano 30B",
+          "hf_id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+          "disk_size_gb": 21.47,
+          "fit_level": "Good",
+          "best_quant": "Q5_K_M"
         }
       ],
-      "keep_sum_gb": 67.74,
-      "download_scratch_gb": 22.92,
-      "need_gb": 190.66,
+      "keep_sum_gb": 66.29,
+      "download_scratch_gb": 22.59,
+      "need_gb": 188.88,
       "comfortable_ssd_gb": 256,
       "floor_ssd_gb": 256,
       "all_fitting": [
-        {
-          "label": "ERNIE 4.5 21B-A3B",
-          "hf_id": "baidu/ERNIE-4.5-21B-A3B-Thinking",
-          "disk_size_gb": 22.92,
-          "fit_level": "Perfect",
-          "best_quant": "Q8_0"
-        },
         {
           "label": "gpt-oss-20b 21B",
           "hf_id": "openai/gpt-oss-20b",
@@ -1095,7 +1061,7 @@
           "label": "Gemma 4 26B-A4B",
           "hf_id": "google/gemma-4-26B-A4B-it",
           "disk_size_gb": 21.24,
-          "fit_level": "Good",
+          "fit_level": "Perfect",
           "best_quant": "Q6_K"
         },
         {
@@ -1106,17 +1072,10 @@
           "best_quant": "Q5_K_M"
         },
         {
-          "label": "Gemma 4 31B",
-          "hf_id": "google/gemma-4-31B-it",
-          "disk_size_gb": 15.69,
-          "fit_level": "Marginal",
-          "best_quant": "Q3_K_M"
-        },
-        {
           "label": "Gemma 4 12B",
           "hf_id": "unsloth/gemma-4-12b-it",
           "disk_size_gb": 12.56,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "best_quant": "Q8_0"
         }
       ],
@@ -1184,12 +1143,11 @@
         {
           "label": "Llama 4 Maverick 400B",
           "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 232.92,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 205.7,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Qwen3.5 397B-A17B",
@@ -1254,28 +1212,27 @@
         {
           "label": "Llama 4 Scout 109B",
           "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 63.01,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 55.6,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "found": true,
-          "fit_level": "Marginal",
+          "fit_level": "Too Tight",
           "disk_size_gb": 15.69,
           "best_quant": "Q3_K_M",
           "memory_required_gb": 23.69,
-          "fits": true
+          "fits": false
         },
         {
           "label": "Gemma 4 26B-A4B",
           "hf_id": "google/gemma-4-26B-A4B-it",
           "found": true,
-          "fit_level": "Good",
+          "fit_level": "Perfect",
           "disk_size_gb": 21.24,
           "best_quant": "Q6_K",
           "memory_required_gb": 13.6,
@@ -1295,11 +1252,11 @@
           "label": "ERNIE 4.5 21B-A3B",
           "hf_id": "baidu/ERNIE-4.5-21B-A3B-Thinking",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Too Tight",
           "disk_size_gb": 22.92,
           "best_quant": "Q8_0",
           "memory_required_gb": 23.85,
-          "fits": true
+          "fits": false
         },
         {
           "label": "Granite 4.1 30B",
@@ -1325,7 +1282,7 @@
           "label": "Gemma 4 12B",
           "hf_id": "unsloth/gemma-4-12b-it",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "disk_size_gb": 12.56,
           "best_quant": "Q8_0",
           "memory_required_gb": 16.06,
@@ -1354,7 +1311,7 @@
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "disk_size_gb": 34.32,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "best_quant": "Q8_0"
         },
         {
@@ -1368,7 +1325,7 @@
           "label": "Granite 4.1 30B",
           "hf_id": "ibm-granite/granite-4.1-30b",
           "disk_size_gb": 30.31,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "best_quant": "Q8_0"
         }
       ],
@@ -1382,7 +1339,7 @@
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "disk_size_gb": 34.32,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "best_quant": "Q8_0"
         },
         {
@@ -1396,14 +1353,14 @@
           "label": "Granite 4.1 30B",
           "hf_id": "ibm-granite/granite-4.1-30b",
           "disk_size_gb": 30.31,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "best_quant": "Q8_0"
         },
         {
           "label": "Qwen3.8 27B",
           "hf_id": "Qwen/Qwen3.8-27B",
           "disk_size_gb": 29.17,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "best_quant": "Q8_0"
         },
         {
@@ -1499,12 +1456,11 @@
         {
           "label": "Llama 4 Maverick 400B",
           "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 232.92,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 205.7,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Qwen3.5 397B-A17B",
@@ -1569,18 +1525,17 @@
         {
           "label": "Llama 4 Scout 109B",
           "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 40.2,
-          "best_quant": "Q2_K",
-          "memory_required_gb": 55.6,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "disk_size_gb": 34.32,
           "best_quant": "Q8_0",
           "memory_required_gb": 42.32,
@@ -1600,7 +1555,7 @@
           "label": "Qwen3.8 27B",
           "hf_id": "Qwen/Qwen3.8-27B",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "disk_size_gb": 29.17,
           "best_quant": "Q8_0",
           "memory_required_gb": 30.17,
@@ -1620,7 +1575,7 @@
           "label": "Granite 4.1 30B",
           "hf_id": "ibm-granite/granite-4.1-30b",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "disk_size_gb": 30.31,
           "best_quant": "Q8_0",
           "memory_required_gb": 32.81,
@@ -1661,56 +1616,14 @@
     "m5pro_64": {
       "title": "Pro mini: M5 Pro 64GB",
       "source_file": "m5pro_64.json",
-      "fitting_count": 11,
+      "fitting_count": 9,
       "keep_n": 3,
       "os_apps_gb": 100.0,
       "keep_models": [
         {
-          "label": "Nemotron 3 Super 120B",
-          "hf_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
-          "disk_size_gb": 59.33,
-          "fit_level": "Marginal",
-          "best_quant": "Q3_K_M"
-        },
-        {
           "label": "gpt-oss-120b 117B",
           "hf_id": "openai/gpt-oss-120b",
           "disk_size_gb": 57.8,
-          "fit_level": "Marginal",
-          "best_quant": "Q3_K_M"
-        },
-        {
-          "label": "Llama 4 Scout 109B",
-          "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "disk_size_gb": 52.15,
-          "fit_level": "Marginal",
-          "best_quant": "Q3_K_M"
-        }
-      ],
-      "keep_sum_gb": 169.28,
-      "download_scratch_gb": 59.33,
-      "need_gb": 328.61,
-      "comfortable_ssd_gb": 512,
-      "floor_ssd_gb": 512,
-      "all_fitting": [
-        {
-          "label": "Nemotron 3 Super 120B",
-          "hf_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
-          "disk_size_gb": 59.33,
-          "fit_level": "Marginal",
-          "best_quant": "Q3_K_M"
-        },
-        {
-          "label": "gpt-oss-120b 117B",
-          "hf_id": "openai/gpt-oss-120b",
-          "disk_size_gb": 57.8,
-          "fit_level": "Marginal",
-          "best_quant": "Q3_K_M"
-        },
-        {
-          "label": "Llama 4 Scout 109B",
-          "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "disk_size_gb": 52.15,
           "fit_level": "Marginal",
           "best_quant": "Q3_K_M"
         },
@@ -1718,7 +1631,35 @@
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "disk_size_gb": 34.32,
+          "fit_level": "Good",
+          "best_quant": "Q8_0"
+        },
+        {
+          "label": "Nemotron 3 Nano 30B",
+          "hf_id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+          "disk_size_gb": 33.16,
           "fit_level": "Perfect",
+          "best_quant": "Q8_0"
+        }
+      ],
+      "keep_sum_gb": 125.28,
+      "download_scratch_gb": 57.8,
+      "need_gb": 283.08,
+      "comfortable_ssd_gb": 512,
+      "floor_ssd_gb": 512,
+      "all_fitting": [
+        {
+          "label": "gpt-oss-120b 117B",
+          "hf_id": "openai/gpt-oss-120b",
+          "disk_size_gb": 57.8,
+          "fit_level": "Marginal",
+          "best_quant": "Q3_K_M"
+        },
+        {
+          "label": "Gemma 4 31B",
+          "hf_id": "google/gemma-4-31B-it",
+          "disk_size_gb": 34.32,
+          "fit_level": "Good",
           "best_quant": "Q8_0"
         },
         {
@@ -1835,12 +1776,11 @@
         {
           "label": "Llama 4 Maverick 400B",
           "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 232.92,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 205.7,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Qwen3.5 397B-A17B",
@@ -1886,11 +1826,11 @@
           "label": "Nemotron 3 Super 120B",
           "hf_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
           "found": true,
-          "fit_level": "Marginal",
+          "fit_level": "Too Tight",
           "disk_size_gb": 59.33,
           "best_quant": "Q3_K_M",
           "memory_required_gb": 63.3,
-          "fits": true
+          "fits": false
         },
         {
           "label": "gpt-oss-120b 117B",
@@ -1905,18 +1845,17 @@
         {
           "label": "Llama 4 Scout 109B",
           "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "found": true,
-          "fit_level": "Marginal",
-          "disk_size_gb": 52.15,
-          "best_quant": "Q3_K_M",
-          "memory_required_gb": 55.6,
-          "fits": true
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "disk_size_gb": 34.32,
           "best_quant": "Q8_0",
           "memory_required_gb": 42.32,
@@ -2012,14 +1951,14 @@
           "label": "Granite 4.1 30B",
           "hf_id": "ibm-granite/granite-4.1-30b",
           "disk_size_gb": 30.31,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "best_quant": "Q8_0"
         },
         {
           "label": "Qwen3.8 27B",
           "hf_id": "Qwen/Qwen3.8-27B",
           "disk_size_gb": 29.17,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "best_quant": "Q8_0"
         }
       ],
@@ -2040,14 +1979,14 @@
           "label": "Granite 4.1 30B",
           "hf_id": "ibm-granite/granite-4.1-30b",
           "disk_size_gb": 30.31,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "best_quant": "Q8_0"
         },
         {
           "label": "Qwen3.8 27B",
           "hf_id": "Qwen/Qwen3.8-27B",
           "disk_size_gb": 29.17,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "best_quant": "Q8_0"
         },
         {
@@ -2061,14 +2000,14 @@
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "disk_size_gb": 26.15,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "best_quant": "Q6_K"
         },
         {
           "label": "ERNIE 4.5 21B-A3B",
           "hf_id": "baidu/ERNIE-4.5-21B-A3B-Thinking",
           "disk_size_gb": 22.92,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "best_quant": "Q8_0"
         },
         {
@@ -2150,12 +2089,11 @@
         {
           "label": "Llama 4 Maverick 400B",
           "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 232.92,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 205.7,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Qwen3.5 397B-A17B",
@@ -2220,18 +2158,17 @@
         {
           "label": "Llama 4 Scout 109B",
           "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 63.01,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 55.6,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "disk_size_gb": 26.15,
           "best_quant": "Q6_K",
           "memory_required_gb": 34.15,
@@ -2251,7 +2188,7 @@
           "label": "Qwen3.8 27B",
           "hf_id": "Qwen/Qwen3.8-27B",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "disk_size_gb": 29.17,
           "best_quant": "Q8_0",
           "memory_required_gb": 30.17,
@@ -2261,7 +2198,7 @@
           "label": "ERNIE 4.5 21B-A3B",
           "hf_id": "baidu/ERNIE-4.5-21B-A3B-Thinking",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "disk_size_gb": 22.92,
           "best_quant": "Q8_0",
           "memory_required_gb": 23.85,
@@ -2271,7 +2208,7 @@
           "label": "Granite 4.1 30B",
           "hf_id": "ibm-granite/granite-4.1-30b",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "disk_size_gb": 30.31,
           "best_quant": "Q8_0",
           "memory_required_gb": 32.81,
@@ -2320,7 +2257,7 @@
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "disk_size_gb": 34.32,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "best_quant": "Q8_0"
         },
         {
@@ -2334,7 +2271,7 @@
           "label": "Granite 4.1 30B",
           "hf_id": "ibm-granite/granite-4.1-30b",
           "disk_size_gb": 30.31,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "best_quant": "Q8_0"
         }
       ],
@@ -2348,7 +2285,7 @@
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "disk_size_gb": 34.32,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "best_quant": "Q8_0"
         },
         {
@@ -2362,14 +2299,14 @@
           "label": "Granite 4.1 30B",
           "hf_id": "ibm-granite/granite-4.1-30b",
           "disk_size_gb": 30.31,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "best_quant": "Q8_0"
         },
         {
           "label": "Qwen3.8 27B",
           "hf_id": "Qwen/Qwen3.8-27B",
           "disk_size_gb": 29.17,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "best_quant": "Q8_0"
         },
         {
@@ -2465,12 +2402,11 @@
         {
           "label": "Llama 4 Maverick 400B",
           "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 232.92,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 205.7,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Qwen3.5 397B-A17B",
@@ -2535,18 +2471,17 @@
         {
           "label": "Llama 4 Scout 109B",
           "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 40.2,
-          "best_quant": "Q2_K",
-          "memory_required_gb": 55.6,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Marginal",
           "disk_size_gb": 34.32,
           "best_quant": "Q8_0",
           "memory_required_gb": 42.32,
@@ -2566,7 +2501,7 @@
           "label": "Qwen3.8 27B",
           "hf_id": "Qwen/Qwen3.8-27B",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "disk_size_gb": 29.17,
           "best_quant": "Q8_0",
           "memory_required_gb": 30.17,
@@ -2586,7 +2521,7 @@
           "label": "Granite 4.1 30B",
           "hf_id": "ibm-granite/granite-4.1-30b",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "disk_size_gb": 30.31,
           "best_quant": "Q8_0",
           "memory_required_gb": 32.81,
@@ -2627,56 +2562,14 @@
     "m5max64": {
       "title": "Studio Max 64GB",
       "source_file": "m5max64.json",
-      "fitting_count": 11,
+      "fitting_count": 9,
       "keep_n": 3,
       "os_apps_gb": 100.0,
       "keep_models": [
         {
-          "label": "Nemotron 3 Super 120B",
-          "hf_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
-          "disk_size_gb": 59.33,
-          "fit_level": "Marginal",
-          "best_quant": "Q3_K_M"
-        },
-        {
           "label": "gpt-oss-120b 117B",
           "hf_id": "openai/gpt-oss-120b",
           "disk_size_gb": 57.8,
-          "fit_level": "Marginal",
-          "best_quant": "Q3_K_M"
-        },
-        {
-          "label": "Llama 4 Scout 109B",
-          "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "disk_size_gb": 52.15,
-          "fit_level": "Marginal",
-          "best_quant": "Q3_K_M"
-        }
-      ],
-      "keep_sum_gb": 169.28,
-      "download_scratch_gb": 59.33,
-      "need_gb": 328.61,
-      "comfortable_ssd_gb": 512,
-      "floor_ssd_gb": 512,
-      "all_fitting": [
-        {
-          "label": "Nemotron 3 Super 120B",
-          "hf_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
-          "disk_size_gb": 59.33,
-          "fit_level": "Marginal",
-          "best_quant": "Q3_K_M"
-        },
-        {
-          "label": "gpt-oss-120b 117B",
-          "hf_id": "openai/gpt-oss-120b",
-          "disk_size_gb": 57.8,
-          "fit_level": "Marginal",
-          "best_quant": "Q3_K_M"
-        },
-        {
-          "label": "Llama 4 Scout 109B",
-          "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "disk_size_gb": 52.15,
           "fit_level": "Marginal",
           "best_quant": "Q3_K_M"
         },
@@ -2684,7 +2577,35 @@
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "disk_size_gb": 34.32,
+          "fit_level": "Good",
+          "best_quant": "Q8_0"
+        },
+        {
+          "label": "Nemotron 3 Nano 30B",
+          "hf_id": "nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B-BF16",
+          "disk_size_gb": 33.16,
           "fit_level": "Perfect",
+          "best_quant": "Q8_0"
+        }
+      ],
+      "keep_sum_gb": 125.28,
+      "download_scratch_gb": 57.8,
+      "need_gb": 283.08,
+      "comfortable_ssd_gb": 512,
+      "floor_ssd_gb": 512,
+      "all_fitting": [
+        {
+          "label": "gpt-oss-120b 117B",
+          "hf_id": "openai/gpt-oss-120b",
+          "disk_size_gb": 57.8,
+          "fit_level": "Marginal",
+          "best_quant": "Q3_K_M"
+        },
+        {
+          "label": "Gemma 4 31B",
+          "hf_id": "google/gemma-4-31B-it",
+          "disk_size_gb": 34.32,
+          "fit_level": "Good",
           "best_quant": "Q8_0"
         },
         {
@@ -2801,12 +2722,11 @@
         {
           "label": "Llama 4 Maverick 400B",
           "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 232.92,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 205.7,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Qwen3.5 397B-A17B",
@@ -2852,11 +2772,11 @@
           "label": "Nemotron 3 Super 120B",
           "hf_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
           "found": true,
-          "fit_level": "Marginal",
+          "fit_level": "Too Tight",
           "disk_size_gb": 59.33,
           "best_quant": "Q3_K_M",
           "memory_required_gb": 63.3,
-          "fits": true
+          "fits": false
         },
         {
           "label": "gpt-oss-120b 117B",
@@ -2871,18 +2791,17 @@
         {
           "label": "Llama 4 Scout 109B",
           "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "found": true,
-          "fit_level": "Marginal",
-          "disk_size_gb": 52.15,
-          "best_quant": "Q3_K_M",
-          "memory_required_gb": 55.6,
-          "fits": true
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Gemma 4 31B",
           "hf_id": "google/gemma-4-31B-it",
           "found": true,
-          "fit_level": "Perfect",
+          "fit_level": "Good",
           "disk_size_gb": 34.32,
           "best_quant": "Q8_0",
           "memory_required_gb": 42.32,
@@ -2963,7 +2882,7 @@
     "m5max128": {
       "title": "Sweet spot: Studio Max 128GB",
       "source_file": "m5max128.json",
-      "fitting_count": 11,
+      "fitting_count": 10,
       "keep_n": 3,
       "os_apps_gb": 100.0,
       "keep_models": [
@@ -2975,37 +2894,30 @@
           "best_quant": "Q8_0"
         },
         {
-          "label": "Llama 4 Scout 109B",
-          "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "disk_size_gb": 114.07,
-          "fit_level": "Perfect",
-          "best_quant": "Q8_0"
-        },
-        {
           "label": "Nemotron 3 Super 120B",
           "hf_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
           "disk_size_gb": 98.89,
           "fit_level": "Perfect",
           "best_quant": "Q6_K"
+        },
+        {
+          "label": "Gemma 4 31B",
+          "hf_id": "google/gemma-4-31B-it",
+          "disk_size_gb": 34.32,
+          "fit_level": "Perfect",
+          "best_quant": "Q8_0"
         }
       ],
-      "keep_sum_gb": 339.39,
+      "keep_sum_gb": 259.64,
       "download_scratch_gb": 126.43,
-      "need_gb": 565.82,
+      "need_gb": 486.07,
       "comfortable_ssd_gb": 1024,
-      "floor_ssd_gb": 1024,
+      "floor_ssd_gb": 512,
       "all_fitting": [
         {
           "label": "gpt-oss-120b 117B",
           "hf_id": "openai/gpt-oss-120b",
           "disk_size_gb": 126.43,
-          "fit_level": "Perfect",
-          "best_quant": "Q8_0"
-        },
-        {
-          "label": "Llama 4 Scout 109B",
-          "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "disk_size_gb": 114.07,
           "fit_level": "Perfect",
           "best_quant": "Q8_0"
         },
@@ -3137,12 +3049,11 @@
         {
           "label": "Llama 4 Maverick 400B",
           "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 232.92,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 205.7,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Qwen3.5 397B-A17B",
@@ -3207,12 +3118,11 @@
         {
           "label": "Llama 4 Scout 109B",
           "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "found": true,
-          "fit_level": "Perfect",
-          "disk_size_gb": 114.07,
-          "best_quant": "Q8_0",
-          "memory_required_gb": 55.6,
-          "fits": true
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Gemma 4 31B",
@@ -3299,17 +3209,10 @@
     "m5ultra96": {
       "title": "Studio Ultra 96GB",
       "source_file": "m5ultra96.json",
-      "fitting_count": 11,
+      "fitting_count": 10,
       "keep_n": 3,
       "os_apps_gb": 100.0,
       "keep_models": [
-        {
-          "label": "Llama 4 Scout 109B",
-          "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "disk_size_gb": 86.91,
-          "fit_level": "Good",
-          "best_quant": "Q6_K"
-        },
         {
           "label": "Nemotron 3 Super 120B",
           "hf_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
@@ -3323,21 +3226,21 @@
           "disk_size_gb": 81.88,
           "fit_level": "Good",
           "best_quant": "Q5_K_M"
+        },
+        {
+          "label": "Gemma 4 31B",
+          "hf_id": "google/gemma-4-31B-it",
+          "disk_size_gb": 34.32,
+          "fit_level": "Perfect",
+          "best_quant": "Q8_0"
         }
       ],
-      "keep_sum_gb": 252.85,
-      "download_scratch_gb": 86.91,
-      "need_gb": 439.76,
-      "comfortable_ssd_gb": 1024,
+      "keep_sum_gb": 200.26,
+      "download_scratch_gb": 84.06,
+      "need_gb": 384.32,
+      "comfortable_ssd_gb": 512,
       "floor_ssd_gb": 512,
       "all_fitting": [
-        {
-          "label": "Llama 4 Scout 109B",
-          "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "disk_size_gb": 86.91,
-          "fit_level": "Good",
-          "best_quant": "Q6_K"
-        },
         {
           "label": "Nemotron 3 Super 120B",
           "hf_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
@@ -3473,12 +3376,11 @@
         {
           "label": "Llama 4 Maverick 400B",
           "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "found": true,
-          "fit_level": "Too Tight",
-          "disk_size_gb": 232.92,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 205.7,
-          "fits": false
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Qwen3.5 397B-A17B",
@@ -3543,12 +3445,11 @@
         {
           "label": "Llama 4 Scout 109B",
           "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "found": true,
-          "fit_level": "Good",
-          "disk_size_gb": 86.91,
-          "best_quant": "Q6_K",
-          "memory_required_gb": 55.6,
-          "fits": true
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Gemma 4 31B",
@@ -3635,7 +3536,7 @@
     "m5ultra256": {
       "title": "Frontier-adjacent: Studio Ultra 256GB",
       "source_file": "m5ultra256.json",
-      "fitting_count": 15,
+      "fitting_count": 13,
       "keep_n": 3,
       "os_apps_gb": 100.0,
       "keep_models": [
@@ -3689,13 +3590,6 @@
           "best_quant": "Q4_K_M"
         },
         {
-          "label": "Llama 4 Maverick 400B",
-          "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "disk_size_gb": 232.92,
-          "fit_level": "Good",
-          "best_quant": "Q4_K_M"
-        },
-        {
           "label": "Nemotron 3 Super 120B",
           "hf_id": "nvidia/NVIDIA-Nemotron-3-Super-120B-A12B-BF16",
           "disk_size_gb": 129.79,
@@ -3706,13 +3600,6 @@
           "label": "gpt-oss-120b 117B",
           "hf_id": "openai/gpt-oss-120b",
           "disk_size_gb": 126.43,
-          "fit_level": "Perfect",
-          "best_quant": "Q8_0"
-        },
-        {
-          "label": "Llama 4 Scout 109B",
-          "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "disk_size_gb": 114.07,
           "fit_level": "Perfect",
           "best_quant": "Q8_0"
         },
@@ -3837,12 +3724,11 @@
         {
           "label": "Llama 4 Maverick 400B",
           "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "found": true,
-          "fit_level": "Good",
-          "disk_size_gb": 232.92,
-          "best_quant": "Q4_K_M",
-          "memory_required_gb": 205.7,
-          "fits": true
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Qwen3.5 397B-A17B",
@@ -3907,12 +3793,11 @@
         {
           "label": "Llama 4 Scout 109B",
           "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "found": true,
-          "fit_level": "Perfect",
-          "disk_size_gb": 114.07,
-          "best_quant": "Q8_0",
-          "memory_required_gb": 55.6,
-          "fits": true
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Gemma 4 31B",
@@ -3999,7 +3884,7 @@
     "m5ultra512": {
       "title": "Full frontier: Studio Ultra 512GB",
       "source_file": "m5ultra512.json",
-      "fitting_count": 18,
+      "fitting_count": 16,
       "keep_n": 3,
       "os_apps_gb": 100.0,
       "keep_models": [
@@ -4007,7 +3892,7 @@
           "label": "Nemotron 3 Ultra 550B",
           "hf_id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
           "disk_size_gb": 448.42,
-          "fit_level": "Good",
+          "fit_level": "Perfect",
           "best_quant": "Q6_K"
         },
         {
@@ -4035,7 +3920,7 @@
           "label": "Nemotron 3 Ultra 550B",
           "hf_id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
           "disk_size_gb": 448.42,
-          "fit_level": "Good",
+          "fit_level": "Perfect",
           "best_quant": "Q6_K"
         },
         {
@@ -4056,13 +3941,6 @@
           "label": "Qwen3.5 397B-A17B",
           "hf_id": "Qwen/Qwen3.5-397B-A17B",
           "disk_size_gb": 423.57,
-          "fit_level": "Perfect",
-          "best_quant": "Q8_0"
-        },
-        {
-          "label": "Llama 4 Maverick 400B",
-          "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "disk_size_gb": 421.66,
           "fit_level": "Perfect",
           "best_quant": "Q8_0"
         },
@@ -4091,13 +3969,6 @@
           "label": "gpt-oss-120b 117B",
           "hf_id": "openai/gpt-oss-120b",
           "disk_size_gb": 126.43,
-          "fit_level": "Perfect",
-          "best_quant": "Q8_0"
-        },
-        {
-          "label": "Llama 4 Scout 109B",
-          "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "disk_size_gb": 114.07,
           "fit_level": "Perfect",
           "best_quant": "Q8_0"
         },
@@ -4213,7 +4084,7 @@
           "label": "Nemotron 3 Ultra 550B",
           "hf_id": "nvidia/NVIDIA-Nemotron-3-Ultra-550B-A55B-BF16",
           "found": true,
-          "fit_level": "Good",
+          "fit_level": "Perfect",
           "disk_size_gb": 448.42,
           "best_quant": "Q6_K",
           "memory_required_gb": 287.1,
@@ -4222,12 +4093,11 @@
         {
           "label": "Llama 4 Maverick 400B",
           "hf_id": "meta-llama/Llama-4-Maverick-17B-128E-Instruct",
-          "found": true,
-          "fit_level": "Perfect",
-          "disk_size_gb": 421.66,
-          "best_quant": "Q8_0",
-          "memory_required_gb": 205.7,
-          "fits": true
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Qwen3.5 397B-A17B",
@@ -4292,12 +4162,11 @@
         {
           "label": "Llama 4 Scout 109B",
           "hf_id": "meta-llama/Llama-4-Scout-17B-16E-Instruct",
-          "found": true,
-          "fit_level": "Perfect",
-          "disk_size_gb": 114.07,
-          "best_quant": "Q8_0",
-          "memory_required_gb": 55.6,
-          "fits": true
+          "found": false,
+          "fit_level": null,
+          "disk_size_gb": null,
+          "best_quant": null,
+          "memory_required_gb": null
         },
         {
           "label": "Gemma 4 31B",

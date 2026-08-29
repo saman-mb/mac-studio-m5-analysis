@@ -4,9 +4,14 @@ Public dataset + docs behind the blog post **"M5 Studio, M6 Mini: Which to Buy f
 
 Apple opened pre-orders (22 Sep 2026) for the M5 Mac Studio and M6 Mac mini. Before
 the hardware shipped, every configuration was simulated through
-[llmfit](https://github.com/alexsjones/llmfit) using its hardware-override flags, and
-fit verdicts + estimated tok/s were recorded for the 24 current open-weight models
-below. Model list refreshed 28 Aug 2026 against the current Hugging Face lineup;
+[llmfit](https://github.com/alexsjones/llmfit) **hardware profiles** (issue
+[#969](https://github.com/AlexsJones/llmfit/issues/969) / PR
+[#971](https://github.com/AlexsJones/llmfit/pull/971)): each SKU is a small JSON
+file with published unified memory **and** memory bandwidth, so tok/s come out of
+`fit --json` already on the target roofline — **no post-hoc bandwidth transpose**
+against the detector machine.
+
+Model list refreshed 28 Aug 2026 against the current Hugging Face lineup;
 older releases (Llama 3.x, DeepSeek V3, Snowflake Arctic, Hermes 4, Jamba) were
 dropped as obsolete.
 
@@ -22,36 +27,59 @@ dropped as obsolete.
 
 ## What is here
 
-- `docs/mac-studio.md` — full configuration coverage for Mac Studio (7 configs)
-- `docs/mac-mini.md` — full configuration coverage for Mac mini (6 configs)
-- `raw/final_matrix3.json` — per config: fit level, raw + scaled tok/s, chosen
-  variant, quant and memory for all 24 models (the dataset used in the post)
-- `raw/matrix4.html` — the rendered fit matrix (HTML table)
-- `raw/build_matrix3.py` — the extraction script: family patterns, variant
-  selection, bandwidth scaling. Re-run against fresh `fit --json` output to
-  reproduce
+- `profiles/*.json` — one llmfit hardware profile per Apple SKU (RAM + GB/s)
+- `scripts/machines.json` — machine table (RAM, bandwidth, cores provenance)
+- `scripts/run_sims.py` — `llmfit --profile profiles/<sku>.json fit --json`
+- `scripts/build_matrix.py` — family selection + fit matrix (uses llmfit tps as-is)
+- `scripts/disk_comfort.py` — comfortable SSD sizes from `disk_size_gb`
+- `docs/mac-studio.md` / `docs/mac-mini.md` — narrative coverage
+- `raw/sims/*.json` — fresh fit dumps (generated; large)
+- `raw/final_matrix3.json` — per-config fit + tok/s for the 24 models
 
-## How it was done
+## Requirements
 
-llmfit detects local hardware, but `--memory`, `--ram` and `--cpu-cores` override it
-to simulate any machine. Each Apple config from the published tech-specs pages was
-simulated with:
+llmfit with hardware profiles (`llmfit hardware list` must work). Build from
+[PR #971](https://github.com/AlexsJones/llmfit/pull/971) or later.
+
+## Reproduce
 
 ```sh
-llmfit --memory 16G  --ram 16G  --cpu-cores 12 fit --json > m6_16.json
-llmfit --memory 24G  --ram 24G  --cpu-cores 12 fit --json > m6_24.json
-llmfit --memory 32G  --ram 32G  --cpu-cores 12 fit --json > m6_32.json
-llmfit --memory 24G  --ram 24G  --cpu-cores 15 fit --json > m5pro_24.json
-llmfit --memory 48G  --ram 48G  --cpu-cores 15 fit --json > m5pro_48.json
-llmfit --memory 64G  --ram 64G  --cpu-cores 18 fit --json > m5pro_64.json
-llmfit --memory 36G  --ram 36G  --cpu-cores 18 fit --json > m5max36.json
-llmfit --memory 48G  --ram 48G  --cpu-cores 18 fit --json > m5max48.json
-llmfit --memory 64G  --ram 64G  --cpu-cores 18 fit --json > m5max64.json
-llmfit --memory 128G --ram 128G --cpu-cores 18 fit --json > m5max128.json
-llmfit --memory 96G  --ram 96G  --cpu-cores 30 fit --json > m5ultra96.json
-llmfit --memory 256G --ram 256G --cpu-cores 30 fit --json > m5ultra256.json
-llmfit --memory 512G --ram 512G --cpu-cores 36 fit --json > m5ultra512.json
+# 1. Simulate every SKU (writes raw/sims/<stem>.json)
+python3 scripts/run_sims.py
+
+# 2. Build the blog matrix (no BW scaling step)
+python3 scripts/build_matrix.py
+
+# 3. Comfortable SSD sizes from the same dumps
+python3 scripts/disk_comfort.py --raw-dir raw/sims --out raw/disk/comfort.json --md raw/disk/comfort.md
 ```
+
+One-off / debug:
+
+```sh
+llmfit --profile profiles/m5max128.json fit --json | jq '.models[0].estimate_basis'
+# → gpu_bandwidth_gbps: 614
+```
+
+## How it was done (current)
+
+Each Apple config from the published tech-specs pages is a profile under
+`profiles/`:
+
+| Profile | RAM | Bandwidth | Product |
+|---|---:|---:|---|
+| `m6_16` | 16 GB | 153 GB/s | Mac mini M6 |
+| `m6_24` / `m6_32` | 24 / 32 GB | 170 GB/s | Mac mini M6 |
+| `m5pro_24` / `_48` / `_64` | 24 / 48 / 64 GB | 307 GB/s | Mac mini M5 Pro |
+| `m5max36` | 36 GB | 460 GB/s | Mac Studio M5 Max |
+| `m5max48` / `_64` / `_128` | 48 / 64 / 128 GB | 614 GB/s | Mac Studio M5 Max |
+| `m5ultra96` / `_256` / `_512` | 96 / 256 / 512 GB | 1200 GB/s | Mac Studio M5 Ultra |
+
+```sh
+llmfit --profile profiles/m5max128.json fit --json > raw/sims/m5max128.json
+```
+
+`--profile` hard-conflicts with `--memory/--ram/--cpu-cores` (no silent mix).
 
 ## Selection methodology
 
@@ -59,74 +87,39 @@ For each model family, one canonical Hugging Face variant is chosen and then reu
 for every machine configuration (a family is never represented by different repos
 on different machines):
 
-1. Match by family pattern (e.g. `deepseek-v4-flash`), excluding junk variants and
-   mis-parsed repos: draft/speculative/distill variants (`DSpark`, `DFlash`,
-   `EAGLE`, distills) and slice/prune repos (`slice`, `prune`, `reap`, `-Npct`,
-   fragments).
-2. Drop entries whose `memory_required_gb` is below a plausibility floor (roughly a
-   2-bit floor of the true parameter count). The HF-derived database contains
-   mis-parsed community/MLX repos claiming e.g. 117B models at 1.2GB; without this
-   gate they produce nonsense "Perfect on 16GB" verdicts.
-3. Arithmetic sanity gate: a "Perfect/Good" verdict is discarded when the entry's
-   own `memory_required_gb` exceeds the machine's available memory — the HF-derived
-   database contains corrupt entries whose fit verdict contradicts their own memory
-   numbers.
-4. The canonical variant is the best candidate on the tightest machine configuration
-   where it achieves a usable verdict (Perfect/Good; falls back to a Marginal
-   candidate on the largest machine). Official publishers (meta-llama, deepseek-ai,
-   Qwen, moonshotai, google, openai, nvidia, ibm-granite, baidu, redhatai, unsloth,
-   mlx-community) are preferred over community repos — a trusted publisher's
-   Marginal beats an unknown repo's "Perfect", since community quant perf metadata
-   is unreliable.
-5. Fit levels for every configuration are recomputed from the canonical variant's
-   measured memory footprint against each machine's usable RAM with declared
-   thresholds: **Perfect** if footprint ≤ 60% of RAM, **Good** ≤ 85%, **Marginal**
-   ≤ 98%, otherwise **Too Tight**. Because the thresholds are ratios of RAM, rows
-   are monotonic: a model never rates worse on a bigger machine.
-6. Decode tok/s = the canonical variant's llmfit estimate, scaled per configuration
-   by the published memory-bandwidth ratio (median of prior scaled/raw measurements;
-   256GB/s detector baseline — llmfit has no bandwidth override flag).
+1. Match by family pattern, excluding junk / draft variants (`DSpark`, `DFlash`,
+   `EAGLE`, distills, slice/prune repos). llmfit itself also demotes EAGLE/DFlash/DSpark
+   from ranked fits now.
+2. Drop entries whose `memory_required_gb` is below a plausibility floor.
+3. Arithmetic sanity gate on Perfect/Good vs available memory.
+4. Canonical variant = best survivor on the tightest usable config; preferred
+   publishers first (meta-llama, deepseek-ai, Qwen, moonshotai, google, openai, …).
+5. Fit levels for every configuration are recomputed from that variant's memory
+   footprint vs each SKU's RAM: **Perfect** ≤ 60%, **Good** ≤ 85%, **Marginal** ≤ 98%,
+   else **Too Tight** (same bands llmfit uses).
+6. Decode tok/s = that variant's `estimated_tps` **from the dump for that SKU**
+   (profile already set the published GB/s). No detector-baseline ratio, no hand
+   MoE active-param formula.
 
 ## Caveats
 
-- Reported tok/s are llmfit roofline estimates, not measurements. Prefill (time to
-  first token) is NOT modelled by llmfit at all — treat all tok/s numbers as
-  relative guidance between machines, not benchmarks.
-- Fit levels are recomputed from the canonical variant's measured memory footprint
-  against each machine's usable RAM (60/85/98% thresholds), so verdicts are
-  monotonic across machine sizes and independent of llmfit's per-entry fit verdict,
-  which can be corrupt.
-- Tok/s estimates are scaled by the published memory-bandwidth ratio against the
-  machine llmfit ran on (256GB/s detector). llmfit has no bandwidth override flag,
-  so treat scaled tok/s as a rough guide.
-- GLM-5.3 and GLM-5.3-Flash were announced but weights were not scoreable in
-  llmfit's catalog at publication time, so the GLM rows use GLM-5.2 (same 743B
-  base). Mistral Large 3 675B was likewise not yet scoreable.
+- Reported tok/s are llmfit roofline estimates, not measurements. Prefill/TTFT is
+  only populated when a profile supplies `gpu_compute_tflops_fp16` (these Apple
+  profiles omit it → honest `null`).
+- Profile schema v1 has no CPU-core field; core count stays whatever the host
+  reports. Decode estimates on the GPU bandwidth path are insensitive to that for
+  these SKUs (≥8 cores).
+- GLM-5.3 / Mistral Large 3 may still be missing from the catalog at scrape time.
 - Specs sourced from Apple UK tech-specs pages, 28 Aug 2026.
 
-## Comfortable SSD size (from llmfit `disk_size_gb`)
-
-llmfit already reports on-disk weight size as `disk_size_gb` on every fit row
-(`llmfit info <model> --json`). Model file sizes are not guessed.
+## Comfortable SSD size
 
 ```sh
-# From local fit dumps (if you have raw/m6_16.json etc.):
-python3 scripts/disk_comfort.py --raw-dir /path/to/dumps
-
-# Or query llmfit live (no multi-MB dumps required):
+python3 scripts/disk_comfort.py --raw-dir raw/sims
+# or live:
 python3 scripts/disk_comfort.py --via-llmfit
 ```
 
-Writes `raw/disk/comfort.json` and `raw/disk/comfort.md`.
-
-Formula (policy constants only):  
+Formula:  
 `need = 100GB OS/apps + sum(top 3 fitting blog-model disks) + max(those) download scratch`,  
 round up to an Apple SSD SKU, bump one tier if that SKU would be >85% full.
-
-| Config | Need | Comfortable SSD |
-|---|---:|---|
-| mini M6 16–32GB | 158–212GB | 256GB |
-| Pro mini / Max ≤64GB | 232–329GB | 512GB |
-| Max 128GB | 566GB | 1TB |
-| Ultra 256GB | 1,073GB | 2TB |
-| Ultra 512GB | 1,882GB | 4TB |

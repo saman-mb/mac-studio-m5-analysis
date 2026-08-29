@@ -1,0 +1,13 @@
+{
+  "schema_version": 1,
+  "name": "m6_24",
+  "match": {
+    "gpu_name_contains": "M6"
+  },
+  "hardware": {
+    "total_ram_gb": 24.0,
+    "unified_memory": true,
+    "gpu_memory_bandwidth_gbps": 170.0,
+    "ddr_bandwidth_gbps": 170.0
+  }
+}

@@ -136,6 +136,30 @@ Caveat: 512GB forces the 36c/80c die upgrade (per UK tech-specs page) — that u
 already included in the 256GB price above, so the 512 number assumes same die, RAM only.
 Late-Oct reveal confirms.
 
+## Comfortable SSD size (from llmfit `disk_size_gb`)
+
+llmfit already reports on-disk weight size as `disk_size_gb` on every fit row
+(`llmfit info <model> --json`). No guessing of model file sizes.
+
+```sh
+python3 scripts/disk_comfort.py
+# writes raw/disk/comfort.json and raw/disk/comfort.md
+```
+
+Formula (policy constants only):  
+`need = 100GB OS/apps + sum(top 3 fitting blog-model disks) + max(those) download scratch`,  
+round up to an Apple SSD SKU, bump one tier if that SKU would be >85% full.
+
+Headline results (re-run the script after refreshing `raw/*.json`):
+
+| Config | Need | Comfortable SSD |
+|---|---:|---|
+| mini M6 16–32GB | 158–212GB | 256GB |
+| Pro mini / Max ≤64GB | 232–329GB | 512GB |
+| Max 128GB | 566GB | 1TB |
+| Ultra 256GB | 1,073GB | 2TB |
+| Ultra 512GB | 1,882GB | 4TB |
+
 ## Reproduce
 
 ```sh
@@ -147,6 +171,7 @@ llmfit --memory 128G --ram 128G --cpu-cores 18  fit --json > raw/m5max128.json
 llmfit --memory 96G  --ram 96G  --cpu-cores 30  fit --json > raw/m5ultra96.json
 llmfit --memory 256G --ram 256G --cpu-cores 30  fit --json > raw/m5ultra256.json
 llmfit --memory 512G --ram 512G --cpu-cores 36  fit --json > raw/m5ultra512.json
+python3 scripts/disk_comfort.py
 ```
 
 `raw/flagship.json` holds the per-config summary for the flagship models above.
@@ -155,6 +180,8 @@ llmfit --memory 512G --ram 512G --cpu-cores 36  fit --json > raw/m5ultra512.json
 
 - llmfit's `fit_level` is memory-driven and reliable; `estimated_tps` here is based
   on the detecting machine and must be scaled, not quoted literally.
+- llmfit's `disk_size_gb` is the weight size for the best_quant it picks on that
+  machine; it is not a free-space measurement of your SSD.
 - llmfit DB contains junk HF entries; flagship names above were queried explicitly.
 - Pricing was not scraped (UK store pages render client-side). Grab price at order time.
 - Unreleased hardware — real perf may differ from bandwidth-scaled estimates.
